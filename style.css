@@ -1370,3 +1370,21 @@ html{
     font-size:12px;
   }
 }
+/* MOBILE TAP FEEDBACK */
+
+@media(max-width:768px){
+
+  .product-card:active,
+  .solution-card:active,
+  .quote-option:active,
+  .contact-item:active{
+    transform:scale(.98);
+  }
+
+  .hero-buttons a:active,
+  .quote-btn:active,
+  .primary-cta:active,
+  .secondary-cta:active{
+    transform:scale(.97);
+  }
+}
