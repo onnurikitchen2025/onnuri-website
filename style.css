@@ -1095,3 +1095,79 @@ html{
   background:rgba(5,42,35,.98);
   box-shadow:0 6px 22px rgba(0,0,0,.12);
 }
+/* MOBILE HAMBURGER MENU */
+
+.menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  padding:8px;
+}
+
+.menu-toggle span{
+  display:block;
+  width:100%;
+  height:2px;
+  background:#fff;
+  margin:6px 0;
+  border-radius:2px;
+  transition:.25s ease;
+}
+
+@media(max-width:768px){
+
+  .site-header{
+    position:sticky;
+    top:0;
+    flex-direction:row;
+    padding:14px 6%;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .main-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:#07352c;
+    padding:12px 6% 20px;
+    box-shadow:0 12px 24px rgba(0,0,0,.14);
+  }
+
+  .main-nav.open{
+    display:flex;
+  }
+
+  .main-nav a{
+    padding:13px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .main-nav .quote-btn{
+    margin-top:12px;
+    text-align:center;
+    border-bottom:0;
+  }
+
+  .menu-toggle.active span:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2){
+    opacity:0;
+  }
+
+  .menu-toggle.active span:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg);
+  }
+}
