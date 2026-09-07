@@ -195,7 +195,7 @@ footer{
   }
 
   .hero{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1.35fr;
     padding:55px 6%;
   }
 
