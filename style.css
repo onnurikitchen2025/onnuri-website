@@ -473,3 +473,10 @@ footer{
     gap:14px 18px;
   }
 }
+.hero-location{
+  margin-top:-12px;
+  margin-bottom:24px;
+  color:rgba(255,255,255,.85);
+  font-size:14px;
+  font-weight:600;
+}
