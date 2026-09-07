@@ -57,29 +57,8 @@ main section{
   padding:70px 8%;
 }
 
-main section:first-child{
-  background:var(--green);
-  color:var(--white);
-  min-height:420px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
 }
 
-main section:first-child h2{
-  font-size:48px;
-  max-width:750px;
-  line-height:1.15;
-  margin-bottom:18px;
-}
-
-main section:first-child p{
-  max-width:650px;
-  margin-bottom:28px;
-  font-size:18px;
-}
-
-main section:first-child a,
 #quote a{
   display:inline-block;
   width:max-content;
