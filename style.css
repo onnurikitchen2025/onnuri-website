@@ -306,3 +306,9 @@ footer{
   object-fit:contain;
   display:block;
 }
+.catalog-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:scale(1.18);
+}
