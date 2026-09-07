@@ -980,3 +980,33 @@ body{
   font-size:13px;
   font-weight:600;
 }
+/* MODERN SCROLL & REVEAL */
+
+html{
+  scroll-behavior:smooth;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
