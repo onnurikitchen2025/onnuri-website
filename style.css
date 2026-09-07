@@ -1285,3 +1285,51 @@ html{
     font-size:11px;
   }
 }
+/* MOBILE PRODUCTS POLISH */
+
+@media(max-width:768px){
+
+  .products-section{
+    padding:60px 6%;
+  }
+
+  .section-heading{
+    margin-bottom:28px;
+  }
+
+  .section-heading h2{
+    font-size:31px;
+    line-height:1.15;
+    letter-spacing:-.8px;
+  }
+
+  .section-heading p{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .products-section .product-grid{
+    gap:18px;
+  }
+
+  .category-image{
+    height:190px;
+  }
+
+  .category-content{
+    padding:20px;
+  }
+
+  .category-content h3{
+    font-size:19px;
+  }
+
+  .category-content p{
+    font-size:14px;
+    margin-bottom:15px;
+  }
+
+  .category-link{
+    font-size:12px;
+  }
+}
