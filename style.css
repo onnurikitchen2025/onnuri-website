@@ -1333,3 +1333,40 @@ html{
     font-size:12px;
   }
 }
+/* MOBILE SOLUTIONS POLISH */
+
+@media(max-width:768px){
+
+  .solutions-section{
+    padding:60px 6%;
+  }
+
+  .solutions-section .section-heading{
+    margin-bottom:28px;
+  }
+
+  .solutions-grid{
+    gap:16px;
+  }
+
+  .solution-card{
+    padding:22px;
+    border-radius:10px;
+  }
+
+  .solution-card h3{
+    font-size:19px;
+    line-height:1.35;
+    margin-bottom:10px;
+  }
+
+  .solution-card p{
+    font-size:14px;
+    line-height:1.65;
+    margin-bottom:18px;
+  }
+
+  .solution-card a{
+    font-size:12px;
+  }
+}
