@@ -1217,3 +1217,69 @@ html{
     text-align:center;
   }
 }
+/* MOBILE HERO FIX */
+
+@media(max-width:768px){
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    padding:50px 6% 45px;
+    gap:32px;
+  }
+
+  .hero-content{
+    width:100%;
+  }
+
+  .hero h2{
+    font-size:38px;
+    line-height:1.08;
+    letter-spacing:-1.2px;
+  }
+
+  .hero-text{
+    font-size:15px;
+    line-height:1.65;
+    max-width:100%;
+  }
+
+  .hero-visual{
+    width:100%;
+  }
+
+  .hero-visual img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+  }
+
+  .hero-buttons{
+    display:flex;
+    gap:12px;
+  }
+
+  .hero-buttons a{
+    flex:1;
+    text-align:center;
+  }
+}
+
+@media(max-width:420px){
+
+  .hero h2{
+    font-size:36px;
+  }
+
+  .hero-buttons{
+    flex-direction:row;
+  }
+
+  .hero-buttons a{
+    width:auto;
+    padding:12px 10px;
+    font-size:11px;
+  }
+}
