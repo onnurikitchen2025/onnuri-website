@@ -181,11 +181,37 @@ footer{
   height:280px;
   object-fit:cover;
   display:block;
+}.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+#products .product-card{
+  background:#fff;
+  border:1px solid #e1e6e4;
+  border-radius:10px;
+  padding:28px;
+  margin:0;
+}
+
+.product-card a{
+  display:inline-block;
+  margin-top:16px;
+  color:var(--green);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.product-card a:hover{
+  text-decoration:underline;
 }
 @media(max-width:768px){
   header{
     flex-direction:column;
-    gap:15px;
+    gap:15px;.product-grid{
+  grid-template-columns:1fr;
+}
   }
 
   nav{
