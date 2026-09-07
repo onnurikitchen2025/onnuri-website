@@ -205,12 +205,71 @@ footer{
 
 .product-card a:hover{
   text-decoration:underline;
+}.catalog-hero{
+  background:var(--green);
+  color:#fff;
+  padding:55px 8%;
+}
+
+.catalog-hero h1{
+  font-size:42px;
+  margin:8px 0 12px;
+}
+
+.catalog-hero p{
+  max-width:700px;
+}
+
+.catalog-section{
+  padding:60px 8%;
+  background:var(--light);
+}
+
+.catalog-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.catalog-card{
+  background:#fff;
+  border:1px solid #e1e6e4;
+  border-radius:10px;
+  padding:18px;
+}
+
+.catalog-image{
+  height:220px;
+  background:#f1f3f2;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:16px;
+  color:#6b7280;
+  font-size:13px;
+  font-weight:700;
+}
+
+.catalog-card h3{
+  color:var(--dark);
+  margin-bottom:8px;
+}
+
+.catalog-card p{
+  font-size:14px;
+  margin-bottom:14px;
+}
+
+.catalog-card a{
+  color:var(--green);
+  font-weight:700;
+  text-decoration:none;
 }
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-    gap:15px;.product-grid{
+  header{.catalog-grid{
   grid-template-columns:1fr;
+}
 }
   }
 
