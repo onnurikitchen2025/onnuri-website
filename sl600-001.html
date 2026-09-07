@@ -65,23 +65,48 @@
   <p>© 2025 Onnuri Outlet Kitchen Corporation. All rights reserved.</p>
 </footer>
 <script>
+ <script>
   const addToQuoteBtn = document.querySelector('.add-to-quote');
 
   if(addToQuoteBtn){
+    const productName = addToQuoteBtn.dataset.product;
+
+    function getQuoteList(){
+      return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
+    }
+
+    function updateButton(){
+      const quoteList = getQuoteList();
+
+      if(quoteList.includes(productName)){
+        addToQuoteBtn.textContent = '✓ ADDED TO QUOTE — REMOVE';
+        addToQuoteBtn.classList.add('added');
+      } else{
+        addToQuoteBtn.textContent = 'ADD TO QUOTE';
+        addToQuoteBtn.classList.remove('added');
+      }
+    }
+
     addToQuoteBtn.addEventListener('click', () => {
-      const productName = addToQuoteBtn.dataset.product;
+      let quoteList = getQuoteList();
 
-      let quoteList = JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
-
-      if(!quoteList.includes(productName)){
+      if(quoteList.includes(productName)){
+        quoteList = quoteList.filter(item => item !== productName);
+      } else{
         quoteList.push(productName);
-        localStorage.setItem('onnuriQuoteList', JSON.stringify(quoteList));
       }
 
-      addToQuoteBtn.textContent = 'ADDED TO QUOTE';
-      addToQuoteBtn.classList.add('added');
+      localStorage.setItem(
+        'onnuriQuoteList',
+        JSON.stringify(quoteList)
+      );
+
+      updateButton();
     });
+
+    updateButton();
   }
+</script>
 </script>
 </body>
 </html>
