@@ -70,49 +70,62 @@
 <footer>
   <p>© 2025 Onnuri Outlet Kitchen Corporation. All rights reserved.</p>
 </footer>
-<script>
  <script>
   const addToQuoteBtn = document.querySelector('.add-to-quote');
+  const removeFromQuoteBtn = document.querySelector('.remove-from-quote');
 
-  if(addToQuoteBtn){
+  if(addToQuoteBtn && removeFromQuoteBtn){
     const productName = addToQuoteBtn.dataset.product;
 
     function getQuoteList(){
       return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
     }
 
-    function updateButton(){
-      const quoteList = getQuoteList();
+    function saveQuoteList(list){
+      localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
+    }
 
-      if(quoteList.includes(productName)){
-        addToQuoteBtn.textContent = '✓ ADDED TO QUOTE — REMOVE';
+    function updateQuoteButtons(){
+      const quoteList = getQuoteList();
+      const isAdded = quoteList.includes(productName);
+
+      if(isAdded){
+        addToQuoteBtn.textContent = '✓ ADDED TO QUOTE';
         addToQuoteBtn.classList.add('added');
+        addToQuoteBtn.disabled = true;
+
+        removeFromQuoteBtn.classList.add('show');
       } else{
         addToQuoteBtn.textContent = 'ADD TO QUOTE';
         addToQuoteBtn.classList.remove('added');
+        addToQuoteBtn.disabled = false;
+
+        removeFromQuoteBtn.classList.remove('show');
       }
     }
 
     addToQuoteBtn.addEventListener('click', () => {
-      let quoteList = getQuoteList();
+      const quoteList = getQuoteList();
 
-      if(quoteList.includes(productName)){
-        quoteList = quoteList.filter(item => item !== productName);
-      } else{
+      if(!quoteList.includes(productName)){
         quoteList.push(productName);
+        saveQuoteList(quoteList);
       }
 
-      localStorage.setItem(
-        'onnuriQuoteList',
-        JSON.stringify(quoteList)
-      );
-
-      updateButton();
+      updateQuoteButtons();
     });
 
-    updateButton();
+    removeFromQuoteBtn.addEventListener('click', () => {
+      let quoteList = getQuoteList();
+
+      quoteList = quoteList.filter(item => item !== productName);
+      saveQuoteList(quoteList);
+
+      updateQuoteButtons();
+    });
+
+    updateQuoteButtons();
   }
-</script>
 </script>
 </body>
 </html>
