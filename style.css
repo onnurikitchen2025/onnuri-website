@@ -629,3 +629,64 @@ footer{
     grid-template-columns:1fr;
   }
 }
+/* ABOUT / WHY ONNURI */
+
+.about-section{
+  padding:85px 7%;
+  background:#f5f7f6;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:60px;
+  align-items:start;
+}
+
+.about-intro{
+  max-width:680px;
+}
+
+.about-intro h2{
+  color:var(--dark);
+  font-size:38px;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+
+.about-intro p{
+  color:#59635f;
+  font-size:16px;
+}
+
+.about-benefits{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.benefit-item{
+  background:#fff;
+  border:1px solid #e1e6e4;
+  border-radius:12px;
+  padding:24px;
+}
+
+.benefit-item h3{
+  color:var(--dark);
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.benefit-item p{
+  color:#5b6662;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .about-section{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .about-benefits{
+    grid-template-columns:1fr;
+  }
+}
