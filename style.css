@@ -1080,3 +1080,18 @@ html{
     transform:none !important;
   }
 }
+/* STICKY HEADER REFINEMENT */
+
+.site-header{
+  transition:
+    padding .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.site-header.scrolled{
+  padding-top:11px;
+  padding-bottom:11px;
+  background:rgba(5,42,35,.98);
+  box-shadow:0 6px 22px rgba(0,0,0,.12);
+}
