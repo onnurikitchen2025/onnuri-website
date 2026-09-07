@@ -49,8 +49,11 @@
   <p><strong>Gas Consumption:</strong> LPG 2.30 kg / LNG 19,800 kcal</p>
   <p><strong>Power Source:</strong> Gas</p>
 </div>
-      <a href="index.html#quote" class="product-quote-btn">
-        REQUEST A QUOTE
+      <button
+  class="product-quote-btn add-to-quote"
+  data-product="SL600-001">
+  ADD TO QUOTE
+</button>
       </a>
     </div>
 
@@ -59,8 +62,26 @@
 </main>
 
 <footer>
-  <p>© 2026 Onnuri Outlet Kitchen Corporation. All rights reserved.</p>
+  <p>© 2025 Onnuri Outlet Kitchen Corporation. All rights reserved.</p>
 </footer>
+<script>
+  const addToQuoteBtn = document.querySelector('.add-to-quote');
 
+  if(addToQuoteBtn){
+    addToQuoteBtn.addEventListener('click', () => {
+      const productName = addToQuoteBtn.dataset.product;
+
+      let quoteList = JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
+
+      if(!quoteList.includes(productName)){
+        quoteList.push(productName);
+        localStorage.setItem('onnuriQuoteList', JSON.stringify(quoteList));
+      }
+
+      addToQuoteBtn.textContent = 'ADDED TO QUOTE';
+      addToQuoteBtn.classList.add('added');
+    });
+  }
+</script>
 </body>
 </html>
