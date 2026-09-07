@@ -1479,3 +1479,79 @@ html{
     padding:13px 16px;
   }
 }
+/* MOBILE CONTACT + FOOTER */
+
+@media(max-width:768px){
+
+  /* CONTACT */
+
+  .contact-section{
+    padding:60px 6%;
+  }
+
+  .contact-heading{
+    margin-bottom:28px;
+  }
+
+  .contact-heading h2{
+    font-size:31px;
+    line-height:1.18;
+    letter-spacing:-.8px;
+    margin-bottom:14px;
+  }
+
+  .contact-heading > p:last-child{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .contact-grid{
+    gap:14px;
+  }
+
+  .contact-item{
+    padding:22px;
+  }
+
+  .contact-item h3{
+    font-size:18px;
+  }
+
+  .contact-item p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* FOOTER */
+
+  .site-footer{
+    padding:50px 6% 20px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-bottom:32px;
+  }
+
+  .footer-brand{
+    max-width:420px;
+  }
+
+  .footer-brand h3{
+    font-size:21px;
+  }
+
+  .footer-brand p,
+  .footer-column p,
+  .footer-column a{
+    font-size:13px;
+    line-height:1.65;
+  }
+
+  .footer-bottom{
+    padding-top:18px;
+    font-size:12px;
+    line-height:1.6;
+  }
+}
