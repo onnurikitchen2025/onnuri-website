@@ -1428,3 +1428,54 @@ html{
     line-height:1.6;
   }
 }
+/* MOBILE QUOTE SECTION */
+
+@media(max-width:768px){
+
+  .quote-section{
+    padding:60px 6%;
+  }
+
+  .quote-main{
+    margin-bottom:28px;
+  }
+
+  .quote-main h2{
+    font-size:31px;
+    line-height:1.18;
+    letter-spacing:-.8px;
+    margin-bottom:14px;
+  }
+
+  .quote-main p{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .quote-options{
+    gap:14px;
+  }
+
+  .quote-option{
+    padding:22px;
+    border-radius:10px;
+  }
+
+  .quote-option h3{
+    font-size:19px;
+    margin-bottom:9px;
+  }
+
+  .quote-option p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:18px;
+  }
+
+  .quote-option .primary-cta,
+  .quote-option .secondary-cta{
+    width:100%;
+    text-align:center;
+    padding:13px 16px;
+  }
+}
