@@ -1555,3 +1555,13 @@ html{
     line-height:1.6;
   }
 }
+.add-to-quote{
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.add-to-quote.added{
+  background:#d9e6e1;
+  color:var(--dark);
+}
