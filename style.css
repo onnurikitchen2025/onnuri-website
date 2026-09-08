@@ -2151,3 +2151,10 @@ html{
     text-align:center;
   }
 }
+.site-signature{
+  margin-left:5px;
+  font-size:9px;
+  font-weight:500;
+  opacity:.18;
+  letter-spacing:.5px;
+}
