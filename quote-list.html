@@ -125,9 +125,17 @@
       localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
     }
 
-    function renderQuoteList(){
-      const quoteList = getQuoteList();
+   function renderQuoteList(){
+  const quoteList = getQuoteList();
 
+  const selectedProducts =
+    document.getElementById('selectedProducts');
+
+  if(selectedProducts){
+    selectedProducts.value = quoteList.join('\n');
+  }
+
+  quoteListItems.innerHTML = '';
       quoteListItems.innerHTML = '';
 
       if(quoteList.length === 0){
