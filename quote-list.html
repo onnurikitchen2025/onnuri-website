@@ -63,30 +63,36 @@
 
       <div class="form-group">
         <label for="customerName">Name *</label>
-        <input type="text" id="customerName" required>
+     <input type="text" id="customerName" name="Customer Name" required>
       </div>
 
       <div class="form-group">
         <label for="businessName">Business / Company Name</label>
-        <input type="text" id="businessName">
+      <input type="text" id="businessName" name="Business / Company">
       </div>
 
       <div class="form-group">
         <label for="contactNumber">Contact Number *</label>
-        <input type="tel" id="contactNumber" required>
+       <input type="tel" id="contactNumber" name="Contact Number" required>
       </div>
 
       <div class="form-group">
         <label for="customerEmail">Email *</label>
-        <input type="email" id="customerEmail" required>
+        <input type="email" id="customerEmail" name="Email" required>
       </div>
 
       <div class="form-group full-width">
         <label for="deliveryLocation">Delivery Location</label>
-        <input type="text" id="deliveryLocation"
-               placeholder="City / Province">
+        <input
+  type="text"
+  id="deliveryLocation"
+  name="Delivery Location"
+  placeholder="City / Province">
       </div>
-
+<textarea
+  id="selectedProducts"
+  name="Selected Products"
+  readonly></textarea>
       <div class="form-group full-width">
         <label for="selectedProducts">Selected Products</label>
         <textarea id="selectedProducts" readonly></textarea>
@@ -96,9 +102,11 @@
         <label for="customerMessage">
           Additional Requirements / Message
         </label>
-        <textarea id="customerMessage"
-                  placeholder="Quantity, preferred delivery date, or other requirements"></textarea>
-      </div>
+       <textarea
+  id="customerMessage"
+  name="Additional Requirements"
+  placeholder="Quantity, preferred delivery date, or other requirements">
+</textarea>
 
     </div>
 
