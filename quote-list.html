@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quote List | Onnuri Kitchen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">Onnuri Kitchen</a>
+
+    <nav class="main-nav">
+      <a href="index.html#products">Products</a>
+      <a href="quote-list.html" class="quote-btn">Quote List</a>
+    </nav>
+  </header>
+
+  <main class="quote-list-page">
+
+    <p class="section-label">YOUR SELECTION</p>
+    <h1>Quote List</h1>
+
+    <p class="quote-list-intro">
+      Review the equipment you selected before requesting a quotation.
+    </p>
+
+    <div id="quoteListItems"></div>
+
+    <div id="emptyQuoteMessage" class="empty-quote">
+      Your quote list is currently empty.
+      <br>
+      <a href="index.html#products">Browse Products</a>
+    </div>
+
+  </main>
+
+  <script>
+    const quoteListItems = document.getElementById('quoteListItems');
+    const emptyQuoteMessage = document.getElementById('emptyQuoteMessage');
+
+    function getQuoteList(){
+      return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
+    }
+
+    function saveQuoteList(list){
+      localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
+    }
+
+    function renderQuoteList(){
+      const quoteList = getQuoteList();
+
+      quoteListItems.innerHTML = '';
+
+      if(quoteList.length === 0){
+        emptyQuoteMessage.style.display = 'block';
+        return;
+      }
+
+      emptyQuoteMessage.style.display = 'none';
+
+      quoteList.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'quote-list-item';
+
+        item.innerHTML = `
+          <div>
+            <h3>${product}</h3>
+            <p>Commercial Kitchen Equipment</p>
+          </div>
+
+          <button class="remove-quote-item" data-product="${product}">
+            REMOVE
+          </button>
+        `;
+
+        quoteListItems.appendChild(item);
+      });
+
+      document.querySelectorAll('.remove-quote-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const product = button.dataset.product;
+
+          const updatedList = getQuoteList().filter(
+            item => item !== product
+          );
+
+          saveQuoteList(updatedList);
+          renderQuoteList();
+        });
+      });
+    }
+
+    renderQuoteList();
+  </script>
+
+</body>
+</html>
