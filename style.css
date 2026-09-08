@@ -2010,3 +2010,85 @@ html{
     flex-direction:column;
   }
 }
+/* MOBILE QUOTE LIST + FORM POLISH */
+
+@media(max-width:768px){
+
+  .quote-list-page{
+    padding:50px 6%;
+  }
+
+  .quote-list-page h1{
+    font-size:32px;
+    line-height:1.15;
+  }
+
+  .quote-list-intro{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:24px;
+  }
+
+  .quote-list-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:18px;
+  }
+
+  .remove-quote-item{
+    align-self:flex-end;
+  }
+
+  .quote-list-actions{
+    gap:12px;
+    margin-top:20px;
+  }
+
+  .continue-browsing-btn,
+  .request-quotation-btn{
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .quotation-form-section{
+    margin-top:45px;
+    padding-top:40px;
+  }
+
+  .quotation-form-heading h2{
+    font-size:28px;
+    line-height:1.18;
+  }
+
+  .quotation-form-heading p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .quotation-form{
+    padding:20px;
+    border-radius:10px;
+  }
+
+  .form-grid{
+    gap:16px;
+  }
+
+  .form-group input,
+  .form-group textarea{
+    font-size:16px;
+    padding:13px;
+  }
+
+  .form-group textarea{
+    min-height:100px;
+  }
+
+  .submit-quotation-btn{
+    min-height:48px;
+    font-size:12px;
+  }
+}
