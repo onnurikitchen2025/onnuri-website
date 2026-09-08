@@ -43,7 +43,68 @@
     REQUEST QUOTATION
   </a>
 </div>
+<section id="quotation-form" class="quotation-form-section">
 
+  <div class="quotation-form-heading">
+    <p class="section-label">REQUEST A QUOTATION</p>
+    <h2>Tell Us About Your Requirements</h2>
+    <p>
+      Complete the form below and our team will review your selected equipment.
+    </p>
+  </div>
+
+  <form class="quotation-form">
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="customerName">Name *</label>
+        <input type="text" id="customerName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="businessName">Business / Company Name</label>
+        <input type="text" id="businessName">
+      </div>
+
+      <div class="form-group">
+        <label for="contactNumber">Contact Number *</label>
+        <input type="tel" id="contactNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="customerEmail">Email *</label>
+        <input type="email" id="customerEmail" required>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="deliveryLocation">Delivery Location</label>
+        <input type="text" id="deliveryLocation"
+               placeholder="City / Province">
+      </div>
+
+      <div class="form-group full-width">
+        <label for="selectedProducts">Selected Products</label>
+        <textarea id="selectedProducts" readonly></textarea>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="customerMessage">
+          Additional Requirements / Message
+        </label>
+        <textarea id="customerMessage"
+                  placeholder="Quantity, preferred delivery date, or other requirements"></textarea>
+      </div>
+
+    </div>
+
+    <button type="submit" class="submit-quotation-btn">
+      SUBMIT QUOTATION REQUEST
+    </button>
+
+  </form>
+
+</section>
     <div id="emptyQuoteMessage" class="empty-quote">
       Your quote list is currently empty.
       <br>
