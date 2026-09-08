@@ -1943,3 +1943,70 @@ html{
     width:100%;
   }
 }
+/* THANK YOU PAGE */
+
+.thank-you-page{
+  min-height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:70px 7%;
+  background:#f5f7f6;
+}
+
+.thank-you-card{
+  max-width:720px;
+  width:100%;
+  background:#fff;
+  border:1px solid #e1e6e4;
+  border-radius:14px;
+  padding:50px;
+  text-align:center;
+}
+
+.thank-you-icon{
+  width:58px;
+  height:58px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#dcebe5;
+  color:var(--dark);
+  font-size:26px;
+  font-weight:800;
+}
+
+.thank-you-card h1{
+  color:var(--dark);
+  font-size:38px;
+  margin-bottom:16px;
+}
+
+.thank-you-card > p{
+  color:#5b6662;
+  line-height:1.7;
+}
+
+.thank-you-actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:28px;
+}
+
+@media(max-width:768px){
+
+  .thank-you-card{
+    padding:32px 22px;
+  }
+
+  .thank-you-card h1{
+    font-size:30px;
+  }
+
+  .thank-you-actions{
+    flex-direction:column;
+  }
+}
