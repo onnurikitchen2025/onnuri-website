@@ -3,33 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>SK1200-610 | Onnuri Kitchen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="brand">Onnuri Kitchen</div>
+<header class="site-header">
 
-  <nav>
-    <a href="index.html">Home</a>
+  <a href="index.html" class="brand">Onnuri Kitchen</a>
+
+  <button class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-nav">
     <a href="index.html#products">Products</a>
+    <a href="index.html#solutions">Solutions</a>
     <a href="index.html#about">About Us</a>
     <a href="index.html#contact">Contact</a>
-    <a href="index.html#quote" class="quote-btn">Request a Quote</a>
+    <a href="quote-list.html" class="quote-btn">Quote List</a>
   </nav>
+
 </header>
+
 
 <main>
 
   <section class="product-detail">
-    
-    <div class="product-detail-image">
-      <img src="SK1200-610.png" alt="SK1200-610">
+
+    <div>
+
+      <a href="gas-ranges.html" class="product-back-link">
+        ← Back to Gas Ranges
+      </a>
+
+      <div class="product-detail-image">
+        <img src="SK1200-610.png" alt="SK1200-610">
+      </div>
+
     </div>
 
+
     <div class="product-detail-info">
+
       <p class="hero-label">COMMERCIAL GAS RANGE</p>
 
       <h1>SK1200-610</h1>
@@ -38,7 +65,9 @@
         Heavy-duty commercial gas range designed for high-volume and multi-dish cooking.
       </p>
 
+
       <div class="product-specs">
+
         <h2>Product Specifications</h2>
 
         <p><strong>Model:</strong> SK1200-610</p>
@@ -49,20 +78,186 @@
         <p><strong>Burner Type:</strong> Ceramic-Coated Shield Burner</p>
         <p><strong>Gas Consumption:</strong> LPG 3.30 kg / LNG 33,300 kcal</p>
         <p><strong>Power Source:</strong> Gas</p>
+
       </div>
 
-      <a href="index.html#quote" class="product-quote-btn">
-        REQUEST A QUOTE
-      </a>
+
+      <div class="product-quote-actions">
+
+        <button
+          type="button"
+          class="product-quote-btn"
+          id="addToQuote">
+          ADD TO QUOTE
+        </button>
+
+        <button
+          type="button"
+          class="remove-quote-item"
+          id="removeFromQuote">
+          REMOVE FROM QUOTE
+        </button>
+
+      </div>
+
     </div>
 
   </section>
 
 </main>
 
+
+<a href="quote-list.html" class="floating-quote">
+  <span class="floating-quote-icon">📋</span>
+  <span class="floating-quote-text">Quote List</span>
+  <span class="quote-count" id="quoteCount">0</span>
+</a>
+
+
 <footer>
-  <p>© 2026 Onnuri Outlet Kitchen Corporation. All rights reserved.</p>
+  <p>
+    © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
+    <span class="site-signature">Built by THRD</span>
+  </p>
 </footer>
+
+
+<script>
+
+  const productName = 'SK1200-610';
+
+  const addToQuote =
+    document.getElementById('addToQuote');
+
+  const removeFromQuote =
+    document.getElementById('removeFromQuote');
+
+  const quoteCount =
+    document.getElementById('quoteCount');
+
+
+  function getQuoteList(){
+    return JSON.parse(
+      localStorage.getItem('onnuriQuoteList')
+    ) || [];
+  }
+
+
+  function saveQuoteList(list){
+    localStorage.setItem(
+      'onnuriQuoteList',
+      JSON.stringify(list)
+    );
+  }
+
+
+  function updateQuotePage(){
+
+    const quoteList = getQuoteList();
+
+    quoteCount.textContent = quoteList.length;
+
+    if(quoteList.includes(productName)){
+
+      addToQuote.textContent =
+        '✓ ADDED TO QUOTE';
+
+      addToQuote.disabled = true;
+
+      removeFromQuote.style.display =
+        'inline-block';
+
+    }else{
+
+      addToQuote.textContent =
+        'ADD TO QUOTE';
+
+      addToQuote.disabled = false;
+
+      removeFromQuote.style.display =
+        'none';
+    }
+  }
+
+
+  addToQuote.addEventListener('click', () => {
+
+    const quoteList = getQuoteList();
+
+    if(!quoteList.includes(productName)){
+      quoteList.push(productName);
+    }
+
+    saveQuoteList(quoteList);
+
+    updateQuotePage();
+  });
+
+
+  removeFromQuote.addEventListener('click', () => {
+
+    let quoteList = getQuoteList();
+
+    quoteList =
+      quoteList.filter(
+        product => product !== productName
+      );
+
+    saveQuoteList(quoteList);
+
+    updateQuotePage();
+  });
+
+
+  updateQuotePage();
+
+
+  const menuToggle =
+    document.querySelector('.menu-toggle');
+
+  const mainNav =
+    document.querySelector('.main-nav');
+
+
+  if(menuToggle && mainNav){
+
+    menuToggle.addEventListener('click', () => {
+
+      const isOpen =
+        mainNav.classList.toggle('open');
+
+      menuToggle.classList.toggle(
+        'active',
+        isOpen
+      );
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
+    });
+
+
+    mainNav.querySelectorAll('a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          mainNav.classList.remove('open');
+          menuToggle.classList.remove('active');
+
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+        });
+
+      });
+  }
+
+</script>
 
 </body>
 </html>
