@@ -1592,3 +1592,100 @@ html{
 .remove-from-quote.show{
   display:block;
 }
+/* QUOTE LIST PAGE */
+
+.quote-list-page{
+  max-width:1000px;
+  margin:0 auto;
+  padding:80px 7%;
+}
+
+.quote-list-page h1{
+  color:var(--dark);
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.quote-list-intro{
+  color:#5b6662;
+  margin-bottom:32px;
+}
+
+#quoteListItems{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.quote-list-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:#fff;
+  border:1px solid #e1e6e4;
+  border-radius:10px;
+  padding:20px 22px;
+}
+
+.quote-list-item h3{
+  color:var(--dark);
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.quote-list-item p{
+  color:#6a7470;
+  font-size:13px;
+}
+
+.remove-quote-item{
+  border:0;
+  background:transparent;
+  color:#8b3a3a;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.remove-quote-item:hover{
+  text-decoration:underline;
+}
+
+.empty-quote{
+  display:none;
+  background:#f5f7f6;
+  border:1px solid #e1e6e4;
+  border-radius:10px;
+  padding:30px;
+  color:#5b6662;
+}
+
+.empty-quote a{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--dark);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.empty-quote a:hover{
+  color:#b58a10;
+}
+
+@media(max-width:768px){
+
+  .quote-list-page{
+    padding:55px 6%;
+  }
+
+  .quote-list-page h1{
+    font-size:34px;
+  }
+
+  .quote-list-item{
+    align-items:flex-start;
+    padding:18px;
+  }
+}
