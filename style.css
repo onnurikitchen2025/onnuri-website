@@ -1771,3 +1771,20 @@ html{
     padding:0 6%;
   }
 }
+.quote-list-actions{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:24px;
+}
+
+@media(max-width:768px){
+  .quote-list-actions{
+    flex-direction:column;
+  }
+
+  .quote-list-actions a{
+    width:100%;
+    text-align:center;
+  }
+}
