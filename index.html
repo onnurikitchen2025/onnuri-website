@@ -409,6 +409,25 @@ mainNav.querySelectorAll('a').forEach(link => {
     menuToggle.setAttribute('aria-expanded', 'false');
   });
 });
+      function updateQuoteCount(){
+  const quoteCount = document.getElementById('quoteCount');
+
+  if(!quoteCount) return;
+
+  const quoteList =
+    JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
+
+  quoteCount.textContent = quoteList.length;
+}
+
+updateQuoteCount();
+
+window.addEventListener('storage', updateQuoteCount);
 </script>
+   <a href="quote-list.html" class="floating-quote">
+  <span class="floating-quote-icon">📋</span>
+  <span class="floating-quote-text">Quote List</span>
+  <span class="quote-count" id="quoteCount">0</span>
+</a>
 </body>
 </html>
