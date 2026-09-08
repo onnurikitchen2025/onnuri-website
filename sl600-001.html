@@ -113,6 +113,7 @@
       }
 
       updateQuoteButtons();
+      updateQuoteCount();
     });
 
     removeFromQuoteBtn.addEventListener('click', () => {
@@ -122,10 +123,22 @@
       saveQuoteList(quoteList);
 
       updateQuoteButtons();
+      updateQuoteCount();
     });
 
     updateQuoteButtons();
+    updateQuoteCount();
   }
+   function updateQuoteCount(){
+  const quoteCount = document.getElementById('quoteCount');
+
+  if(!quoteCount) return;
+
+  const quoteList =
+    JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
+
+  quoteCount.textContent = quoteList.length;
+}
 </script>
 </body>
 </html>
