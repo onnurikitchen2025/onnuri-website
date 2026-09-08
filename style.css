@@ -2092,3 +2092,15 @@ html{
     font-size:12px;
   }
 }
+@media(max-width:768px){
+
+  .menu-toggle{
+    width:38px;
+    height:38px;
+    padding:7px;
+  }
+
+  .menu-toggle span{
+    margin:5px 0;
+  }
+}
