@@ -2245,3 +2245,31 @@ html{
     background:#fff;
   }
 }
+/* MOBILE GAS RANGE CATALOG FIX */
+
+@media(max-width:768px){
+
+  .catalog-grid{
+    grid-template-columns:1fr !important;
+    gap:20px;
+  }
+
+  .catalog-card{
+    width:100%;
+    max-width:none;
+  }
+
+  .catalog-image{
+    height:240px;
+  }
+
+  .catalog-card h3{
+    font-size:22px;
+    line-height:1.2;
+  }
+
+  .catalog-card p{
+    font-size:15px;
+    line-height:1.6;
+  }
+}
