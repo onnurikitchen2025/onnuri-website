@@ -2200,3 +2200,48 @@ html{
   }
 
 }
+/* MOBILE THANK YOU PAGE POLISH */
+
+@media(max-width:768px){
+
+  .thank-you-page{
+    min-height:calc(100vh - 68px);
+    padding:40px 6%;
+    align-items:flex-start;
+  }
+
+  .thank-you-card{
+    margin-top:40px;
+    padding:32px 22px;
+  }
+
+  .thank-you-card h1{
+    font-size:30px;
+    line-height:1.15;
+  }
+
+  .thank-you-card > p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .thank-you-actions{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .thank-you-actions a{
+    width:100%;
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .thank-you-actions .continue-browsing-btn{
+    border:1px solid #0b4438;
+    border-radius:5px;
+    color:#0b4438;
+    background:#fff;
+  }
+}
