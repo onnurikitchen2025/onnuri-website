@@ -2299,3 +2299,15 @@ html{
     margin-top:0 !important;
   }
 }
+/* MOBILE PRODUCT CARD BACKGROUND */
+
+@media(max-width:768px){
+
+  .catalog-card{
+    background:#f5f7f6 !important;
+  }
+
+  .catalog-image{
+    background:#f5f7f6 !important;
+  }
+}
