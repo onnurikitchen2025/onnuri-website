@@ -2273,3 +2273,17 @@ html{
     line-height:1.6;
   }
 }
+@media(max-width:768px){
+
+  .catalog-image{
+    height:200px;
+  }
+
+  .catalog-image img{
+    transform:scale(1.05);
+  }
+
+  .catalog-card{
+    padding:18px;
+  }
+}
