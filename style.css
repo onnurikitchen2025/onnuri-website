@@ -2287,3 +2287,15 @@ html{
     padding:18px;
   }
 }
+/* MOBILE CATALOG TOP SPACING */
+
+@media(max-width:768px){
+
+  .catalog-section{
+    padding-top:20px !important;
+  }
+
+  .catalog-grid{
+    margin-top:0 !important;
+  }
+}
