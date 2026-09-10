@@ -175,123 +175,215 @@
   </main>
 
   <script>
-    const quoteListItems = document.getElementById('quoteListItems');
-    const emptyQuoteMessage = document.getElementById('emptyQuoteMessage');
+  /* =========================
+     QUOTE LIST
+  ========================= */
 
-    function getQuoteList(){
-      return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
-    }
+  const quoteListItems = document.getElementById('quoteListItems');
+  const emptyQuoteMessage = document.getElementById('emptyQuoteMessage');
 
-    function saveQuoteList(list){
-      localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
-    }
-
-   function renderQuoteList(){
-  const quoteList = getQuoteList();
-
-  const selectedProducts =
-    document.getElementById('selectedProducts');
-
-  if(selectedProducts){
-    selectedProducts.value = quoteList.join('\n');
+  function getQuoteList(){
+    return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
   }
 
-  quoteListItems.innerHTML = '';
-      quoteListItems.innerHTML = '';
+  function saveQuoteList(list){
+    localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
+  }
 
-      if(quoteList.length === 0){
-        emptyQuoteMessage.style.display = 'block';
-        return;
-      }
+  function renderQuoteList(){
+    const quoteList = getQuoteList();
 
-      emptyQuoteMessage.style.display = 'none';
+    const selectedProducts =
+      document.getElementById('selectedProducts');
 
-      quoteList.forEach(product => {
-        const item = document.createElement('div');
-        item.className = 'quote-list-item';
+    if(selectedProducts){
+      selectedProducts.value = quoteList.join('\n');
+    }
 
-        item.innerHTML = `
-          <div>
-            <h3>${product}</h3>
-            <p>Commercial Kitchen Equipment</p>
-          </div>
+    if(!quoteListItems || !emptyQuoteMessage){
+      return;
+    }
 
-          <button class="remove-quote-item" data-product="${product}">
-            REMOVE
-          </button>
-        `;
+    quoteListItems.innerHTML = '';
 
-        quoteListItems.appendChild(item);
-      });
+    if(quoteList.length === 0){
+      emptyQuoteMessage.style.display = 'block';
+      return;
+    }
 
-      document.querySelectorAll('.remove-quote-item').forEach(button => {
+    emptyQuoteMessage.style.display = 'none';
+
+    quoteList.forEach(product => {
+      const item = document.createElement('div');
+
+      item.className = 'quote-list-item';
+
+      item.innerHTML = `
+        <div>
+          <h3>${product}</h3>
+          <p>Commercial Kitchen Equipment</p>
+        </div>
+
+        <button
+          type="button"
+          class="remove-quote-item"
+          data-product="${product}">
+          REMOVE
+        </button>
+      `;
+
+      quoteListItems.appendChild(item);
+    });
+
+    document
+      .querySelectorAll('.remove-quote-item')
+      .forEach(button => {
+
         button.addEventListener('click', () => {
+
           const product = button.dataset.product;
 
-          const updatedList = getQuoteList().filter(
-            item => item !== product
-          );
+          const updatedList =
+            getQuoteList().filter(
+              item => item !== product
+            );
 
           saveQuoteList(updatedList);
+
           renderQuoteList();
         });
-      });
-    }
 
-    renderQuoteList();
-  </script>
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
+      });
+  }
+
+  renderQuoteList();
+
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  const menuToggle =
+    document.querySelector('.menu-toggle');
+
+  const mainNav =
+    document.querySelector('.main-nav');
 
   if(menuToggle && mainNav){
+
     menuToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
 
-      menuToggle.classList.toggle('active', isOpen);
-      menuToggle.setAttribute('aria-expanded', isOpen);
+      const isOpen =
+        mainNav.classList.toggle('open');
+
+      menuToggle.classList.toggle(
+        'active',
+        isOpen
+      );
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
     });
 
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+    mainNav
+      .querySelectorAll('a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          mainNav.classList.remove('open');
+
+          menuToggle.classList.remove('active');
+
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+        });
+
       });
-    });
   }
-</script>
-  <script>
-  const quotationForm = document.getElementById('quotationForm');
 
-  if (quotationForm) {
-    quotationForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
 
-      const formData = new FormData(quotationForm);
+  /* =========================
+     QUOTATION FORM SUBMIT
+  ========================= */
 
-      try {
-        const response = await fetch(
-          'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
-          {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json'
-            },
-            body: formData
-          }
-        );
+  const quotationForm =
+    document.getElementById('quotationForm');
 
-        if (response.ok) {
-          window.location.href = 'thank-you.html';
-        } else {
-          alert('Unable to submit your quotation. Please try again.');
+  if(quotationForm){
+
+    quotationForm.addEventListener(
+      'submit',
+      async function(e){
+
+        e.preventDefault();
+
+        const submitButton =
+          quotationForm.querySelector(
+            'button[type="submit"]'
+          );
+
+        if(submitButton){
+          submitButton.disabled = true;
+          submitButton.textContent = 'SUBMITTING...';
         }
 
-      } catch (error) {
-        alert('Unable to submit your quotation. Please check your connection and try again.');
+        const formData =
+          new FormData(quotationForm);
+
+        try{
+
+          const response = await fetch(
+            'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
+            {
+              method: 'POST',
+
+              headers: {
+                'Accept': 'application/json'
+              },
+
+              body: formData
+            }
+          );
+
+          if(response.ok){
+
+            window.location.href =
+              'thank-you.html';
+
+          }else{
+
+            alert(
+              'Unable to submit your quotation. Please try again.'
+            );
+
+            if(submitButton){
+              submitButton.disabled = false;
+              submitButton.textContent =
+                'SUBMIT QUOTATION REQUEST';
+            }
+          }
+
+        }catch(error){
+
+          alert(
+            'Unable to submit your quotation. Please check your connection and try again.'
+          );
+
+          if(submitButton){
+            submitButton.disabled = false;
+            submitButton.textContent =
+              'SUBMIT QUOTATION REQUEST';
+          }
+        }
       }
-    });
+    );
   }
 </script>
 </body>
