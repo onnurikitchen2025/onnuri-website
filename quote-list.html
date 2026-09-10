@@ -261,5 +261,38 @@
     });
   }
 </script>
+  <script>
+  const quotationForm = document.getElementById('quotationForm');
+
+  if (quotationForm) {
+    quotationForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(quotationForm);
+
+      try {
+        const response = await fetch(
+          'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
+          {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json'
+            },
+            body: formData
+          }
+        );
+
+        if (response.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          alert('Unable to submit your quotation. Please try again.');
+        }
+
+      } catch (error) {
+        alert('Unable to submit your quotation. Please check your connection and try again.');
+      }
+    });
+  }
+</script>
 </body>
 </html>
