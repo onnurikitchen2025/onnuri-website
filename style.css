@@ -5767,3 +5767,134 @@ body{
   }
 
 }
+/* =========================================
+   FIX HOMEPAGE CONTACT PREVIEW
+========================================= */
+
+.home-contact-preview{
+  padding:70px 7%;
+
+  background:linear-gradient(
+    135deg,
+    #052e27 0%,
+    #073d33 50%,
+    #0b4d40 100%
+  );
+
+  color:#ffffff;
+}
+
+.home-contact-inner{
+  width:100%;
+  max-width:1300px;
+
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:60px;
+}
+
+.home-contact-content{
+  max-width:720px;
+}
+
+.home-contact-content .section-label{
+  color:#f2c94c !important;
+}
+
+.home-contact-content h2{
+  margin:10px 0 16px !important;
+
+  color:#ffffff !important;
+
+  font-size:34px;
+  line-height:1.25;
+}
+
+.home-contact-content > p:last-child{
+  margin:0;
+
+  max-width:650px;
+
+  color:rgba(255,255,255,.88) !important;
+
+  font-size:15px;
+  line-height:1.7;
+}
+
+.home-contact-actions{
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  flex-shrink:0;
+}
+
+.home-contact-btn{
+  min-width:180px;
+  height:52px;
+
+  padding:0 22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:5px;
+
+  font-size:13px;
+  font-weight:800;
+
+  text-decoration:none;
+}
+
+.home-contact-btn.primary{
+  background:#f2c94c;
+  color:#07352c;
+}
+
+.home-contact-btn.secondary{
+  color:#ffffff !important;
+  background:transparent;
+
+  border:1px solid rgba(255,255,255,.55);
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .home-contact-preview{
+    padding:55px 6%;
+  }
+
+  .home-contact-inner{
+    flex-direction:column;
+    align-items:center;
+
+    gap:28px;
+
+    text-align:center;
+  }
+
+  .home-contact-content h2{
+    font-size:29px;
+  }
+
+  .home-contact-actions{
+    width:100%;
+
+    flex-direction:column;
+  }
+
+  .home-contact-btn{
+    width:100%;
+    max-width:340px;
+  }
+
+}
