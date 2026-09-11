@@ -2457,3 +2457,14 @@ html{
   }
 
 }
+@media(max-width:768px){
+
+  .main-nav.open{
+    display:flex;
+    min-height:calc(100vh - 68px);
+    justify-content:flex-start;
+    background:#07352c;
+    padding-bottom:40px;
+  }
+
+}
