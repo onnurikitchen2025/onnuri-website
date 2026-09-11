@@ -5916,3 +5916,40 @@ body{
   }
 
 }
+/* =========================================
+   HOMEPAGE PRODUCT CARDS - COMPACT DESKTOP
+========================================= */
+
+@media(min-width:1025px){
+
+  /* whole product grid */
+  .product-grid{
+    width:100%;
+    max-width:1300px !important;
+
+    margin-left:auto !important;
+    margin-right:auto !important;
+
+    gap:22px !important;
+  }
+
+  /* cards */
+  .product-card{
+    padding:22px !important;
+  }
+
+  /* image area */
+  .product-card-image{
+    height:220px !important;
+  }
+
+  .product-card h3{
+    font-size:20px !important;
+  }
+
+  .product-card p{
+    font-size:14px !important;
+    line-height:1.6;
+  }
+
+}
