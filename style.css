@@ -3166,3 +3166,66 @@ footer{
     #0b6655 100%
   );
 }
+/* =========================
+   HERO IMAGE ENTRANCE
+========================= */
+
+.hero-visual img{
+  opacity:0;
+  transform:translateY(18px) scale(.98);
+  animation:heroImageIn .8s ease forwards;
+  animation-delay:.2s;
+}
+
+@keyframes heroImageIn{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+
+/* =========================
+   PAGE LOADING OVERLAY
+========================= */
+
+.page-loader{
+  position:fixed;
+  inset:0;
+  background:#07352c;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:99999;
+
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .25s ease;
+}
+
+.page-loader.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.page-loader img{
+  width:110px;
+  height:auto;
+  filter:brightness(0) invert(1);
+
+  animation:loaderPulse 1s ease-in-out infinite;
+}
+
+@keyframes loaderPulse{
+  0%,100%{
+    transform:scale(1);
+    opacity:.75;
+  }
+
+  50%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+}
