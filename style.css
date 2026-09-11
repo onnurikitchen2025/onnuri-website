@@ -2502,3 +2502,24 @@ html{
   }
 
 }
+/* DESKTOP HERO IMAGE SIZE */
+
+@media(min-width:769px){
+
+  .hero{
+    grid-template-columns: 42% 58%;
+  }
+
+  .hero-visual{
+    width:85%;
+    max-width:760px;
+    justify-self:end;
+  }
+
+  .hero-visual img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+  }
+
+}
