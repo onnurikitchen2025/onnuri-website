@@ -2938,3 +2938,40 @@ footer{
   }
 
 }
+/* MOBILE HERO BUTTON FINAL FIX */
+
+@media(max-width:768px){
+
+  .hero-buttons{
+    width:100%;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:10px;
+  }
+
+  .hero-buttons a{
+    width:100%;
+    min-width:0;
+    height:56px;
+    padding:0 8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    line-height:1;
+    font-weight:800;
+    text-align:center;
+
+    white-space:nowrap;
+  }
+
+}
+@media(max-width:340px){
+
+  .hero-buttons{
+    grid-template-columns:1fr;
+  }
+
+}
