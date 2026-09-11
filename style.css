@@ -5898,3 +5898,21 @@ body{
   }
 
 }
+/* HOMEPAGE SERVICES - BETTER BUTTON POSITION */
+
+@media(min-width:769px){
+
+  .home-services-inner{
+    justify-content:flex-start !important;
+    gap:100px !important;
+  }
+
+  .home-services-content{
+    max-width:720px;
+  }
+
+  .home-services-action{
+    margin-left:0 !important;
+  }
+
+}
