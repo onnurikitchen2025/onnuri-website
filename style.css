@@ -5969,3 +5969,24 @@ body{
   }
 
 }
+/* =========================================
+   COMPACT PRODUCTS HEADING
+========================================= */
+
+.products-section .section-heading{
+  padding:20px 30px !important;
+  margin-bottom:24px !important;
+}
+
+.products-section .section-heading .section-label{
+  margin:0 0 8px !important;
+}
+
+.products-section .section-heading h2{
+  margin:0 0 10px !important;
+}
+
+.products-section .section-heading > p:last-child{
+  margin:0 !important;
+  line-height:1.5;
+}
