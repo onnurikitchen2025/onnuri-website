@@ -2468,3 +2468,37 @@ html{
   }
 
 }
+/* MOBILE CATALOG CARD POLISH */
+
+@media(max-width:768px){
+
+  .catalog-section{
+    padding:20px 6% 40px;
+  }
+
+  .catalog-grid{
+    gap:18px;
+  }
+
+  .catalog-card{
+    padding:16px;
+    border-radius:10px;
+  }
+
+  .catalog-image{
+    height:190px;
+    margin-bottom:14px;
+  }
+
+  .catalog-card h3{
+    font-size:21px;
+    margin-bottom:8px;
+  }
+
+  .catalog-card p{
+    font-size:14px;
+    line-height:1.55;
+    margin-bottom:14px;
+  }
+
+}
