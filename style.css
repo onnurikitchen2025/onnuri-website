@@ -3132,12 +3132,11 @@ footer{
 
 .footer-logo img{
   display:block;
-  width:130px;
+  width:150px;
   height:auto;
   object-fit:contain;
   filter:brightness(0) invert(1);
 }
-
 /* MOBILE */
 
 @media(max-width:768px){
