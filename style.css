@@ -2403,3 +2403,20 @@ html{
     transform:translateY(-8px) rotate(-45deg);
   }
 }
+/* GAS RANGE MOBILE HEADER LOGO */
+
+@media(max-width:768px){
+
+  .site-header .site-logo{
+    display:block;
+    height:38px;
+    width:auto;
+    object-fit:contain;
+  }
+
+  .site-header .brand{
+    display:flex;
+    align-items:center;
+  }
+
+}
