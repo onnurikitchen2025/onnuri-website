@@ -2609,3 +2609,30 @@ html{
   border-color:#ffffff;
   transform:translateY(-2px);
 }
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+@media(max-width:768px){
+
+  .site-header,
+  .hero,
+  main,
+  section{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero{
+    margin-left:0;
+    margin-right:0;
+  }
+
+}
