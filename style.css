@@ -4561,3 +4561,29 @@ footer{
   }
 
 }
+/* =========================================
+   GLOBAL STICKY HEADER
+========================================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:10000;
+
+  background:#07352c;
+
+  transition:
+    background .25s ease,
+    box-shadow .25s ease,
+    backdrop-filter .25s ease;
+}
+
+.site-header.scrolled{
+  background:rgba(7,53,44,.96);
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.12);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
