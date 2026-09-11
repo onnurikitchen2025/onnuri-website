@@ -2735,3 +2735,206 @@ img{
   }
 
 }
+/* ==================================================
+   ONNURI - UNIVERSAL RESPONSIVE SAFETY LAYER
+   Mobile / Tablet / Laptop / Desktop
+================================================== */
+
+/* ---------- GLOBAL ---------- */
+
+html{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+img,
+video,
+iframe{
+  max-width:100%;
+}
+
+img{
+  height:auto;
+}
+
+.site-header,
+main,
+section,
+footer{
+  max-width:100%;
+}
+
+
+/* ==================================================
+   TABLET + MOBILE
+   1024px AND BELOW
+================================================== */
+
+@media(max-width:1024px){
+
+  .site-header{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero{
+    width:100%;
+    max-width:100%;
+    margin-left:0;
+    margin-right:0;
+  }
+
+  .hero-content,
+  .hero-visual{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .hero-visual img{
+    width:100%;
+    max-width:100%;
+    object-fit:cover;
+  }
+
+  .contact-grid,
+  .catalog-grid,
+  .footer-grid{
+    max-width:100%;
+  }
+
+  .floating-quote{
+    max-width:calc(100vw - 24px);
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   768px AND BELOW
+================================================== */
+
+@media(max-width:768px){
+
+  .site-header{
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .hero{
+    width:100%;
+    max-width:100%;
+    padding-left:6%;
+    padding-right:6%;
+    margin:0;
+    overflow:hidden;
+  }
+
+  .hero-content{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+
+  .hero-buttons{
+    width:100%;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:12px;
+  }
+
+  .hero-buttons a{
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    padding-left:10px;
+    padding-right:10px;
+    text-align:center;
+    font-size:13px;
+  }
+
+  .hero-visual{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .hero-visual img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .contact-grid,
+  .catalog-grid,
+  .footer-grid{
+    width:100%;
+    max-width:100%;
+  }
+
+  .contact-item,
+  .catalog-card{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .contact-link{
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
+
+  .floating-quote{
+    right:12px;
+    max-width:calc(100vw - 24px);
+  }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+   380px AND BELOW
+================================================== */
+
+@media(max-width:380px){
+
+  .hero-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons a{
+    width:100%;
+  }
+
+}
+
+
+/* ==================================================
+   LARGE DESKTOP
+================================================== */
+
+@media(min-width:1440px){
+
+  .hero-content{
+    max-width:650px;
+  }
+
+  .hero-visual{
+    max-width:720px;
+  }
+
+}
