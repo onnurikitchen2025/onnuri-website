@@ -2636,3 +2636,102 @@ body{
   }
 
 }
+/* =========================
+   UNIVERSAL MOBILE WIDTH FIX
+========================= */
+
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+@media(max-width:768px){
+
+  body{
+    width:100%;
+    max-width:100vw;
+    overflow-x:hidden;
+  }
+
+  .site-header,
+  .hero,
+  .hero-content,
+  .hero-visual,
+  main,
+  section{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero{
+    padding-left:6%;
+    padding-right:6%;
+    margin:0;
+    overflow:hidden;
+  }
+
+  .hero-content{
+    min-width:0;
+  }
+
+  .hero-buttons{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .hero-buttons a{
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    padding:0 10px;
+    font-size:13px;
+    white-space:normal;
+    text-align:center;
+  }
+
+  .hero-visual{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .hero-visual img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .floating-quote{
+    max-width:calc(100vw - 24px);
+  }
+
+}
+@media(max-width:380px){
+
+  .hero-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons a{
+    width:100%;
+  }
+
+}
