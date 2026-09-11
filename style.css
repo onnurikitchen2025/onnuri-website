@@ -2445,3 +2445,15 @@ html{
   }
 
 }
+/* MOBILE MENU FULL COVER */
+
+@media(max-width:768px){
+
+  .main-nav.open{
+    display:flex;
+    min-height:calc(100vh - 68px);
+    justify-content:flex-start;
+    background:#07352c;
+  }
+
+}
