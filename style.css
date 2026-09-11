@@ -2535,15 +2535,16 @@ html{
 @media(min-width:769px){
 
   .hero{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     gap:70px;
-    min-height:620px;
+    min-height:540px;
     align-items:center;
 
-    max-width:1650px;
-    margin:0 auto;
-    padding-left:5%;
-    padding-right:5%;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding-left:7%;
+    padding-right:7%;
   }
 
   .hero-content{
