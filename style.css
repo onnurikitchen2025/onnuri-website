@@ -5177,3 +5177,30 @@ body{
   }
 
 }
+/* =========================================
+   ABOUT WHO WE ARE - MOBILE CENTER
+========================================= */
+
+@media(max-width:768px){
+
+  .about-story-content{
+    text-align:center !important;
+  }
+
+  .about-story-content .section-label{
+    text-align:center !important;
+  }
+
+  .about-story-content h2{
+    text-align:center !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .about-story-content > p:not(.section-label){
+    text-align:center !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+}
