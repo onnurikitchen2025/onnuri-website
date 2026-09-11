@@ -3158,3 +3158,11 @@ footer{
     #0b4d40 100%
   );
 }
+.hero{
+  background:linear-gradient(
+    135deg,
+    #032b24 0%,
+    #075044 55%,
+    #0b6655 100%
+  );
+}
