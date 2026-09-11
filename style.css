@@ -5320,3 +5320,44 @@ body{
   }
 
 }
+/* ==================================================
+   DESKTOP HEADER + HERO SIZE ADJUSTMENT
+   Mobile remains unchanged
+================================================== */
+
+@media(min-width:1025px){
+
+  /* SMALLER HEADER */
+
+  .site-header{
+    min-height:68px !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+  }
+
+  .site-header .brand-logo img{
+    width:100px !important;
+    height:auto;
+  }
+
+
+  /* SMALLER HERO IMAGE */
+
+  .hero-visual{
+    width:90% !important;
+    max-width:610px !important;
+
+    justify-self:start;
+  }
+
+  .hero-visual img{
+    width:100% !important;
+    height:390px !important;
+
+    object-fit:cover;
+    object-position:center;
+
+    border-radius:12px;
+  }
+
+}
