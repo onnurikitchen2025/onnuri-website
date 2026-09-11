@@ -2530,3 +2530,39 @@ html{
   }
 
 }
+/* DESKTOP HERO - BALANCED LAYOUT */
+
+@media(min-width:769px){
+
+  .hero{
+    grid-template-columns: 1fr 1fr;
+    gap:70px;
+    min-height:620px;
+    align-items:center;
+
+    max-width:1650px;
+    margin:0 auto;
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .hero-content{
+    max-width:620px;
+    justify-self:end;
+    width:100%;
+  }
+
+  .hero-visual{
+    width:100%;
+    max-width:680px;
+    justify-self:start;
+  }
+
+  .hero-visual img{
+    width:100%;
+    height:480px;
+    object-fit:cover;
+    border-radius:12px;
+  }
+
+}
