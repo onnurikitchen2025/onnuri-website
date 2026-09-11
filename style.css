@@ -3123,3 +3123,27 @@ footer{
   }
 
 }
+/* FOOTER LOGO */
+
+.footer-logo{
+  display:inline-block;
+  margin-bottom:18px;
+}
+
+.footer-logo img{
+  display:block;
+  width:130px;
+  height:auto;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .footer-logo img{
+    width:115px;
+  }
+
+}
