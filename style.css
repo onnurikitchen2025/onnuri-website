@@ -4587,3 +4587,521 @@ footer{
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
 }
+/* ==================================================
+   CONTACT PAGE
+================================================== */
+
+
+/* HERO */
+
+.contact-page-hero{
+  min-height:420px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:80px 7%;
+
+  color:#fff;
+
+  background:linear-gradient(
+    135deg,
+    #052e27 0%,
+    #073d33 50%,
+    #0b4d40 100%
+  );
+}
+
+.contact-page-hero-inner{
+  width:100%;
+  max-width:850px;
+
+  margin:0 auto;
+
+  text-align:center;
+
+  animation:contactHeroIn .7s ease both;
+}
+
+.contact-page-hero .section-label{
+  color:#f2c94c;
+}
+
+.contact-page-hero h1{
+  max-width:800px;
+
+  margin:12px auto 20px;
+
+  font-size:48px;
+  line-height:1.15;
+}
+
+.contact-page-hero-inner > p:last-child{
+  max-width:720px;
+
+  margin:0 auto;
+
+  color:rgba(255,255,255,.85);
+
+  font-size:17px;
+  line-height:1.7;
+}
+
+
+@keyframes contactHeroIn{
+
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* CONTACT CARDS */
+
+.contact-page-section{
+  padding:80px 7%;
+
+  background:#fff;
+}
+
+.contact-page-heading{
+  max-width:700px;
+
+  margin:0 auto 42px;
+
+  text-align:center;
+}
+
+.contact-page-heading h2{
+  margin:10px 0 14px;
+
+  color:#07352c;
+
+  font-size:36px;
+}
+
+.contact-page-heading > p:last-child{
+  color:#68716f;
+
+  line-height:1.7;
+}
+
+
+.contact-page-grid{
+  max-width:1300px;
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:22px;
+}
+
+
+.contact-page-card{
+  min-width:0;
+
+  padding:34px 30px;
+
+  display:flex;
+  flex-direction:column;
+
+  background:#f7f9f8;
+
+  border:1px solid #dfe5e2;
+  border-radius:10px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.contact-page-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(7,53,44,.08);
+}
+
+
+.contact-page-icon{
+  width:56px;
+  height:56px;
+
+  margin-bottom:24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#07352c;
+
+  background:#f2c94c;
+
+  border-radius:12px;
+}
+
+
+.contact-page-icon svg{
+  width:27px;
+  height:27px;
+}
+
+
+.contact-page-card h3{
+  margin:8px 0 14px;
+
+  color:#07352c;
+
+  font-size:22px;
+}
+
+
+.contact-page-card p{
+  margin:0 0 24px;
+
+  color:#68716f;
+
+  font-size:14px;
+  line-height:1.7;
+}
+
+
+.contact-page-link{
+  margin-top:auto;
+
+  color:#07352c;
+
+  font-size:13px;
+  font-weight:800;
+
+  text-decoration:none;
+}
+
+
+.contact-page-link:hover{
+  text-decoration:underline;
+}
+
+
+/* WAREHOUSE */
+
+.contact-warehouse-section{
+  padding:85px 7%;
+
+  background:#f5f7f6;
+}
+
+
+.contact-warehouse-inner{
+  max-width:1300px;
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(0,1fr);
+
+  gap:70px;
+
+  align-items:center;
+}
+
+
+.contact-warehouse-content h2{
+  margin:10px 0 18px;
+
+  color:#07352c;
+
+  font-size:38px;
+  line-height:1.2;
+}
+
+
+.contact-warehouse-content > p:not(.section-label){
+  max-width:570px;
+
+  color:#5c6663;
+
+  font-size:15px;
+  line-height:1.75;
+}
+
+
+.warehouse-address{
+  margin:28px 0;
+
+  padding-left:18px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:8px;
+
+  border-left:3px solid #f2c94c;
+}
+
+
+.warehouse-address strong{
+  color:#07352c;
+}
+
+
+.warehouse-address span{
+  max-width:450px;
+
+  color:#68716f;
+
+  line-height:1.6;
+}
+
+
+.contact-directions-btn{
+  min-height:50px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 24px;
+
+  background:#f2c94c;
+
+  color:#07352c;
+
+  border-radius:5px;
+
+  font-size:13px;
+  font-weight:800;
+
+  text-decoration:none;
+
+  transition:transform .2s ease;
+}
+
+
+.contact-directions-btn:hover{
+  transform:translateY(-2px);
+}
+
+
+.contact-warehouse-image{
+  overflow:hidden;
+
+  border-radius:12px;
+}
+
+
+.contact-warehouse-image img{
+  display:block;
+
+  width:100%;
+  height:430px;
+
+  object-fit:cover;
+
+  transition:transform .5s ease;
+}
+
+
+.contact-warehouse-image:hover img{
+  transform:scale(1.03);
+}
+
+
+/* QUOTE CTA */
+
+.contact-quote-cta{
+  padding:80px 7%;
+
+  color:#fff;
+
+  background:#07352c;
+}
+
+
+.contact-quote-inner{
+  max-width:760px;
+
+  margin:0 auto;
+
+  text-align:center;
+}
+
+
+.contact-quote-inner .section-label{
+  color:#f2c94c;
+}
+
+
+.contact-quote-inner h2{
+  margin:12px 0 18px;
+
+  font-size:36px;
+}
+
+
+.contact-quote-inner > p{
+  color:rgba(255,255,255,.82);
+
+  line-height:1.7;
+}
+
+
+.contact-quote-btn{
+  min-width:200px;
+  height:52px;
+
+  margin-top:28px;
+
+  padding:0 24px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f2c94c;
+
+  color:#07352c;
+
+  border-radius:5px;
+
+  font-size:13px;
+  font-weight:800;
+
+  text-decoration:none;
+
+  transition:transform .2s ease;
+}
+
+
+.contact-quote-btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* TABLET */
+
+@media(min-width:769px) and (max-width:1024px){
+
+  .contact-page-grid{
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+
+    gap:16px;
+  }
+
+  .contact-page-card{
+    padding:28px 22px;
+  }
+
+  .contact-warehouse-inner{
+    gap:40px;
+  }
+
+  .contact-warehouse-image img{
+    height:380px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .contact-page-hero{
+    min-height:360px;
+
+    padding:60px 6%;
+  }
+
+  .contact-page-hero h1{
+    font-size:34px;
+  }
+
+  .contact-page-hero-inner > p:last-child{
+    font-size:15px;
+  }
+
+
+  .contact-page-section{
+    padding:55px 6%;
+  }
+
+  .contact-page-heading{
+    margin-bottom:30px;
+  }
+
+  .contact-page-heading h2{
+    font-size:30px;
+  }
+
+
+  .contact-page-grid{
+    grid-template-columns:1fr;
+
+    gap:16px;
+  }
+
+
+  .contact-page-card{
+    padding:26px 22px;
+  }
+
+
+  .contact-warehouse-section{
+    padding:55px 6%;
+  }
+
+
+  .contact-warehouse-inner{
+    grid-template-columns:1fr;
+
+    gap:32px;
+  }
+
+
+  .contact-warehouse-content h2{
+    font-size:30px;
+  }
+
+
+  .contact-warehouse-image img{
+    height:300px;
+  }
+
+
+  .contact-directions-btn{
+    width:100%;
+  }
+
+
+  .contact-quote-cta{
+    padding:60px 6%;
+  }
+
+
+  .contact-quote-inner h2{
+    font-size:30px;
+  }
+
+
+  .contact-quote-btn{
+    width:100%;
+    max-width:340px;
+  }
+
+}
