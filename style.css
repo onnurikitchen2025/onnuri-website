@@ -3941,3 +3941,527 @@ footer{
   fill:none;
   stroke:#07352c;
 }
+/* ==================================================
+   ABOUT PAGE - COMPLETE FINAL STYLE
+================================================== */
+
+
+/* ABOUT HERO */
+
+.about-page-hero{
+  width:100%;
+  padding:90px 7%;
+
+  background:linear-gradient(
+    135deg,
+    #052e27 0%,
+    #073d33 50%,
+    #0b4d40 100%
+  );
+
+  color:#fff;
+}
+
+.about-page-hero-inner{
+  max-width:850px;
+  margin:0 auto;
+  text-align:center;
+
+  animation:aboutHeroIn .7s ease both;
+}
+
+.about-page-hero h1{
+  margin:12px 0 20px;
+
+  font-size:48px;
+  line-height:1.12;
+  font-weight:800;
+}
+
+.about-page-hero-inner > p:last-child{
+  max-width:720px;
+  margin:0 auto;
+
+  font-size:17px;
+  line-height:1.7;
+
+  color:rgba(255,255,255,.85);
+}
+
+@keyframes aboutHeroIn{
+
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* ==================================================
+   WHO WE ARE
+================================================== */
+
+.about-story{
+  width:100%;
+  padding:90px 7%;
+
+  background:#fff;
+}
+
+.about-story-grid{
+  max-width:1300px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+
+  gap:70px;
+  align-items:center;
+}
+
+.about-story-image{
+  overflow:hidden;
+
+  border-radius:12px;
+}
+
+.about-story-image img{
+  display:block;
+
+  width:100%;
+  height:480px;
+
+  object-fit:cover;
+
+  transition:transform .5s ease;
+}
+
+.about-story-image:hover img{
+  transform:scale(1.03);
+}
+
+.about-story-content h2{
+  margin:10px 0 22px;
+
+  color:#07352c;
+
+  font-size:38px;
+  line-height:1.2;
+}
+
+.about-story-content > p:not(.section-label){
+  margin-bottom:16px;
+
+  color:#5c6663;
+
+  font-size:15px;
+  line-height:1.75;
+}
+
+
+/* ==================================================
+   MISSION + VISION
+================================================== */
+
+.mission-vision-section{
+  width:100%;
+  padding:80px 7%;
+
+  background:#f5f7f6;
+}
+
+.mission-vision-grid{
+  max-width:1300px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:24px;
+}
+
+.mission-vision-card{
+  padding:42px;
+
+  background:#fff;
+
+  border-top:3px solid #f2c94c;
+  border-radius:10px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.mission-vision-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 14px 32px rgba(7,53,44,.08);
+}
+
+
+/* MISSION / VISION ICON */
+
+.mission-icon{
+  width:58px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:24px;
+
+  background:#f2c94c;
+
+  border-radius:12px;
+
+  transition:transform .25s ease;
+}
+
+.mission-icon svg{
+  width:28px !important;
+  height:28px !important;
+
+  max-width:28px;
+  max-height:28px;
+
+  fill:none !important;
+
+  stroke:#07352c;
+  stroke-width:1.8;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.mission-vision-card:hover .mission-icon{
+  transform:scale(1.07);
+}
+
+.mission-vision-card h2{
+  margin:10px 0 18px;
+
+  color:#07352c;
+
+  font-size:28px;
+  line-height:1.25;
+}
+
+.mission-vision-card > p:not(.section-label){
+  margin-bottom:14px;
+
+  color:#5c6663;
+
+  font-size:15px;
+  line-height:1.75;
+}
+
+
+/* ==================================================
+   WHY ONNURI
+================================================== */
+
+.about-values{
+  width:100%;
+  padding:85px 7%;
+
+  background:#fff;
+}
+
+.about-values-heading{
+  max-width:700px;
+  margin:0 auto 42px;
+
+  text-align:center;
+}
+
+.about-values-heading h2{
+  margin-top:10px;
+
+  color:#07352c;
+
+  font-size:36px;
+}
+
+.about-values-grid{
+  max-width:1300px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+
+  gap:20px;
+}
+
+.about-value-card{
+  padding:28px;
+
+  background:#f7f9f8;
+
+  border:1px solid #dfe5e2;
+  border-radius:10px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.about-value-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(7,53,44,.07);
+}
+
+.about-value-card span{
+  color:#b58a00;
+
+  font-size:13px;
+  font-weight:800;
+}
+
+.about-value-card h3{
+  margin:18px 0 12px;
+
+  color:#07352c;
+
+  font-size:19px;
+}
+
+.about-value-card p{
+  color:#68716f;
+
+  font-size:14px;
+  line-height:1.7;
+}
+
+
+/* ==================================================
+   ABOUT CTA
+================================================== */
+
+.about-cta{
+  width:100%;
+  padding:80px 7%;
+
+  background:#07352c;
+
+  color:#fff;
+}
+
+.about-cta-inner{
+  max-width:760px;
+  margin:0 auto;
+
+  text-align:center;
+}
+
+.about-cta h2{
+  margin:12px 0 18px;
+
+  font-size:36px;
+}
+
+.about-cta-inner > p:not(.section-label){
+  color:rgba(255,255,255,.82);
+
+  line-height:1.7;
+}
+
+.about-cta-buttons{
+  margin-top:30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:14px;
+}
+
+.about-cta-buttons a{
+  min-width:190px;
+  height:52px;
+
+  padding:0 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:5px;
+
+  font-size:13px;
+  font-weight:800;
+
+  text-decoration:none;
+}
+
+
+/* ==================================================
+   SCROLL ANIMATION
+================================================== */
+
+.reveal-item{
+  opacity:0;
+
+  transform:translateY(24px);
+
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.reveal-item.reveal-visible{
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(min-width:769px) and (max-width:1024px){
+
+  .about-story{
+    padding:65px 6%;
+  }
+
+  .about-story-grid{
+    gap:40px;
+  }
+
+  .about-story-image img{
+    height:420px;
+  }
+
+  .mission-vision-section{
+    padding:65px 6%;
+  }
+
+  .mission-vision-card{
+    padding:32px;
+  }
+
+  .about-values{
+    padding:65px 6%;
+  }
+
+  .about-values-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:768px){
+
+  .about-page-hero{
+    padding:60px 6%;
+  }
+
+  .about-page-hero h1{
+    font-size:36px;
+  }
+
+  .about-page-hero-inner > p:last-child{
+    font-size:15px;
+  }
+
+
+  .about-story{
+    padding:50px 6%;
+  }
+
+  .about-story-grid{
+    grid-template-columns:1fr;
+
+    gap:32px;
+  }
+
+  .about-story-image img{
+    height:300px;
+  }
+
+  .about-story-content h2{
+    font-size:30px;
+  }
+
+
+  .mission-vision-section{
+    padding:50px 6%;
+  }
+
+  .mission-vision-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .mission-vision-card{
+    padding:28px 22px;
+  }
+
+  .mission-vision-card h2{
+    font-size:24px;
+  }
+
+  .mission-icon{
+    width:52px;
+    height:52px;
+
+    margin-bottom:20px;
+  }
+
+  .mission-icon svg{
+    width:25px !important;
+    height:25px !important;
+  }
+
+
+  .about-values{
+    padding:55px 6%;
+  }
+
+  .about-values-heading h2{
+    font-size:30px;
+  }
+
+  .about-values-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .about-cta{
+    padding:60px 6%;
+  }
+
+  .about-cta h2{
+    font-size:30px;
+  }
+
+  .about-cta-buttons{
+    flex-direction:column;
+
+    align-items:center;
+  }
+
+  .about-cta-buttons a{
+    width:100%;
+    max-width:340px;
+  }
+
+}
