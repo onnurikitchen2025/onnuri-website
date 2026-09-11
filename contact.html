@@ -729,6 +729,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
+<script>
+  const siteHeader = document.querySelector('.site-header');
 
+  if(siteHeader){
+    const updateHeader = () => {
+      siteHeader.classList.toggle(
+        'scrolled',
+        window.scrollY > 20
+      );
+    };
+
+    updateHeader();
+
+    window.addEventListener(
+      'scroll',
+      updateHeader
+    );
+  }
+</script>
 </body>
 </html>
