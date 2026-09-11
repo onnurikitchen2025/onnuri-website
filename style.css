@@ -2420,3 +2420,28 @@ html{
   }
 
 }
+/* MOBILE GAS RANGE HERO - COMPACT */
+
+@media(max-width:768px){
+
+  .catalog-hero{
+    padding:48px 6% 44px;
+  }
+
+  .catalog-hero .hero-label{
+    margin-bottom:20px;
+  }
+
+  .catalog-hero h1{
+    font-size:40px;
+    line-height:1.15;
+    margin-bottom:20px;
+  }
+
+  .catalog-hero > p:last-child{
+    font-size:15px;
+    line-height:1.65;
+    margin-bottom:0;
+  }
+
+}
