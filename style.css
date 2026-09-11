@@ -3918,3 +3918,26 @@ footer{
   }
 
 }
+.mission-icon{
+  width:58px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f2c94c;
+  border-radius:12px;
+
+  margin-bottom:24px;
+}
+
+.mission-icon svg{
+  width:28px;
+  height:28px;
+  max-width:28px;
+  max-height:28px;
+
+  fill:none;
+  stroke:#07352c;
+}
