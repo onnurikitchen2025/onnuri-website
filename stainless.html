@@ -829,19 +829,20 @@
 </div>
 
 
-<script>
+<script src="quote.js"></script>
 
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
-
-  /* MOBILE MENU */
+  /* =========================================
+     MOBILE MENU
+  ========================================= */
 
   const menuToggle =
     document.querySelector('.menu-toggle');
 
   const mainNav =
     document.querySelector('.main-nav');
-
 
   if(menuToggle && mainNav){
 
@@ -866,7 +867,6 @@ document.addEventListener('DOMContentLoaded', () => {
       );
 
     });
-
 
     mainNav.querySelectorAll('a')
       .forEach(link => {
@@ -893,12 +893,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
-  /* FIXED HEADER */
+  /* =========================================
+     FIXED HEADER
+  ========================================= */
 
   const siteHeader =
     document.querySelector('.site-header');
-
 
   const updateHeader = () => {
 
@@ -911,7 +911,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
 
-
   updateHeader();
 
   window.addEventListener(
@@ -920,12 +919,12 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 
-
-  /* PAGE LOADER */
+  /* =========================================
+     PAGE LOADER
+  ========================================= */
 
   const pageLoader =
     document.getElementById('pageLoader');
-
 
   document.querySelectorAll('a')
     .forEach(link => {
@@ -934,7 +933,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const href =
           this.getAttribute('href');
-
 
         if(
           !href ||
@@ -947,14 +945,11 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-
         e.preventDefault();
-
 
         if(pageLoader){
           pageLoader.classList.add('active');
         }
-
 
         setTimeout(() => {
 
@@ -967,15 +962,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-  /* SCROLL REVEAL */
+  /* =========================================
+     SCROLL REVEAL
+  ========================================= */
 
   const revealItems =
     document.querySelectorAll(
       '.stainless-card, ' +
       '.stainless-cta-inner'
     );
-
 
   if('IntersectionObserver' in window){
 
@@ -1003,7 +998,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { threshold:.12 }
       );
 
-
     revealItems.forEach(item => {
 
       item.classList.add('reveal-item');
@@ -1021,208 +1015,277 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-});
+  /* =========================================
+     SIZE SELECTOR
+  ========================================= */
 
-</script>
-    <script>
-document
-  .querySelectorAll('.add-stainless-quote-btn')
-  .forEach(button => {
+  document
+    .querySelectorAll('.size-selector')
+    .forEach(selector => {
 
-    button.addEventListener('click', () => {
-
-      const card =
-        button.closest('.stainless-card');
-
-      const productName =
-        card.dataset.product;
-
-      const activeSize =
-        card.querySelector('.size-btn.active');
-
-      if(!activeSize) return;
-
-      const selectedSize =
-        activeSize.dataset.size;
-
-      const quoteItem =
-        productName + ' — ' + selectedSize;
-
-
-      addProductToQuote(quoteItem);
-
-
-      button.textContent = 'ADDED';
-
-      setTimeout(() => {
-        button.textContent = 'ADD TO QUOTE';
-      }, 1200);
-
-    });
-
-  });
-</script>
-<script>
-
-document.querySelectorAll('.size-selector').forEach(selector => {
-
-  const buttons =
-    selector.querySelectorAll('.size-btn');
-
-  const card =
-    selector.closest('.stainless-card');
-
-  const selectedText =
-    card.querySelector('.selected-size strong');
-
-
-  buttons.forEach(button => {
-
-    button.addEventListener('click', () => {
-
-      buttons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      button.classList.add('active');
-
-      if(selectedText){
-        selectedText.textContent =
-          button.dataset.size;
-      }
-
-    });
-
-  });
-
-});
-
-</script>
-<script>
-document.querySelectorAll('.size-selector').forEach(selector => {
-
-  const buttons = selector.querySelectorAll('.size-btn');
-  const card = selector.closest('.stainless-card');
-  const selectedText = card.querySelector('.selected-size strong');
-
-  buttons.forEach(button => {
-
-    button.addEventListener('click', () => {
-
-      // Remove active state from other sizes
-      buttons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      // Highlight selected size
-      button.classList.add('active');
-
-      // Update selected size text
-      if(selectedText){
-        selectedText.textContent = button.dataset.size;
-      }
-
-    });
-
-  });
-
-});
-</script>
-  <script>
-const previewModal =
-  document.getElementById('productPreviewModal');
-
-const previewClose =
-  document.getElementById('productPreviewClose');
-
-const previewImage =
-  document.getElementById('previewImage');
-
-const previewPlaceholder =
-  document.getElementById('previewPlaceholder');
-
-const previewProductName =
-  document.getElementById('previewProductName');
-
-const previewProductSize =
-  document.getElementById('previewProductSize');
-
-
-document
-  .querySelectorAll('.preview-product-btn')
-  .forEach(button => {
-
-    button.addEventListener('click', () => {
+      const buttons =
+        selector.querySelectorAll('.size-btn');
 
       const card =
-        button.closest('.stainless-card');
+        selector.closest('.stainless-card');
 
-      const productName =
-        card.dataset.product;
+      const selectedText =
+        card.querySelector(
+          '.selected-size strong'
+        );
 
-      const activeSize =
-        card.querySelector('.size-btn.active');
+      buttons.forEach(button => {
 
-      if(!activeSize) return;
+        button.addEventListener('click', () => {
 
-      const selectedSize =
-        activeSize.dataset.size;
+          buttons.forEach(btn => {
+            btn.classList.remove('active');
+          });
 
-      const image =
-        activeSize.dataset.image;
+          button.classList.add('active');
 
+          if(selectedText){
+            selectedText.textContent =
+              button.dataset.size;
+          }
 
-      previewProductName.textContent =
-        productName;
+        });
 
-      previewProductSize.textContent =
-        selectedSize;
-
-
-      if(image){
-
-        previewImage.src = image;
-
-        previewImage.alt =
-          productName + ' ' + selectedSize;
-
-        previewImage.hidden = false;
-
-        previewPlaceholder.hidden = true;
-
-      }else{
-
-        previewImage.hidden = true;
-
-        previewPlaceholder.hidden = false;
-
-      }
-
-
-      previewModal.classList.add('open');
+      });
 
     });
 
-  });
+
+  /* =========================================
+     PRODUCT IMAGE PREVIEW
+  ========================================= */
+
+  const previewModal =
+    document.getElementById(
+      'productPreviewModal'
+    );
+
+  const previewClose =
+    document.getElementById(
+      'productPreviewClose'
+    );
+
+  const previewImage =
+    document.getElementById(
+      'previewImage'
+    );
+
+  const previewPlaceholder =
+    document.getElementById(
+      'previewPlaceholder'
+    );
+
+  const previewProductName =
+    document.getElementById(
+      'previewProductName'
+    );
+
+  const previewProductSize =
+    document.getElementById(
+      'previewProductSize'
+    );
 
 
-previewClose.addEventListener('click', () => {
+  document
+    .querySelectorAll(
+      '.preview-product-btn'
+    )
+    .forEach(button => {
 
-  previewModal.classList.remove('open');
+      button.addEventListener('click', () => {
 
-});
+        const card =
+          button.closest(
+            '.stainless-card'
+          );
+
+        const productName =
+          card.dataset.product;
+
+        const activeSize =
+          card.querySelector(
+            '.size-btn.active'
+          );
+
+        if(!activeSize) return;
+
+        const selectedSize =
+          activeSize.dataset.size;
+
+        const image =
+          activeSize.dataset.image;
 
 
-previewModal.addEventListener('click', e => {
+        if(previewProductName){
+          previewProductName.textContent =
+            productName;
+        }
 
-  if(e.target === previewModal){
+        if(previewProductSize){
+          previewProductSize.textContent =
+            selectedSize;
+        }
 
-    previewModal.classList.remove('open');
+
+        if(
+          image &&
+          previewImage &&
+          previewPlaceholder
+        ){
+
+          previewImage.src = image;
+
+          previewImage.alt =
+            productName +
+            ' ' +
+            selectedSize;
+
+          previewImage.hidden = false;
+
+          previewPlaceholder.hidden = true;
+
+        }else if(
+          previewImage &&
+          previewPlaceholder
+        ){
+
+          previewImage.hidden = true;
+
+          previewPlaceholder.hidden = false;
+
+        }
+
+
+        if(previewModal){
+          previewModal.classList.add(
+            'open'
+          );
+        }
+
+      });
+
+    });
+
+
+  if(previewClose && previewModal){
+
+    previewClose.addEventListener(
+      'click',
+      () => {
+
+        previewModal.classList.remove(
+          'open'
+        );
+
+      }
+    );
 
   }
 
+
+  if(previewModal){
+
+    previewModal.addEventListener(
+      'click',
+      e => {
+
+        if(e.target === previewModal){
+
+          previewModal.classList.remove(
+            'open'
+          );
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =========================================
+     ADD STAINLESS PRODUCT TO QUOTE
+  ========================================= */
+
+  document
+    .querySelectorAll(
+      '.add-stainless-quote-btn'
+    )
+    .forEach(button => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          const card =
+            button.closest(
+              '.stainless-card'
+            );
+
+          const productName =
+            card.dataset.product;
+
+          const activeSize =
+            card.querySelector(
+              '.size-btn.active'
+            );
+
+          if(!activeSize) return;
+
+          const selectedSize =
+            activeSize.dataset.size;
+
+          const quoteItem =
+            productName +
+            ' — ' +
+            selectedSize;
+
+
+          if(
+            typeof addProductToQuote
+            === 'function'
+          ){
+
+            addProductToQuote(
+              quoteItem
+            );
+
+          }
+
+
+          const originalText =
+            button.textContent;
+
+          button.textContent =
+            'ADDED';
+
+          button.disabled = true;
+
+
+          setTimeout(() => {
+
+            button.textContent =
+              originalText;
+
+            button.disabled = false;
+
+          },1200);
+
+        }
+      );
+
+    });
+
 });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
