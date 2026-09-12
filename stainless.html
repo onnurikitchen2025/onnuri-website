@@ -1271,7 +1271,82 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
           }
+/* FLY TO QUOTE LIST ANIMATION */
 
+const floatingQuote =
+  document.querySelector(
+    '.floating-quote-list'
+  );
+
+if(floatingQuote){
+
+  const buttonRect =
+    button.getBoundingClientRect();
+
+  const quoteRect =
+    floatingQuote.getBoundingClientRect();
+
+  const flyItem =
+    document.createElement('div');
+
+  flyItem.className =
+    'quote-fly-item';
+
+  flyItem.textContent = '✓';
+
+  flyItem.style.left =
+    (buttonRect.left +
+    buttonRect.width / 2 -
+    17) + 'px';
+
+  flyItem.style.top =
+    (buttonRect.top +
+    buttonRect.height / 2 -
+    17) + 'px';
+
+  document.body.appendChild(
+    flyItem
+  );
+
+
+  requestAnimationFrame(() => {
+
+    flyItem.style.left =
+      (quoteRect.left +
+      quoteRect.width / 2 -
+      17) + 'px';
+
+    flyItem.style.top =
+      (quoteRect.top +
+      quoteRect.height / 2 -
+      17) + 'px';
+
+    flyItem.style.transform =
+      'scale(.55)';
+
+    flyItem.style.opacity =
+      '0.75';
+
+  });
+
+
+  setTimeout(() => {
+
+    flyItem.remove();
+
+    floatingQuote.classList.remove(
+      'quote-pop'
+    );
+
+    void floatingQuote.offsetWidth;
+
+    floatingQuote.classList.add(
+      'quote-pop'
+    );
+
+  },650);
+
+}
 
           const originalText =
             button.textContent;
