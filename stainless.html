@@ -1185,5 +1185,43 @@ previewModal.addEventListener('click', e => {
 
 });
 </script>
+  <script>
+document
+  .querySelectorAll('.add-stainless-quote-btn')
+  .forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      const card =
+        button.closest('.stainless-card');
+
+      const productName =
+        card.dataset.product;
+
+      const activeSize =
+        card.querySelector('.size-btn.active');
+
+      if(!activeSize) return;
+
+      const selectedSize =
+        activeSize.dataset.size;
+
+      const quoteItem =
+        productName + ' — ' + selectedSize;
+
+
+      addProductToQuote(quoteItem);
+
+
+      button.textContent = 'ADDED';
+
+      setTimeout(() => {
+        button.textContent = 'ADD TO QUOTE';
+      }, 1200);
+
+    });
+
+  });
+</script>
 </body>
 </html>
