@@ -7055,3 +7055,22 @@ body{
 .selected-size strong{
   color:#07352c;
 }
+/* KEEP STAINLESS CARDS EVEN */
+
+.stainless-grid{
+  align-items:stretch;
+}
+
+.stainless-card{
+  height:100%;
+}
+
+.stainless-card-content{
+  display:flex;
+  flex-direction:column;
+}
+
+.selected-size{
+  margin-top:auto !important;
+  padding-top:14px;
+}
