@@ -1,137 +1,112 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const feedbackOpen =
-    document.getElementById('feedbackOpen');
+  const button = document.getElementById('feedbackOpen');
+  const modal = document.getElementById('feedbackModal');
+  const close = document.getElementById('feedbackClose');
 
-  const feedbackModal =
-    document.getElementById('feedbackModal');
+  if (!button || !modal) return;
 
-  const feedbackClose =
-    document.getElementById('feedbackClose');
-
-  if(!feedbackOpen || !feedbackModal){
-    return;
-  }
-
-  /* =========================
-     OPEN / CLOSE MODAL
-  ========================= */
-
-  feedbackOpen.addEventListener('click', () => {
-    feedbackModal.classList.add('open');
-  });
-
-  if(feedbackClose){
-    feedbackClose.addEventListener('click', () => {
-      feedbackModal.classList.remove('open');
-    });
-  }
-
-  feedbackModal.addEventListener('click', e => {
-
-    if(e.target === feedbackModal){
-      feedbackModal.classList.remove('open');
-    }
-
-  });
-
-
-  /* =========================
-     DRAGGABLE FLOATING BUTTON
-  ========================= */
-
-  let isDragging = false;
+  let dragging = false;
   let moved = false;
 
   let startX = 0;
   let startY = 0;
-
   let startLeft = 0;
   let startTop = 0;
 
-  function startDrag(clientX, clientY){
 
-    const rect =
-      feedbackOpen.getBoundingClientRect();
+  /* OPEN POPUP */
 
-    isDragging = true;
+  button.addEventListener('click', () => {
+
+    if (moved) {
+      moved = false;
+      return;
+    }
+
+    modal.classList.add('open');
+
+  });
+
+
+  /* CLOSE POPUP */
+
+  if (close) {
+    close.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+
+    if (e.target === modal) {
+      modal.classList.remove('open');
+    }
+
+  });
+
+
+  /* START DRAG */
+
+  function startDrag(x, y) {
+
+    const rect = button.getBoundingClientRect();
+
+    dragging = true;
     moved = false;
 
-    startX = clientX;
-    startY = clientY;
+    startX = x;
+    startY = y;
 
     startLeft = rect.left;
     startTop = rect.top;
 
-    feedbackOpen.style.right = 'auto';
-    feedbackOpen.style.bottom = 'auto';
+    button.style.right = 'auto';
+    button.style.bottom = 'auto';
 
   }
 
-  function moveDrag(clientX, clientY){
 
-    if(!isDragging) return;
+  /* MOVE */
 
-    const dx = clientX - startX;
-    const dy = clientY - startY;
+  function moveDrag(x, y) {
 
-    if(
-      Math.abs(dx) > 4 ||
-      Math.abs(dy) > 4
-    ){
+    if (!dragging) return;
+
+    const dx = x - startX;
+    const dy = y - startY;
+
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
       moved = true;
     }
 
-    let newLeft =
-      startLeft + dx;
-
-    let newTop =
-      startTop + dy;
-
-    const buttonWidth =
-      feedbackOpen.offsetWidth;
-
-    const buttonHeight =
-      feedbackOpen.offsetHeight;
+    let left = startLeft + dx;
+    let top = startTop + dy;
 
     const maxLeft =
-      window.innerWidth -
-      buttonWidth -
-      8;
+      window.innerWidth - button.offsetWidth - 8;
 
     const maxTop =
-      window.innerHeight -
-      buttonHeight -
-      8;
+      window.innerHeight - button.offsetHeight - 8;
 
-    newLeft =
-      Math.max(
-        8,
-        Math.min(newLeft, maxLeft)
-      );
+    left = Math.max(8, Math.min(left, maxLeft));
+    top = Math.max(8, Math.min(top, maxTop));
 
-    newTop =
-      Math.max(
-        8,
-        Math.min(newTop, maxTop)
-      );
-
-    feedbackOpen.style.left =
-      newLeft + 'px';
-
-    feedbackOpen.style.top =
-      newTop + 'px';
+    button.style.left = left + 'px';
+    button.style.top = top + 'px';
 
   }
 
-  function endDrag(){
 
-    if(!isDragging) return;
+  /* END DRAG */
 
-    isDragging = false;
+  function endDrag() {
 
-    const rect =
-      feedbackOpen.getBoundingClientRect();
+    if (!dragging) return;
+
+    dragging = false;
+
+    const rect = button.getBoundingClientRect();
 
     localStorage.setItem(
       'onnuriFeedbackPosition',
@@ -144,131 +119,74 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* MOUSE */
+  /* DESKTOP */
 
-  feedbackOpen.addEventListener(
-    'mousedown',
-    e => {
+  button.addEventListener('mousedown', (e) => {
 
-      startDrag(
-        e.clientX,
-        e.clientY
-      );
+    startDrag(e.clientX, e.clientY);
 
-      e.preventDefault();
+    e.preventDefault();
 
-    }
-  );
+  });
 
-  document.addEventListener(
-    'mousemove',
-    e => {
+  document.addEventListener('mousemove', (e) => {
+    moveDrag(e.clientX, e.clientY);
+  });
 
-      moveDrag(
-        e.clientX,
-        e.clientY
-      );
-
-    }
-  );
-
-  document.addEventListener(
-    'mouseup',
-    endDrag
-  );
+  document.addEventListener('mouseup', endDrag);
 
 
-  /* TOUCH */
+  /* MOBILE */
 
-  feedbackOpen.addEventListener(
-    'touchstart',
-    e => {
+  button.addEventListener('touchstart', (e) => {
 
-      const touch =
-        e.touches[0];
+    const touch = e.touches[0];
 
-      startDrag(
-        touch.clientX,
-        touch.clientY
-      );
-
-    },
-    { passive:true }
-  );
-
-  document.addEventListener(
-    'touchmove',
-    e => {
-
-      if(!isDragging) return;
-
-      const touch =
-        e.touches[0];
-
-      moveDrag(
-        touch.clientX,
-        touch.clientY
-      );
-
-    },
-    { passive:false }
-  );
-
-  document.addEventListener(
-    'touchend',
-    endDrag
-  );
-
-
-  /* Prevent modal opening after drag */
-
-  feedbackOpen.addEventListener(
-    'click',
-    e => {
-
-      if(moved){
-
-        e.preventDefault();
-        e.stopImmediatePropagation();
-
-        moved = false;
-
-      }
-
-    },
-    true
-  );
-
-
-  /* =========================
-     RESTORE SAVED POSITION
-  ========================= */
-
-  const savedPosition =
-    localStorage.getItem(
-      'onnuriFeedbackPosition'
+    startDrag(
+      touch.clientX,
+      touch.clientY
     );
 
-  if(savedPosition){
+  }, { passive: true });
 
-    try{
 
-      const position =
-        JSON.parse(savedPosition);
+  document.addEventListener('touchmove', (e) => {
 
-      feedbackOpen.style.right =
-        'auto';
+    if (!dragging) return;
 
-      feedbackOpen.style.bottom =
-        'auto';
+    const touch = e.touches[0];
 
-      feedbackOpen.style.left =
-        position.left + 'px';
+    moveDrag(
+      touch.clientX,
+      touch.clientY
+    );
 
-      feedbackOpen.style.top =
-        position.top + 'px';
+    e.preventDefault();
 
-    }catch(e){}
+  }, { passive: false });
+
+
+  document.addEventListener('touchend', endDrag);
+
+
+  /* RESTORE LAST POSITION */
+
+  const saved =
+    localStorage.getItem('onnuriFeedbackPosition');
+
+  if (saved) {
+
+    try {
+
+      const position = JSON.parse(saved);
+
+      button.style.right = 'auto';
+      button.style.bottom = 'auto';
+
+      button.style.left = position.left + 'px';
+      button.style.top = position.top + 'px';
+
+    } catch (error) {}
 
   }
 
