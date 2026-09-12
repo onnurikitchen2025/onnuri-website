@@ -6902,3 +6902,44 @@ body{
 
   border-radius:10px;
 }
+/* =========================================
+   STAINLESS BACK BUTTON
+========================================= */
+
+.stainless-catalog-top{
+  width:100%;
+  max-width:1180px;
+
+  margin:0 auto 24px;
+}
+
+.stainless-back-btn{
+  display:inline-flex;
+  align-items:center;
+
+  min-height:42px;
+
+  padding:0 16px;
+
+  color:#07352c;
+
+  background:#f1f4f2;
+
+  border:1px solid #d7dfdc;
+  border-radius:5px;
+
+  font-size:12px;
+  font-weight:800;
+
+  text-decoration:none;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.stainless-back-btn:hover{
+  background:#e6ece9;
+
+  transform:translateX(-3px);
+}
