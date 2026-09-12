@@ -318,5 +318,52 @@ button.addEventListener('touchend', () => {
     }
 
   });
+/* =========================
+   FEEDBACK FORM DETAILS
+========================= */
 
+const feedbackForm =
+  document.getElementById('feedbackForm');
+
+if (feedbackForm) {
+
+  feedbackForm.addEventListener('submit', () => {
+
+    const page =
+      document.getElementById('feedbackPage');
+
+    const screen =
+      document.getElementById('feedbackScreen');
+
+    const browser =
+      document.getElementById('feedbackBrowser');
+
+    const date =
+      document.getElementById('feedbackDate');
+
+
+    if (page) {
+      page.value = window.location.href;
+    }
+
+    if (screen) {
+      screen.value =
+        window.innerWidth +
+        ' × ' +
+        window.innerHeight;
+    }
+
+    if (browser) {
+      browser.value =
+        navigator.userAgent;
+    }
+
+    if (date) {
+      date.value =
+        new Date().toLocaleString();
+    }
+
+  });
+
+}
 });
