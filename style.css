@@ -6953,3 +6953,53 @@ body{
     </a>
 
   </div>
+.size-selector{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.size-btn{
+  padding:7px 10px;
+
+  background:#f1f4f2;
+  color:#46514e;
+
+  border:1px solid #dfe5e2;
+  border-radius:4px;
+
+  font-family:inherit;
+  font-size:11px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.size-btn:hover{
+  border-color:#07352c;
+  transform:translateY(-1px);
+}
+
+.size-btn.active{
+  background:#07352c;
+  border-color:#07352c;
+  color:#fff;
+}
+
+.selected-size{
+  margin:14px 0 0 !important;
+
+  color:#68716f !important;
+
+  font-size:12px !important;
+}
+
+.selected-size strong{
+  color:#07352c;
+}
