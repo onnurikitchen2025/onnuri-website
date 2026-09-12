@@ -172,26 +172,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('touchend', endDrag);
 
+/* RESTORE SAVED POSITION SAFELY */
 
-  /* RESTORE LAST POSITION */
+const saved =
+  localStorage.getItem('onnuriFeedbackPosition');
 
-  const saved =
-    localStorage.getItem('onnuriFeedbackPosition');
+if (saved) {
 
-  if (saved) {
+  try {
 
-    try {
+    const position = JSON.parse(saved);
 
-      const position = JSON.parse(saved);
+    const maxLeft =
+      window.innerWidth - button.offsetWidth - 8;
 
-      button.style.right = 'auto';
-      button.style.bottom = 'auto';
+    const maxTop =
+      window.innerHeight - button.offsetHeight - 8;
 
-      button.style.left = position.left + 'px';
-      button.style.top = position.top + 'px';
+    const safeLeft =
+      Math.max(8, Math.min(position.left, maxLeft));
 
-    } catch (error) {}
+    const safeTop =
+      Math.max(8, Math.min(position.top, maxTop));
+
+    button.style.right = 'auto';
+    button.style.bottom = 'auto';
+
+    button.style.left = safeLeft + 'px';
+    button.style.top = safeTop + 'px';
+
+  } catch (error) {
+
+    localStorage.removeItem('onnuriFeedbackPosition');
 
   }
 
-});
+}
