@@ -7468,3 +7468,56 @@ body{
   }
 
 }
+/* =========================================
+   FIX STAINLESS GRID WIDTH
+========================================= */
+
+.stainless-catalog{
+  width:100%;
+  padding-left:7%;
+  padding-right:7%;
+}
+
+.stainless-grid{
+  width:100% !important;
+  max-width:1180px !important;
+
+  margin-left:auto !important;
+  margin-right:auto !important;
+
+  display:grid !important;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr)) !important;
+
+  gap:22px !important;
+}
+
+.stainless-card{
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+}
+
+
+/* TABLET */
+
+@media(min-width:769px) and (max-width:1024px){
+
+  .stainless-grid{
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .stainless-grid{
+    grid-template-columns:
+      1fr !important;
+  }
+
+}
