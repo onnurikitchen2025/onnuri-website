@@ -7116,3 +7116,24 @@ body{
   margin-top:auto !important;
   padding-top:12px;
 }
+/* =========================================
+   ALIGN STAINLESS HEADER WITH PRODUCT CARDS
+========================================= */
+
+.stainless-catalog-top,
+.stainless-heading,
+.stainless-grid{
+  width:100%;
+  max-width:1180px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Keep spacing clean */
+.stainless-catalog-top{
+  margin-bottom:24px !important;
+}
+
+.stainless-heading{
+  margin-bottom:35px !important;
+}
