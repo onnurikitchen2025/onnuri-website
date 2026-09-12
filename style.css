@@ -7636,3 +7636,171 @@ body{
   }
 
 }
+/* =========================================
+   GLOBAL WEBSITE FEEDBACK
+========================================= */
+
+.feedback-floating-btn{
+  position:fixed;
+  right:24px;
+  bottom:95px;
+  z-index:1200;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  min-height:46px;
+  padding:0 16px;
+
+  background:#ffffff;
+  color:#07352c;
+
+  border:1px solid #d8e0dd;
+  border-radius:30px;
+
+  font-family:inherit;
+  font-size:12px;
+  font-weight:800;
+
+  cursor:grab;
+  user-select:none;
+  touch-action:none;
+
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+  transition:
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+.feedback-floating-btn:active{
+  cursor:grabbing;
+}
+
+.feedback-floating-btn:hover{
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+.feedback-icon{
+  font-size:15px;
+}
+
+.feedback-modal{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.55);
+}
+
+.feedback-modal.open{
+  display:flex;
+}
+
+.feedback-box{
+  position:relative;
+
+  width:100%;
+  max-width:460px;
+
+  padding:32px;
+
+  background:#fff;
+  border-radius:12px;
+
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+.feedback-box h3{
+  margin:5px 0 10px;
+  color:#07352c;
+  font-size:24px;
+}
+
+.feedback-description{
+  margin-bottom:20px;
+  color:#68716f;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.feedback-box select,
+.feedback-box textarea{
+  width:100%;
+  margin-bottom:12px;
+  padding:13px;
+
+  border:1px solid #d8e0dd;
+  border-radius:6px;
+
+  font:inherit;
+  background:#fff;
+}
+
+.feedback-box textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.feedback-submit{
+  width:100%;
+  padding:13px;
+
+  background:#f2c94c;
+  color:#07352c;
+
+  border:0;
+  border-radius:5px;
+
+  font-family:inherit;
+  font-weight:800;
+
+  cursor:pointer;
+}
+
+.feedback-close{
+  position:absolute;
+  top:12px;
+  right:15px;
+
+  border:0;
+  background:none;
+
+  font-size:25px;
+  cursor:pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .feedback-floating-btn{
+    width:46px;
+    height:46px;
+
+    min-height:46px;
+
+    padding:0;
+
+    justify-content:center;
+
+    border-radius:50%;
+  }
+
+  .feedback-label{
+    display:none;
+  }
+
+  .feedback-box{
+    padding:28px 20px;
+  }
+
+}
