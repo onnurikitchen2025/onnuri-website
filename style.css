@@ -7521,3 +7521,26 @@ body{
   }
 
 }
+/* GAS RANGES - BACK TO PRODUCT CATEGORIES */
+
+.gas-back-btn{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:24px;
+
+  color:#ffffff;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.5px;
+
+  text-decoration:none;
+
+  border-bottom:1px solid rgba(255,255,255,.45);
+  padding-bottom:4px;
+
+  transition:opacity .2s ease;
+}
+
+.gas-back-btn:hover{
+  opacity:.7;
+}
