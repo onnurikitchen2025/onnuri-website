@@ -7319,3 +7319,94 @@ body{
   }
 
 }
+/* =========================================
+   FLOATING QUOTE LIST
+========================================= */
+
+.floating-quote-list{
+  position:fixed;
+
+  right:22px;
+  bottom:28px;
+
+  z-index:9000;
+
+  min-height:52px;
+
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  padding:0 15px;
+
+  background:#07352c;
+  color:#ffffff;
+
+  border-radius:7px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
+
+  text-decoration:none;
+
+  font-size:11px;
+  font-weight:800;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.floating-quote-list:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.24);
+}
+
+.floating-quote-icon{
+  font-size:18px;
+}
+
+.floating-quote-text{
+  white-space:nowrap;
+}
+
+.floating-quote-list .quote-count{
+  min-width:24px;
+  height:24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 6px;
+
+  background:#f2c94c;
+  color:#07352c;
+
+  border-radius:20px;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .floating-quote-list{
+    right:15px;
+    bottom:18px;
+
+    min-height:48px;
+
+    padding:0 12px;
+  }
+
+  .floating-quote-text{
+    display:none;
+  }
+
+}
