@@ -1017,5 +1017,100 @@ document.querySelectorAll('.size-selector').forEach(selector => {
 
 });
 </script>
+  <script>
+const previewModal =
+  document.getElementById('productPreviewModal');
+
+const previewClose =
+  document.getElementById('productPreviewClose');
+
+const previewImage =
+  document.getElementById('previewImage');
+
+const previewPlaceholder =
+  document.getElementById('previewPlaceholder');
+
+const previewProductName =
+  document.getElementById('previewProductName');
+
+const previewProductSize =
+  document.getElementById('previewProductSize');
+
+
+document
+  .querySelectorAll('.preview-product-btn')
+  .forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      const card =
+        button.closest('.stainless-card');
+
+      const productName =
+        card.dataset.product;
+
+      const activeSize =
+        card.querySelector('.size-btn.active');
+
+      if(!activeSize) return;
+
+      const selectedSize =
+        activeSize.dataset.size;
+
+      const image =
+        activeSize.dataset.image;
+
+
+      previewProductName.textContent =
+        productName;
+
+      previewProductSize.textContent =
+        selectedSize;
+
+
+      if(image){
+
+        previewImage.src = image;
+
+        previewImage.alt =
+          productName + ' ' + selectedSize;
+
+        previewImage.hidden = false;
+
+        previewPlaceholder.hidden = true;
+
+      }else{
+
+        previewImage.hidden = true;
+
+        previewPlaceholder.hidden = false;
+
+      }
+
+
+      previewModal.classList.add('open');
+
+    });
+
+  });
+
+
+previewClose.addEventListener('click', () => {
+
+  previewModal.classList.remove('open');
+
+});
+
+
+previewModal.addEventListener('click', e => {
+
+  if(e.target === previewModal){
+
+    previewModal.classList.remove('open');
+
+  }
+
+});
+</script>
 </body>
 </html>
