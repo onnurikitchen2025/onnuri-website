@@ -512,11 +512,78 @@ mainNav.querySelectorAll('a').forEach(link => {
     <textarea id="feedbackMessage"
               placeholder="Describe the problem..."></textarea>
 
-    <button type="button"
-            class="feedback-submit"
-            id="feedbackSubmit">
-      SUBMIT FEEDBACK
-    </button>
+    <form id="feedbackForm"
+      action="https://formsubmit.co/onnurikitchen2025@gmail.com"
+      method="POST">
+
+  <input type="hidden"
+         name="_subject"
+         value="Onnuri Website Feedback">
+
+  <input type="hidden"
+         name="_captcha"
+         value="false">
+
+  <input type="hidden"
+         name="Page"
+         id="feedbackPage">
+
+  <input type="hidden"
+         name="Screen Size"
+         id="feedbackScreen">
+
+  <input type="hidden"
+         name="Browser"
+         id="feedbackBrowser">
+
+  <input type="hidden"
+         name="Date & Time"
+         id="feedbackDate">
+
+
+  <select id="feedbackType"
+          name="Issue Type"
+          required>
+
+    <option value="">
+      Select issue type
+    </option>
+
+    <option>
+      Broken Button / Link
+    </option>
+
+    <option>
+      Wrong Product Information
+    </option>
+
+    <option>
+      Layout / Display Problem
+    </option>
+
+    <option>
+      Quote List Problem
+    </option>
+
+    <option>
+      Other
+    </option>
+
+  </select>
+
+
+  <textarea id="feedbackMessage"
+            name="Feedback"
+            placeholder="Describe the problem..."
+            required></textarea>
+
+
+  <button type="submit"
+          class="feedback-submit">
+    SUBMIT FEEDBACK
+  </button>
+
+</form>
 
   </div>
 
