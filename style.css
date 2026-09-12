@@ -7804,3 +7804,7 @@ body{
   }
 
 }
+.feedback-floating-btn{
+  pointer-events:auto !important;
+  touch-action:none !important;
+}
