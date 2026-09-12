@@ -6,26 +6,189 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!button || !modal) return;
 
-  button.addEventListener('click', () => {
-    modal.classList.add('open');
+
+  /* =========================
+     SAVED POSITION
+  ========================= */
+
+  let x = 0;
+  let y = 0;
+
+  const saved = localStorage.getItem('onnuriFeedbackDrag');
+
+  if (saved) {
+    try {
+      const pos = JSON.parse(saved);
+
+      x = Number(pos.x) || 0;
+      y = Number(pos.y) || 0;
+
+      button.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+    } catch (e) {}
+  }
+
+
+  /* =========================
+     DRAG
+  ========================= */
+
+  let dragging = false;
+  let moved = false;
+
+  let startPointerX = 0;
+  let startPointerY = 0;
+
+  let startX = 0;
+  let startY = 0;
+
+  let startRect = null;
+
+
+  button.addEventListener('pointerdown', (e) => {
+
+    dragging = true;
+    moved = false;
+
+    startPointerX = e.clientX;
+    startPointerY = e.clientY;
+
+    startX = x;
+    startY = y;
+
+    startRect = button.getBoundingClientRect();
+
+    button.setPointerCapture(e.pointerId);
+
   });
 
+
+  button.addEventListener('pointermove', (e) => {
+
+    if (!dragging) return;
+
+    let dx = e.clientX - startPointerX;
+    let dy = e.clientY - startPointerY;
+
+
+    if (
+      Math.abs(dx) > 5 ||
+      Math.abs(dy) > 5
+    ) {
+      moved = true;
+    }
+
+    if (!moved) return;
+
+
+    /* KEEP BUTTON INSIDE SCREEN */
+
+    if (startRect.left + dx < 8) {
+      dx = 8 - startRect.left;
+    }
+
+    if (startRect.top + dy < 8) {
+      dy = 8 - startRect.top;
+    }
+
+    if (
+      startRect.right + dx >
+      window.innerWidth - 8
+    ) {
+      dx =
+        window.innerWidth -
+        8 -
+        startRect.right;
+    }
+
+    if (
+      startRect.bottom + dy >
+      window.innerHeight - 8
+    ) {
+      dy =
+        window.innerHeight -
+        8 -
+        startRect.bottom;
+    }
+
+
+    x = startX + dx;
+    y = startY + dy;
+
+    button.style.transform =
+      `translate(${x}px, ${y}px)`;
+
+  });
+
+
+  button.addEventListener('pointerup', (e) => {
+
+    if (!dragging) return;
+
+    dragging = false;
+
+
+    /* CLICK = OPEN FEEDBACK */
+
+    if (!moved) {
+
+      modal.classList.add('open');
+
+    }
+
+    /* DRAG = SAVE POSITION */
+
+    else {
+
+      localStorage.setItem(
+        'onnuriFeedbackDrag',
+        JSON.stringify({ x, y })
+      );
+
+    }
+
+
+    try {
+      button.releasePointerCapture(e.pointerId);
+    } catch (error) {}
+
+  });
+
+
+  button.addEventListener('pointercancel', () => {
+    dragging = false;
+  });
+
+
+  /* =========================
+     CLOSE POPUP
+  ========================= */
+
   if (close) {
+
     close.addEventListener('click', () => {
       modal.classList.remove('open');
     });
+
   }
 
+
   modal.addEventListener('click', (e) => {
+
     if (e.target === modal) {
       modal.classList.remove('open');
     }
+
   });
 
+
   document.addEventListener('keydown', (e) => {
+
     if (e.key === 'Escape') {
       modal.classList.remove('open');
     }
+
   });
 
 });
