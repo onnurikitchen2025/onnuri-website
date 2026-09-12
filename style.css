@@ -6837,3 +6837,19 @@ body{
   }
 
 }
+/* =========================================
+   ALIGN PRODUCTS WITH SECTION HEADING
+========================================= */
+
+.products-section .section-heading,
+.products-section .products-grid{
+  width:100%;
+  max-width:1300px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Keep the three cards evenly distributed */
+.products-section .products-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
