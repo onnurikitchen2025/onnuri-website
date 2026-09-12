@@ -50,22 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startDrag(x, y) {
 
-    const rect = button.getBoundingClientRect();
+  const rect = button.getBoundingClientRect();
 
-    dragging = true;
-    moved = false;
+  dragging = true;
+  moved = false;
 
-    startX = x;
-    startY = y;
+  startX = x;
+  startY = y;
 
-    startLeft = rect.left;
-    startTop = rect.top;
+  startLeft = rect.left;
+  startTop = rect.top;
 
-    button.style.right = 'auto';
-    button.style.bottom = 'auto';
+  /* keep current position before removing right/bottom */
 
-  }
+  button.style.left = rect.left + 'px';
+  button.style.top = rect.top + 'px';
 
+  button.style.right = 'auto';
+  button.style.bottom = 'auto';
+
+}
 
   /* MOVE */
 
