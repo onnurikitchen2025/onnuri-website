@@ -7610,3 +7610,29 @@ body{
   }
 
 }
+/* =========================================
+   HOMEPAGE PRODUCT CATEGORIES - MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .products-grid{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+
+  .product-category-card{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+  }
+
+  .product-category-image{
+    width:100%;
+  }
+
+  .product-category-card h3{
+    min-height:0 !important;
+  }
+
+}
