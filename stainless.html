@@ -153,11 +153,12 @@
 
   <div class="stainless-grid">
 
-
-  <article class="stainless-card">
+<article class="stainless-card">
 
   <div class="stainless-image">
-    <span>PRODUCT IMAGE</span>
+    <span class="stainless-image-placeholder">
+      PRODUCT IMAGE
+    </span>
   </div>
 
   <div class="stainless-card-content">
@@ -167,21 +168,51 @@
     <h3>1-Bowl Sink</h3>
 
     <p class="stainless-size-label">
-      Available Sizes
+      Select Size
     </p>
 
-    <div class="stainless-sizes">
-      <span>60 × 60 × 80 cm</span>
-      <span>90 × 60 × 80 cm</span>
-      <span>120 × 60 × 80 cm</span>
-      <span>150 × 60 × 80 cm</span>
-      <span>180 × 60 × 80 cm</span>
+    <div class="stainless-sizes size-selector">
+
+      <button type="button"
+              class="size-btn active"
+              data-size="60 × 60 × 80 cm">
+        60 × 60 × 80 cm
+      </button>
+
+      <button type="button"
+              class="size-btn"
+              data-size="90 × 60 × 80 cm">
+        90 × 60 × 80 cm
+      </button>
+
+      <button type="button"
+              class="size-btn"
+              data-size="120 × 60 × 80 cm">
+        120 × 60 × 80 cm
+      </button>
+
+      <button type="button"
+              class="size-btn"
+              data-size="150 × 60 × 80 cm">
+        150 × 60 × 80 cm
+      </button>
+
+      <button type="button"
+              class="size-btn"
+              data-size="180 × 60 × 80 cm">
+        180 × 60 × 80 cm
+      </button>
+
     </div>
+
+    <p class="selected-size">
+      Selected:
+      <strong>60 × 60 × 80 cm</strong>
+    </p>
 
   </div>
 
-  </article>
-
+</article>
 
   <!-- 2-BOWL SINK - NO WORKBENCH -->
 
@@ -682,7 +713,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+<script>
 
+document.querySelectorAll('.size-selector').forEach(selector => {
+
+  const buttons =
+    selector.querySelectorAll('.size-btn');
+
+  const card =
+    selector.closest('.stainless-card');
+
+  const selectedText =
+    card.querySelector('.selected-size strong');
+
+
+  buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      button.classList.add('active');
+
+      if(selectedText){
+        selectedText.textContent =
+          button.dataset.size;
+      }
+
+    });
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
