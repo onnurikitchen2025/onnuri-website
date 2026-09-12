@@ -6853,3 +6853,39 @@ body{
 .products-section .products-grid{
   grid-template-columns:repeat(3, minmax(0,1fr));
 }
+/* =========================================
+   STAINLESS PRODUCT SIZE OPTIONS
+========================================= */
+
+.stainless-size-label{
+  margin:4px 0 10px !important;
+
+  color:#07352c !important;
+
+  font-size:12px !important;
+  font-weight:700;
+}
+
+.stainless-sizes{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px;
+
+  margin-top:0;
+}
+
+.stainless-sizes span{
+  padding:6px 9px;
+
+  background:#f1f4f2;
+
+  border:1px solid #dfe5e2;
+  border-radius:4px;
+
+  color:#46514e;
+
+  font-size:11px;
+  font-weight:600;
+  line-height:1.2;
+}
