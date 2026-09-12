@@ -7544,3 +7544,34 @@ body{
 .gas-back-btn:hover{
   opacity:.7;
 }
+/* PRODUCT CATEGORY BACK BUTTON */
+
+.product-back-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 18px;
+  margin-bottom:28px;
+
+  background:#f1f4f2;
+  color:#07352c;
+
+  border:1px solid #d4ddda;
+  border-radius:5px;
+
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.2px;
+
+  text-decoration:none;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.product-back-btn:hover{
+  background:#e7ecea;
+  transform:translateY(-1px);
+}
