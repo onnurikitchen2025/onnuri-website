@@ -7091,8 +7091,12 @@ body{
 
 /* Product title */
 .stainless-card-content h3{
-  min-height:52px;
+  min-height:38px;
   margin-bottom:10px !important;
+}
+
+.size-selector{
+  min-height:82px;
 }
 
 /* Select Size */
