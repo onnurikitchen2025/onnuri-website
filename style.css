@@ -7410,3 +7410,61 @@ body{
   }
 
 }
+/* =========================================
+   ADD TO QUOTE FLY ANIMATION
+========================================= */
+
+.quote-fly-item{
+  position:fixed;
+  z-index:15000;
+
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#f2c94c;
+  color:#07352c;
+
+  font-size:17px;
+  font-weight:900;
+
+  pointer-events:none;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.22);
+
+  transition:
+    left .65s cubic-bezier(.2,.8,.2,1),
+    top .65s cubic-bezier(.2,.8,.2,1),
+    transform .65s ease,
+    opacity .65s ease;
+}
+
+.floating-quote-list.quote-pop{
+  animation:quotePop .55s ease;
+}
+
+@keyframes quotePop{
+
+  0%{
+    transform:scale(1);
+  }
+
+  40%{
+    transform:scale(1.14);
+  }
+
+  70%{
+    transform:scale(.96);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
