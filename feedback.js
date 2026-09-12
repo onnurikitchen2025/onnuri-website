@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener('pointerdown', (e) => {
 
+    if (e.pointerType === 'touch') return;
+    
     dragging = true;
     moved = false;
 
@@ -66,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener('pointermove', (e) => {
 
+    
+    if (e.pointerType === 'touch') return;
+    
     if (!dragging) return;
 
     let dx = e.clientX - startPointerX;
@@ -124,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener('pointerup', (e) => {
 
+    if (e.pointerType === 'touch') return;
+    
     if (!dragging) return;
 
     dragging = false;
@@ -160,7 +167,128 @@ document.addEventListener('DOMContentLoaded', () => {
     dragging = false;
   });
 
+/* =========================
+   MOBILE TOUCH DRAG
+========================= */
 
+let touchDragging = false;
+let touchMoved = false;
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+let touchBaseX = 0;
+let touchBaseY = 0;
+
+let touchStartRect = null;
+
+
+button.addEventListener('touchstart', (e) => {
+
+  const touch = e.touches[0];
+
+  touchDragging = true;
+  touchMoved = false;
+
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+
+  touchBaseX = x;
+  touchBaseY = y;
+
+  touchStartRect =
+    button.getBoundingClientRect();
+
+}, { passive:false });
+
+
+button.addEventListener('touchmove', (e) => {
+
+  if (!touchDragging) return;
+
+  const touch = e.touches[0];
+
+  let dx =
+    touch.clientX - touchStartX;
+
+  let dy =
+    touch.clientY - touchStartY;
+
+
+  if (
+    Math.abs(dx) > 5 ||
+    Math.abs(dy) > 5
+  ) {
+    touchMoved = true;
+  }
+
+  if (!touchMoved) return;
+
+
+  e.preventDefault();
+
+
+  /* KEEP INSIDE SCREEN */
+
+  if (touchStartRect.left + dx < 8) {
+    dx = 8 - touchStartRect.left;
+  }
+
+  if (touchStartRect.top + dy < 8) {
+    dy = 8 - touchStartRect.top;
+  }
+
+  if (
+    touchStartRect.right + dx >
+    window.innerWidth - 8
+  ) {
+    dx =
+      window.innerWidth -
+      8 -
+      touchStartRect.right;
+  }
+
+  if (
+    touchStartRect.bottom + dy >
+    window.innerHeight - 8
+  ) {
+    dy =
+      window.innerHeight -
+      8 -
+      touchStartRect.bottom;
+  }
+
+
+  x = touchBaseX + dx;
+  y = touchBaseY + dy;
+
+  button.style.transform =
+    `translate(${x}px, ${y}px)`;
+
+}, { passive:false });
+
+
+button.addEventListener('touchend', () => {
+
+  if (!touchDragging) return;
+
+  touchDragging = false;
+
+
+  if (touchMoved) {
+
+    localStorage.setItem(
+      'onnuriFeedbackDrag',
+      JSON.stringify({ x, y })
+    );
+
+  } else {
+
+    modal.classList.add('open');
+
+  }
+
+});
   /* =========================
      CLOSE POPUP
   ========================= */
