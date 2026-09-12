@@ -7832,3 +7832,11 @@ body{
   }
 
 }
+.feedback-floating-btn{
+  touch-action:none !important;
+  cursor:grab;
+}
+
+.feedback-floating-btn:active{
+  cursor:grabbing;
+}
