@@ -7257,3 +7257,65 @@ body{
   }
 
 }
+/* =========================================
+   STAINLESS CARD ACTION BUTTONS
+========================================= */
+
+.stainless-card-actions{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+
+.preview-product-btn,
+.add-stainless-quote-btn{
+  flex:1;
+  min-height:42px;
+  padding:0 14px;
+
+  border-radius:5px;
+
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.preview-product-btn{
+  background:#f1f4f2;
+  color:#07352c;
+  border:1px solid #d5dfdb;
+}
+
+.add-stainless-quote-btn{
+  background:#f2c94c;
+  color:#07352c;
+  border:1px solid #f2c94c;
+}
+
+.preview-product-btn:hover,
+.add-stainless-quote-btn:hover{
+  transform:translateY(-1px);
+}
+
+.preview-product-btn:hover{
+  background:#e6ece9;
+}
+
+.add-stainless-quote-btn:hover{
+  background:#e8bb2f;
+}
+
+@media(max-width:480px){
+
+  .stainless-card-actions{
+    flex-direction:column;
+  }
+
+}
