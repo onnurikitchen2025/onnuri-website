@@ -319,7 +319,7 @@ button.addEventListener('touchend', () => {
 
   });
 /* =========================
-   FEEDBACK FORM DETAILS
+   FEEDBACK AJAX SUBMISSION
 ========================= */
 
 const feedbackForm =
@@ -327,7 +327,10 @@ const feedbackForm =
 
 if (feedbackForm) {
 
-  feedbackForm.addEventListener('submit', () => {
+  feedbackForm.addEventListener('submit', async (e) => {
+
+    e.preventDefault();
+
 
     const page =
       document.getElementById('feedbackPage');
@@ -341,6 +344,11 @@ if (feedbackForm) {
     const date =
       document.getElementById('feedbackDate');
 
+    const submitButton =
+      feedbackForm.querySelector('.feedback-submit');
+
+
+    /* AUTOMATIC DETAILS */
 
     if (page) {
       page.value = window.location.href;
@@ -354,8 +362,7 @@ if (feedbackForm) {
     }
 
     if (browser) {
-      browser.value =
-        navigator.userAgent;
+      browser.value = navigator.userAgent;
     }
 
     if (date) {
@@ -363,7 +370,97 @@ if (feedbackForm) {
         new Date().toLocaleString();
     }
 
+
+    /* SUBMIT */
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'SENDING...';
+
+
+    try {
+
+      const formData =
+        new FormData(feedbackForm);
+
+
+      const response =
+        await fetch(
+          'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
+          {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }
+        );
+
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+
+      /* SUCCESS MESSAGE */
+
+      let successMessage =
+        feedbackForm.querySelector(
+          '.feedback-success'
+        );
+
+
+      if (!successMessage) {
+
+        successMessage =
+          document.createElement('div');
+
+        successMessage.className =
+          'feedback-success';
+
+        feedbackForm.appendChild(
+          successMessage
+        );
+
+      }
+
+
+      successMessage.textContent =
+        '✓ Thank you! Your feedback has been submitted.';
+
+
+      feedbackForm.reset();
+
+      submitButton.textContent =
+        'SUBMITTED ✓';
+
+
+      setTimeout(() => {
+
+        modal.classList.remove('open');
+
+        successMessage.remove();
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          'SUBMIT FEEDBACK';
+
+      }, 2200);
+
+
+    } catch (error) {
+
+      submitButton.disabled = false;
+
+      submitButton.textContent =
+        'SUBMIT FEEDBACK';
+
+      alert(
+        'Unable to send feedback. Please try again.'
+      );
+
+    }
+
   });
 
 }
-});
