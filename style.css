@@ -7846,3 +7846,24 @@ body{
   user-select:none;
   -webkit-touch-callout:none;
 }
+.feedback-success{
+  margin-top:14px;
+  padding:12px 14px;
+
+  background:#edf6f2;
+  color:#07352c;
+
+  border:1px solid #cddfd7;
+  border-radius:6px;
+
+  font-size:13px;
+  font-weight:700;
+  line-height:1.5;
+
+  text-align:center;
+}
+
+.feedback-submit:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
