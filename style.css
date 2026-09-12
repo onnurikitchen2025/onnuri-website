@@ -7840,3 +7840,9 @@ body{
 .feedback-floating-btn:active{
   cursor:grabbing;
 }
+.feedback-floating-btn{
+  touch-action:none !important;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
