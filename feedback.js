@@ -6,205 +6,245 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!button || !modal) return;
 
+
   let dragging = false;
   let moved = false;
 
   let startX = 0;
   let startY = 0;
+
   let startLeft = 0;
   let startTop = 0;
 
 
-  /* OPEN POPUP */
+  /* =========================
+     POINTER DOWN
+  ========================= */
 
-  button.addEventListener('click', () => {
+  button.addEventListener('pointerdown', (e) => {
 
-    if (moved) {
-      moved = false;
-      return;
-    }
+    const rect = button.getBoundingClientRect();
 
-    modal.classList.add('open');
+    dragging = true;
+    moved = false;
 
-  });
+    startX = e.clientX;
+    startY = e.clientY;
 
+    startLeft = rect.left;
+    startTop = rect.top;
 
-  /* CLOSE POPUP */
-
-  if (close) {
-    close.addEventListener('click', () => {
-      modal.classList.remove('open');
-    });
-  }
-
-  modal.addEventListener('click', (e) => {
-
-    if (e.target === modal) {
-      modal.classList.remove('open');
-    }
+    button.setPointerCapture(e.pointerId);
 
   });
 
 
-  /* START DRAG */
+  /* =========================
+     DRAG
+  ========================= */
 
-  function startDrag(x, y) {
-
-  const rect = button.getBoundingClientRect();
-
-  dragging = true;
-  moved = false;
-
-  startX = x;
-  startY = y;
-
-  startLeft = rect.left;
-  startTop = rect.top;
-
-  /* keep current position before removing right/bottom */
-
-  button.style.left = rect.left + 'px';
-  button.style.top = rect.top + 'px';
-
-  button.style.right = 'auto';
-  button.style.bottom = 'auto';
-
-}
-
-  /* MOVE */
-
-  function moveDrag(x, y) {
+  button.addEventListener('pointermove', (e) => {
 
     if (!dragging) return;
 
-    const dx = x - startX;
-    const dy = y - startY;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
 
-    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+    if (
+      Math.abs(dx) > 6 ||
+      Math.abs(dy) > 6
+    ) {
       moved = true;
     }
+
+    if (!moved) return;
+
 
     let left = startLeft + dx;
     let top = startTop + dy;
 
     const maxLeft =
-      window.innerWidth - button.offsetWidth - 8;
+      window.innerWidth -
+      button.offsetWidth -
+      8;
 
     const maxTop =
-      window.innerHeight - button.offsetHeight - 8;
-
-    left = Math.max(8, Math.min(left, maxLeft));
-    top = Math.max(8, Math.min(top, maxTop));
-
-    button.style.left = left + 'px';
-    button.style.top = top + 'px';
-
-  }
+      window.innerHeight -
+      button.offsetHeight -
+      8;
 
 
-  /* END DRAG */
+    left =
+      Math.max(
+        8,
+        Math.min(left, maxLeft)
+      );
 
-  function endDrag() {
+    top =
+      Math.max(
+        8,
+        Math.min(top, maxTop)
+      );
+
+
+    button.style.right = 'auto';
+    button.style.bottom = 'auto';
+
+    button.style.left =
+      left + 'px';
+
+    button.style.top =
+      top + 'px';
+
+  });
+
+
+  /* =========================
+     CLICK OR END DRAG
+  ========================= */
+
+  button.addEventListener('pointerup', (e) => {
 
     if (!dragging) return;
 
     dragging = false;
 
-    const rect = button.getBoundingClientRect();
 
-    localStorage.setItem(
-      'onnuriFeedbackPosition',
-      JSON.stringify({
-        left: rect.left,
-        top: rect.top
-      })
-    );
+    if (moved) {
+
+      const rect =
+        button.getBoundingClientRect();
+
+      localStorage.setItem(
+        'onnuriFeedbackPosition',
+        JSON.stringify({
+          left: rect.left,
+          top: rect.top
+        })
+      );
+
+    } else {
+
+      modal.classList.add('open');
+
+    }
+
+
+    try {
+      button.releasePointerCapture(
+        e.pointerId
+      );
+    } catch (error) {}
+
+  });
+
+
+  /* =========================
+     CLOSE MODAL
+  ========================= */
+
+  if (close) {
+
+    close.addEventListener('click', () => {
+
+      modal.classList.remove('open');
+
+    });
 
   }
 
 
-  /* DESKTOP */
+  modal.addEventListener('click', (e) => {
 
-  button.addEventListener('mousedown', (e) => {
+    if (e.target === modal) {
 
-    startDrag(e.clientX, e.clientY);
+      modal.classList.remove('open');
 
-    e.preventDefault();
+    }
 
   });
 
-  document.addEventListener('mousemove', (e) => {
-    moveDrag(e.clientX, e.clientY);
+
+  /* ESC KEY */
+
+  document.addEventListener('keydown', (e) => {
+
+    if (e.key === 'Escape') {
+
+      modal.classList.remove('open');
+
+    }
+
   });
 
-  document.addEventListener('mouseup', endDrag);
 
+  /* =========================
+     RESTORE POSITION
+  ========================= */
 
-  /* MOBILE */
-
-  button.addEventListener('touchstart', (e) => {
-
-    const touch = e.touches[0];
-
-    startDrag(
-      touch.clientX,
-      touch.clientY
+  const saved =
+    localStorage.getItem(
+      'onnuriFeedbackPosition'
     );
 
-  }, { passive: true });
+
+  if (saved) {
+
+    try {
+
+      const position =
+        JSON.parse(saved);
 
 
-  document.addEventListener('touchmove', (e) => {
+      const maxLeft =
+        window.innerWidth -
+        button.offsetWidth -
+        8;
 
-    if (!dragging) return;
-
-    const touch = e.touches[0];
-
-    moveDrag(
-      touch.clientX,
-      touch.clientY
-    );
-
-    e.preventDefault();
-
-  }, { passive: false });
+      const maxTop =
+        window.innerHeight -
+        button.offsetHeight -
+        8;
 
 
-  document.addEventListener('touchend', endDrag);
+      const safeLeft =
+        Math.max(
+          8,
+          Math.min(
+            position.left,
+            maxLeft
+          )
+        );
 
-/* RESTORE SAVED POSITION SAFELY */
 
-const saved =
-  localStorage.getItem('onnuriFeedbackPosition');
+      const safeTop =
+        Math.max(
+          8,
+          Math.min(
+            position.top,
+            maxTop
+          )
+        );
 
-if (saved) {
 
-  try {
+      button.style.right = 'auto';
+      button.style.bottom = 'auto';
 
-    const position = JSON.parse(saved);
+      button.style.left =
+        safeLeft + 'px';
 
-    const maxLeft =
-      window.innerWidth - button.offsetWidth - 8;
+      button.style.top =
+        safeTop + 'px';
 
-    const maxTop =
-      window.innerHeight - button.offsetHeight - 8;
 
-    const safeLeft =
-      Math.max(8, Math.min(position.left, maxLeft));
+    } catch (error) {
 
-    const safeTop =
-      Math.max(8, Math.min(position.top, maxTop));
+      localStorage.removeItem(
+        'onnuriFeedbackPosition'
+      );
 
-    button.style.right = 'auto';
-    button.style.bottom = 'auto';
-
-    button.style.left = safeLeft + 'px';
-    button.style.top = safeTop + 'px';
-
-  } catch (error) {
-
-    localStorage.removeItem('onnuriFeedbackPosition');
+    }
 
   }
 
-}
+});
