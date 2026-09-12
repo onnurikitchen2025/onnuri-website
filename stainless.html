@@ -749,6 +749,35 @@ document.querySelectorAll('.size-selector').forEach(selector => {
 });
 
 </script>
+<script>
+document.querySelectorAll('.size-selector').forEach(selector => {
 
+  const buttons = selector.querySelectorAll('.size-btn');
+  const card = selector.closest('.stainless-card');
+  const selectedText = card.querySelector('.selected-size strong');
+
+  buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      // Remove active state from other sizes
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Highlight selected size
+      button.classList.add('active');
+
+      // Update selected size text
+      if(selectedText){
+        selectedText.textContent = button.dataset.size;
+      }
+
+    });
+
+  });
+
+});
+</script>
 </body>
 </html>
