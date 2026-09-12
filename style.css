@@ -7808,3 +7808,27 @@ body{
   pointer-events:auto !important;
   touch-action:none !important;
 }
+.feedback-floating-btn{
+  position:fixed !important;
+  right:24px !important;
+  bottom:95px !important;
+
+  left:auto !important;
+  top:auto !important;
+
+  display:flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+
+  pointer-events:auto !important;
+  z-index:1200 !important;
+}
+
+@media(max-width:768px){
+
+  .feedback-floating-btn{
+    right:16px !important;
+    bottom:88px !important;
+  }
+
+}
