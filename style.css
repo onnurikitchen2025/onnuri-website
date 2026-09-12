@@ -7074,3 +7074,41 @@ body{
   margin-top:auto !important;
   padding-top:14px;
 }
+/* =========================================
+   ALIGN STAINLESS CARD CONTENT
+========================================= */
+
+.stainless-card-content{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+/* Category label */
+.stainless-type{
+  min-height:16px;
+}
+
+/* Product title */
+.stainless-card-content h3{
+  min-height:52px;
+  margin-bottom:10px !important;
+}
+
+/* Select Size */
+.stainless-size-label{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+}
+
+/* Reserve equal space for size buttons */
+.size-selector{
+  min-height:82px;
+  align-content:flex-start;
+}
+
+/* Selected size stays aligned at bottom */
+.selected-size{
+  margin-top:auto !important;
+  padding-top:12px;
+}
