@@ -8560,51 +8560,61 @@ a.floating-back{
 
 }
 /* =========================================
-   QUOTE LIST - EXTRA COMPACT MOBILE
+   QUOTE LIST - ULTRA COMPACT MOBILE
 ========================================= */
 
 @media(max-width:768px){
 
   #quoteListItems{
-    gap:8px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:6px !important;
   }
 
   .quote-list-item{
+    display:flex !important;
     flex-direction:row !important;
     align-items:center !important;
     justify-content:space-between !important;
 
-    padding:12px 14px !important;
     min-height:0 !important;
+    height:auto !important;
 
-    gap:12px !important;
-    border-radius:8px !important;
+    padding:9px 12px !important;
+    gap:10px !important;
+
+    border-radius:7px !important;
   }
 
   .quote-list-item > div{
-    flex:1;
-    min-width:0;
+    flex:1 !important;
+    min-width:0 !important;
   }
 
   .quote-list-item h3{
-    font-size:15px !important;
+    font-size:13px !important;
     line-height:1.25 !important;
-    margin:0 0 3px !important;
+
+    margin:0 0 2px 0 !important;
+    padding:0 !important;
   }
 
   .quote-list-item p{
-    font-size:11px !important;
-    line-height:1.35 !important;
+    font-size:10px !important;
+    line-height:1.25 !important;
+
     margin:0 !important;
+    padding:0 !important;
   }
 
   .remove-quote-item{
-    flex-shrink:0;
-    align-self:center !important;
+    flex-shrink:0 !important;
 
-    font-size:9px !important;
+    font-size:8px !important;
+    line-height:1 !important;
+
     margin:0 !important;
-    padding:6px 0 !important;
+    padding:5px 0 !important;
   }
 
 }
