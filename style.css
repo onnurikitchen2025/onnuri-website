@@ -8144,14 +8144,14 @@ body{
 }
 /* OTHER PRODUCTS - MOBILE SPACING */
 
+.other-products-catalog{
+  padding:40px 7% 70px !important;
+}
+
 @media(max-width:768px){
 
   .other-products-catalog{
     padding:32px 6% 50px !important;
-  }
-
-  .other-products-grid{
-    margin-top:0 !important;
   }
 
 }
