@@ -8778,3 +8778,24 @@ a.floating-back{
 .other-products-hero{
   padding-bottom:36px !important;
 }
+/* =========================================
+   FOOTER BRAND ALIGNMENT FIX
+========================================= */
+
+.footer-brand{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:flex-start !important;
+}
+
+.footer-brand .footer-logo{
+  margin:0 0 20px 0 !important;
+}
+
+.footer-brand > p{
+  margin:0 !important;
+  max-width:420px !important;
+  text-align:left !important;
+  line-height:1.6 !important;
+}
