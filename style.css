@@ -8391,3 +8391,21 @@ a.floating-back{
   }
 
 }
+/* ABOUT BACK BUTTON ROW */
+
+.about-back-row{
+  width:100% !important;
+  display:flex !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  text-align:left !important;
+  margin:0 0 24px 0 !important;
+}
+
+.about-back-row .product-back-btn{
+  display:inline-flex !important;
+  width:auto !important;
+  margin:0 !important;
+  position:static !important;
+  transform:none !important;
+}
