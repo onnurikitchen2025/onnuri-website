@@ -8095,42 +8095,55 @@ body{
 
 }
 /* =========================================
-   FLOATING BACK BUTTON - MOBILE
+   FLOATING BACK BUTTON
+   MOBILE / TOUCH DEVICE DEFAULT
 ========================================= */
 
 .floating-back{
-  display:none;
+  position:fixed !important;
+
+  left:max(8px, env(safe-area-inset-left)) !important;
+  bottom:max(14px, env(safe-area-inset-bottom)) !important;
+
+  z-index:99999 !important;
+
+  width:36px;
+  height:36px;
+
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(7,53,44,.92);
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+
+  box-shadow:0 6px 18px rgba(0,0,0,.14);
+
+  visibility:visible !important;
+  opacity:1 !important;
 }
 
-@media(max-width:1024px){
+
+/* HIDE ONLY ON REAL DESKTOP */
+
+@media(min-width:1025px) and (hover:hover) and (pointer:fine){
 
   .floating-back{
-    display:flex;
-
-    position:fixed;
-    left:8px;
-    bottom:14px;
-    z-index:950;
-
-    width:36px;
-    height:40px;
-
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(7,53,44,.92);
-    color:#fff;
-
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:50%;
-
-    font-size:16px;
-    font-weight:700;
-    text-decoration:none;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.14);
+    display:none !important;
   }
 
+}
+
+
+.floating-back:active{
+  transform:scale(.94);
 }
 /* OTHER PRODUCTS - CATALOG SPACING */
 
