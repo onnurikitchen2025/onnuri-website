@@ -8263,3 +8263,48 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   ABOUT PAGE - MOBILE COMPACT
+========================================= */
+
+@media(max-width:768px){
+
+  .about-page-hero{
+    min-height:auto !important;
+    padding:38px 6% 42px !important;
+  }
+
+  .about-page-hero-inner{
+    max-width:100% !important;
+  }
+
+  .about-back-btn{
+    display:flex !important;
+    width:max-content !important;
+    margin:0 0 26px 0 !important;
+  }
+
+  .about-page-hero .section-label{
+    margin-bottom:12px !important;
+  }
+
+  .about-page-hero h1{
+    font-size:32px !important;
+    line-height:1.15 !important;
+    margin-bottom:18px !important;
+  }
+
+  .about-page-hero > .about-page-hero-inner > p:last-child{
+    font-size:14px !important;
+    line-height:1.7 !important;
+    margin-bottom:0 !important;
+  }
+
+}
+.about-back-btn{
+  display:flex !important;
+  width:max-content !important;
+  margin-left:0 !important;
+  margin-right:auto !important;
+  margin-bottom:28px !important;
+}
