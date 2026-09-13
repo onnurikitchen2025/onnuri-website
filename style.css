@@ -8739,10 +8739,6 @@ a.floating-back{
 
 @media(max-width:768px){
 
-  .other-products-hero{
-    padding-bottom:36px !important;
-  }
-
   .other-products-section{
     padding-top:28px !important;
   }
@@ -8778,4 +8774,7 @@ a.floating-back{
     width:120px !important;
   }
 
+}
+.other-products-hero{
+  padding-bottom:36px !important;
 }
