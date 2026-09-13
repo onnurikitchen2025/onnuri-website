@@ -8752,3 +8752,30 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   GLOBAL HEADER LOGO SIZE
+========================================= */
+
+.site-header .brand-logo{
+  display:flex !important;
+  align-items:center !important;
+  width:auto !important;
+  height:auto !important;
+}
+
+.site-header .brand-logo img{
+  width:145px !important;
+  height:auto !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:contain !important;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .site-header .brand-logo img{
+    width:120px !important;
+  }
+
+}
