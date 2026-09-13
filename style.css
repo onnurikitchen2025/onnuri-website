@@ -8447,3 +8447,21 @@ a.floating-back{
   }
 
 }
+/* CONTACT BACK BUTTON - FORCE LEFT */
+
+.contact-back-wrap{
+  width:100% !important;
+  display:flex !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  text-align:left !important;
+  margin:0 0 20px 0 !important;
+}
+
+.contact-back-wrap .product-back-btn{
+  display:inline-flex !important;
+  width:auto !important;
+  margin:0 !important;
+  position:static !important;
+  transform:none !important;
+}
