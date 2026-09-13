@@ -8308,3 +8308,55 @@ a.floating-back{
   margin-right:auto !important;
   margin-bottom:28px !important;
 }
+/* =========================================
+   ABOUT - MISSION & VISION MOBILE COMPACT
+========================================= */
+
+@media(max-width:768px){
+
+  .mission-vision-section{
+    padding:32px 5% !important;
+  }
+
+  .mission-vision-grid{
+    gap:16px !important;
+  }
+
+  .mission-vision-card{
+    padding:24px 22px !important;
+    border-radius:10px !important;
+  }
+
+  .mission-icon{
+    width:46px !important;
+    height:46px !important;
+    margin-bottom:18px !important;
+  }
+
+  .mission-icon svg{
+    width:23px !important;
+    height:23px !important;
+  }
+
+  .mission-vision-card .section-label{
+    font-size:11px !important;
+    margin-bottom:10px !important;
+  }
+
+  .mission-vision-card h2{
+    font-size:22px !important;
+    line-height:1.25 !important;
+    margin-bottom:16px !important;
+  }
+
+  .mission-vision-card p{
+    font-size:14px !important;
+    line-height:1.65 !important;
+    margin-bottom:14px !important;
+  }
+
+  .mission-vision-card p:last-child{
+    margin-bottom:0 !important;
+  }
+
+}
