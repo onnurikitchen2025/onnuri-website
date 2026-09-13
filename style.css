@@ -8715,3 +8715,40 @@ a.floating-back{
     width:165px !important;
   }
 }
+/* =========================================
+   OTHER PRODUCTS - DESKTOP CARD WIDTH
+========================================= */
+
+@media(min-width:769px){
+
+  .other-products-grid{
+    grid-template-columns:repeat(3, minmax(0, 320px)) !important;
+    justify-content:center !important;
+    gap:24px !important;
+  }
+
+  .other-product-card{
+    width:100% !important;
+    max-width:320px !important;
+  }
+
+}
+/* =========================================
+   OTHER PRODUCTS - MOBILE SPACING
+========================================= */
+
+@media(max-width:768px){
+
+  .other-products-hero{
+    padding-bottom:36px !important;
+  }
+
+  .other-products-section{
+    padding-top:28px !important;
+  }
+
+  .other-products-grid{
+    gap:16px !important;
+  }
+
+}
