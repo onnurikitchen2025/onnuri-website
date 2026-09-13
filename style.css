@@ -8006,3 +8006,45 @@ body{
   }
 
 }
+/* =========================================
+   COMPACT HEADER
+========================================= */
+
+/* DESKTOP */
+@media(min-width:769px){
+
+  .site-header{
+    height:64px;
+    padding-top:0;
+    padding-bottom:0;
+  }
+
+  .brand-logo img{
+    max-height:42px;
+    width:auto;
+  }
+
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .site-header{
+    height:72px !important;
+    min-height:72px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .brand-logo img{
+    max-height:46px;
+    width:auto;
+  }
+
+  .menu-toggle{
+    width:32px;
+    height:32px;
+  }
+
+}
