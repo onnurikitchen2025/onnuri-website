@@ -8155,21 +8155,39 @@ body{
 }
 /* OTHER PRODUCTS - MOBILE CARD WIDTH */
 
-@media(max-width:768px){
+@media(max-width:1024px){
 
-  .other-products-catalog{
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
+  .floating-back{
+    display:flex !important;
 
-  .other-products-grid{
-    width:calc(100% - 32px) !important;
-    max-width:420px !important;
-    margin:32px auto 0 !important;
-  }
+    position:fixed !important;
+    left:max(8px, env(safe-area-inset-left)) !important;
+    bottom:max(14px, env(safe-area-inset-bottom)) !important;
 
-  .other-product-card{
-    width:100% !important;
+    width:36px !important;
+    height:36px !important;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(7,53,44,.92);
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:50%;
+
+    font-size:16px;
+    font-weight:700;
+    text-decoration:none;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.14);
+
+    z-index:99999 !important;
+
+    visibility:visible !important;
+    opacity:1 !important;
+
+    transform:none;
   }
 
 }
