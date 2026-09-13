@@ -8076,3 +8076,21 @@ body{
   }
 
 }
+/* =========================================
+   STAINLESS CATALOG - MASTER SPACING
+========================================= */
+
+.stainless-catalog{
+  padding:65px 7%;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .stainless-catalog{
+    padding:28px 6% 50px !important;
+  }
+
+}
