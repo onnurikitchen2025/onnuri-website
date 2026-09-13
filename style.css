@@ -8255,3 +8255,11 @@ a.floating-back{
   min-height:auto !important;
   line-height:1.2 !important;
 }
+@media(max-width:768px){
+
+  .product-back-btn{
+    padding:6px 9px !important;
+    font-size:9px !important;
+  }
+
+}
