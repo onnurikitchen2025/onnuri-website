@@ -8163,19 +8163,23 @@ body{
   }
 
 }
-/* OTHER PRODUCTS - MOBILE SIDE SPACING FINAL */
+/* OTHER PRODUCTS - MOBILE CARD WIDTH */
 
 @media(max-width:768px){
 
   .other-products-catalog{
-    padding-left:28px !important;
-    padding-right:28px !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
   }
 
   .other-products-grid{
-    width:100% !important;
-    max-width:100% !important;
+    width:calc(100% - 32px) !important;
+    max-width:420px !important;
     margin:32px auto 0 !important;
+  }
+
+  .other-product-card{
+    width:100% !important;
   }
 
 }
