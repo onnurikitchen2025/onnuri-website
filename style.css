@@ -8048,3 +8048,31 @@ body{
   }
 
 }
+/* =========================================
+   COMPACT CATALOG HERO - MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .catalog-hero{
+    padding:28px 6% 34px !important;
+  }
+
+  .catalog-hero .product-back-btn{
+    padding:10px 14px;
+    margin-bottom:20px;
+    font-size:11px;
+  }
+
+  .catalog-hero h1{
+    margin-bottom:12px !important;
+    font-size:32px !important;
+    line-height:1.12 !important;
+  }
+
+  .catalog-hero p{
+    font-size:14px !important;
+    line-height:1.6 !important;
+  }
+
+}
