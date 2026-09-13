@@ -8559,3 +8559,52 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   QUOTE LIST - EXTRA COMPACT MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  #quoteListItems{
+    gap:8px !important;
+  }
+
+  .quote-list-item{
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+
+    padding:12px 14px !important;
+    min-height:0 !important;
+
+    gap:12px !important;
+    border-radius:8px !important;
+  }
+
+  .quote-list-item > div{
+    flex:1;
+    min-width:0;
+  }
+
+  .quote-list-item h3{
+    font-size:15px !important;
+    line-height:1.25 !important;
+    margin:0 0 3px !important;
+  }
+
+  .quote-list-item p{
+    font-size:11px !important;
+    line-height:1.35 !important;
+    margin:0 !important;
+  }
+
+  .remove-quote-item{
+    flex-shrink:0;
+    align-self:center !important;
+
+    font-size:9px !important;
+    margin:0 !important;
+    padding:6px 0 !important;
+  }
+
+}
