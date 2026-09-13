@@ -8142,3 +8142,12 @@ body{
   }
 
 }
+/* OTHER PRODUCTS - MOBILE SPACING */
+
+@media(max-width:768px){
+
+  .other-products-catalog{
+    padding:28px 6% 50px !important;
+  }
+
+}
