@@ -8814,3 +8814,12 @@ a.floating-back{
   }
 
 }
+@media(max-width:768px){
+
+  .other-products-grid{
+    width:auto !important;
+    margin:24px 16px 28px !important;
+    gap:16px !important;
+  }
+
+}
