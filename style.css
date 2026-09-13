@@ -8237,3 +8237,21 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   GLOBAL BACK BUTTON - SMALL / SECONDARY
+========================================= */
+
+.product-back-btn{
+  padding:7px 10px !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  border-radius:4px !important;
+
+  background:#f1f4f2 !important;
+  color:#07352c !important;
+
+  border:1px solid #d4ddda !important;
+
+  min-height:auto !important;
+  line-height:1.2 !important;
+}
