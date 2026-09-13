@@ -8618,3 +8618,56 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   QUOTE LIST - COMPACT DESKTOP
+========================================= */
+
+@media(min-width:769px){
+
+  #quoteListItems{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px !important;
+  }
+
+  .quote-list-item{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+
+    min-height:0 !important;
+    height:auto !important;
+
+    padding:14px 20px !important;
+    gap:20px !important;
+
+    border-radius:8px !important;
+  }
+
+  .quote-list-item > div{
+    flex:1 !important;
+  }
+
+  .quote-list-item h3{
+    font-size:16px !important;
+    line-height:1.25 !important;
+    margin:0 0 3px !important;
+  }
+
+  .quote-list-item p{
+    font-size:12px !important;
+    line-height:1.3 !important;
+    margin:0 !important;
+  }
+
+  .remove-quote-item{
+    flex-shrink:0 !important;
+    margin:0 !important;
+    padding:5px 0 !important;
+
+    font-size:9px !important;
+    line-height:1 !important;
+  }
+
+}
