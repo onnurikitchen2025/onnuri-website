@@ -8671,3 +8671,18 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   FOOTER LOGO SIZE
+========================================= */
+
+.footer-logo img{
+  width:150px !important;
+  height:auto !important;
+  max-width:none !important;
+}
+
+@media(max-width:768px){
+  .footer-logo img{
+    width:135px !important;
+  }
+}
