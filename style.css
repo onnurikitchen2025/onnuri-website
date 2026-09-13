@@ -8686,3 +8686,32 @@ a.floating-back{
     width:135px !important;
   }
 }
+/* =========================================
+   GLOBAL FOOTER LOGO FIX
+========================================= */
+
+.footer-brand{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+}
+
+.footer-logo{
+  display:inline-block !important;
+  width:auto !important;
+  max-width:none !important;
+}
+
+.footer-logo img{
+  display:block !important;
+  width:190px !important;
+  max-width:none !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:768px){
+  .footer-logo img{
+    width:165px !important;
+  }
+}
