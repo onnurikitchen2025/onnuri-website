@@ -8850,3 +8850,38 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   FOOTER BRAND - DESKTOP ALIGNMENT
+========================================= */
+
+@media(min-width:769px){
+
+  .footer-brand{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    text-align:center !important;
+  }
+
+  .footer-brand .footer-logo{
+    display:flex !important;
+    justify-content:center !important;
+    width:100% !important;
+    margin:0 auto 20px !important;
+  }
+
+  .footer-brand .footer-logo img{
+    width:190px !important;
+    height:auto !important;
+    margin:0 auto !important;
+  }
+
+  .footer-brand > p{
+    max-width:480px !important;
+    margin:0 auto !important;
+    text-align:center !important;
+    line-height:1.6 !important;
+  }
+
+}
