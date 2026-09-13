@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* prevent duplicate */
-  if (document.getElementById('floatingBackButton')) {
-    return;
-  }
+  if (document.getElementById('floatingBackButton')) return;
 
   const button = document.createElement('a');
 
@@ -15,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   Object.assign(button.style, {
     position: 'fixed',
     left: '18px',
-    bottom: '24px',
 
     width: '42px',
     height: '42px',
@@ -32,16 +28,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fontSize: '20px',
     fontWeight: '700',
-    lineHeight: '1',
     textDecoration: 'none',
 
     boxShadow: '0 6px 20px rgba(0,0,0,.22)',
-
-    zIndex: '2147483647',
-    opacity: '1',
-    visibility: 'visible'
+    zIndex: '2147483647'
   });
 
   document.body.appendChild(button);
+
+
+  /* KEEP BUTTON INSIDE ANY SCREEN SIZE */
+
+  function positionBackButton(){
+
+    const viewportHeight =
+      window.visualViewport
+        ? window.visualViewport.height
+        : window.innerHeight;
+
+    button.style.top =
+      Math.max(16, viewportHeight - 66) + 'px';
+
+    button.style.bottom = 'auto';
+
+  }
+
+  positionBackButton();
+
+  window.addEventListener(
+    'resize',
+    positionBackButton
+  );
+
+  if(window.visualViewport){
+
+    window.visualViewport.addEventListener(
+      'resize',
+      positionBackButton
+    );
+
+  }
 
 });
