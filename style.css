@@ -8174,3 +8174,41 @@ a.floating-back{
 
   box-shadow:0 6px 18px rgba(0,0,0,.18) !important;
 }
+/* =========================================
+   SERVICES HERO - MOBILE COMPACT
+========================================= */
+
+@media(max-width:768px){
+
+  .services-hero{
+    min-height:auto !important;
+    padding:42px 6% 44px !important;
+  }
+
+  .services-hero-inner{
+    max-width:100% !important;
+  }
+
+  .services-hero .product-back-btn{
+    margin-bottom:28px;
+  }
+
+  .services-hero h1{
+    font-size:34px !important;
+    line-height:1.15 !important;
+    margin-bottom:18px !important;
+  }
+
+  .services-hero-text{
+    font-size:14px !important;
+    line-height:1.7 !important;
+  }
+
+}
+@media(max-width:768px){
+
+  .services-page-section{
+    padding-top:32px !important;
+  }
+
+}
