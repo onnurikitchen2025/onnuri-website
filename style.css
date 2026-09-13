@@ -8379,3 +8379,50 @@ a.floating-back{
   position:static !important;
   transform:none !important;
 }
+/* =========================================
+   CONTACT PAGE - CONSISTENCY
+========================================= */
+
+.contact-back-row{
+  width:100%;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  margin:0 0 24px 0;
+}
+
+.contact-back-row .product-back-btn{
+  margin:0 !important;
+  width:auto !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .contact-page-hero{
+    min-height:auto !important;
+    padding:38px 6% 42px !important;
+  }
+
+  .contact-page-hero-inner{
+    max-width:100% !important;
+  }
+
+  .contact-page-hero h1{
+    font-size:32px !important;
+    line-height:1.15 !important;
+    margin-bottom:18px !important;
+  }
+
+  .contact-page-hero-inner > p:last-child{
+    font-size:14px !important;
+    line-height:1.7 !important;
+  }
+
+  .contact-page-section{
+    padding-top:36px !important;
+  }
+
+}
