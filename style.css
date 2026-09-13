@@ -8138,3 +8138,39 @@ body{
 .floating-back:active{
   transform:scale(.94);
 }
+/* =========================================
+   FLOATING BACK - FINAL GLOBAL
+========================================= */
+
+a.floating-back{
+  display:flex !important;
+  position:fixed !important;
+
+  left:10px !important;
+  bottom:16px !important;
+
+  width:36px !important;
+  height:36px !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  background:#07352c !important;
+  color:#ffffff !important;
+
+  border-radius:50% !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+
+  font-size:16px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+
+  text-decoration:none !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+
+  z-index:2147483647 !important;
+
+  box-shadow:0 6px 18px rgba(0,0,0,.18) !important;
+}
