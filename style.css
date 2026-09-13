@@ -8823,3 +8823,30 @@ a.floating-back{
   }
 
 }
+@media(max-width:768px){
+
+  .footer-brand{
+    align-items:center !important;
+    text-align:center !important;
+  }
+
+  .footer-brand .footer-logo{
+    display:flex !important;
+    justify-content:center !important;
+    width:100% !important;
+    margin:0 auto 16px !important;
+  }
+
+  .footer-brand .footer-logo img{
+    display:block !important;
+    width:165px !important;
+    height:auto !important;
+    margin:0 auto !important;
+  }
+
+  .footer-brand > p{
+    text-align:center !important;
+    margin:0 auto !important;
+  }
+
+}
