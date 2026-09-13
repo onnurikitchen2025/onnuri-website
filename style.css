@@ -8797,3 +8797,20 @@ a.floating-back{
   }
 
 }
+/* OTHER PRODUCTS - FINAL GRID SPACING */
+
+.other-products-grid{
+  margin-top:40px !important;
+  margin-bottom:40px !important;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .other-products-grid{
+    margin-top:24px !important;
+    margin-bottom:28px !important;
+    gap:16px !important;
+  }
+
+}
