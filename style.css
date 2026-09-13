@@ -8147,7 +8147,11 @@ body{
 @media(max-width:768px){
 
   .other-products-catalog{
-    padding:28px 6% 50px !important;
+    padding:32px 6% 50px !important;
+  }
+
+  .other-products-grid{
+    margin-top:0 !important;
   }
 
 }
