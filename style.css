@@ -8360,3 +8360,34 @@ a.floating-back{
   }
 
 }
+/* ABOUT BACK BUTTON - FORCE LEFT */
+
+.about-page-hero-inner .about-back-btn{
+  display:flex !important;
+  width:max-content !important;
+
+  margin-left:0 !important;
+  margin-right:auto !important;
+  margin-bottom:24px !important;
+
+  align-self:flex-start !important;
+  justify-self:start !important;
+
+  transform:none !important;
+  position:relative !important;
+  left:0 !important;
+  right:auto !important;
+}
+
+@media(max-width:768px){
+
+  .about-page-hero-inner{
+    text-align:center;
+  }
+
+  .about-page-hero-inner .about-back-btn{
+    margin-left:0 !important;
+    margin-right:auto !important;
+  }
+
+}
