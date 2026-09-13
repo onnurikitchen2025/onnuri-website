@@ -8163,3 +8163,19 @@ body{
   }
 
 }
+/* OTHER PRODUCTS - MOBILE SIDE SPACING FINAL */
+
+@media(max-width:768px){
+
+  .other-products-catalog{
+    padding-left:28px !important;
+    padding-right:28px !important;
+  }
+
+  .other-products-grid{
+    width:100% !important;
+    max-width:100% !important;
+    margin:32px auto 0 !important;
+  }
+
+}
