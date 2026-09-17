@@ -220,22 +220,164 @@ footer{
   max-width:700px;
 }
 
+/* =========================================
+   MASTER PRODUCT CATALOG
+========================================= */
+
 .catalog-section{
-  padding:60px 8%;
+  padding:50px 7%;
   background:var(--light);
 }
 
 .catalog-grid{
+  max-width:1200px;
+  margin:0 auto;
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:22px;
 }
 
 .catalog-card{
   background:#fff;
   border:1px solid #e1e6e4;
-  border-radius:10px;
-  padding:18px;
+  border-radius:12px;
+  padding:16px;
+
+  display:flex;
+  flex-direction:column;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.catalog-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 30px rgba(0,0,0,.08);
+  border-color:#d3dad7;
+}
+
+
+/* PRODUCT IMAGE */
+
+.catalog-image{
+  width:100%;
+  height:190px;
+
+  background:#f5f7f6;
+  border-radius:8px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  margin-bottom:14px;
+}
+
+.catalog-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+
+  transform:scale(1.05);
+}
+
+
+/* PRODUCT NAME */
+
+.catalog-card h3{
+  color:var(--dark);
+  font-size:18px;
+  line-height:1.25;
+  margin-bottom:7px;
+}
+
+
+/* DESCRIPTION */
+
+.catalog-card p{
+  color:#59635f;
+  font-size:13px;
+  line-height:1.55;
+
+  margin-bottom:14px;
+
+  flex-grow:1;
+}
+
+
+/* VIEW PRODUCT */
+
+.catalog-card a{
+  display:inline-block;
+
+  color:var(--dark);
+  font-size:12px;
+  font-weight:800;
+  text-decoration:none;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.catalog-card a:hover{
+  color:#b58a10;
+  transform:translateX(3px);
+}
+
+
+/* TABLET */
+
+@media(max-width:1000px){
+
+  .catalog-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .catalog-section{
+    padding:24px 6% 45px;
+  }
+
+  .catalog-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .catalog-card{
+    padding:14px;
+  }
+
+  .catalog-image{
+    height:180px;
+    margin-bottom:12px;
+  }
+
+  .catalog-image img{
+    transform:scale(1.03);
+  }
+
+  .catalog-card h3{
+    font-size:18px;
+  }
+
+  .catalog-card p{
+    font-size:13px;
+    margin-bottom:12px;
+  }
+
+}
 }
 
 .catalog-image{
