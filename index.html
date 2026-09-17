@@ -30,7 +30,31 @@
     <span></span>
     <span></span>
   </button>
+<div class="header-search">
 
+  <button type="button"
+          class="search-toggle"
+          aria-label="Search products">
+    <span class="search-icon">⌕</span>
+  </button>
+
+  <div class="search-box">
+    <input type="search"
+           id="siteSearch"
+           placeholder="Search products..."
+           autocomplete="off">
+
+    <button type="button"
+            class="search-close"
+            aria-label="Close search">
+      ×
+    </button>
+
+    <div class="search-results"
+         id="searchResults"></div>
+  </div>
+
+</div>
 <nav class="main-nav">
   <a href="index.html">Home</a>
   <a href="#products">Products</a>
@@ -40,7 +64,8 @@
 <a href="quote-list.html#quotationForm" class="quote-btn">
   Request a Quote
 </a>
-</header>
+</nav>
+   </header>
    
   <main>
     <section class="hero">
