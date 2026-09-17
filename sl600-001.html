@@ -90,76 +90,7 @@
   <span class="floating-quote-text">Quote List</span>
   <span class="quote-count" id="quoteCount">0</span>
 </a>
- <script>
-  const addToQuoteBtn = document.querySelector('.add-to-quote');
-  const removeFromQuoteBtn = document.querySelector('.remove-from-quote');
-
-  if(addToQuoteBtn && removeFromQuoteBtn){
-    const productName = addToQuoteBtn.dataset.product;
-
-    function getQuoteList(){
-      return JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
-    }
-
-    function saveQuoteList(list){
-      localStorage.setItem('onnuriQuoteList', JSON.stringify(list));
-    }
-
-    function updateQuoteButtons(){
-      const quoteList = getQuoteList();
-      const isAdded = quoteList.includes(productName);
-
-      if(isAdded){
-        addToQuoteBtn.textContent = '✓ ADDED TO QUOTE';
-        addToQuoteBtn.classList.add('added');
-        addToQuoteBtn.disabled = true;
-
-        removeFromQuoteBtn.classList.add('show');
-      } else{
-        addToQuoteBtn.textContent = 'ADD TO QUOTE';
-        addToQuoteBtn.classList.remove('added');
-        addToQuoteBtn.disabled = false;
-
-        removeFromQuoteBtn.classList.remove('show');
-      }
-    }
-
-    addToQuoteBtn.addEventListener('click', () => {
-      const quoteList = getQuoteList();
-
-      if(!quoteList.includes(productName)){
-        quoteList.push(productName);
-        saveQuoteList(quoteList);
-      }
-
-      updateQuoteButtons();
-      updateQuoteCount();
-    });
-
-    removeFromQuoteBtn.addEventListener('click', () => {
-      let quoteList = getQuoteList();
-
-      quoteList = quoteList.filter(item => item !== productName);
-      saveQuoteList(quoteList);
-
-      updateQuoteButtons();
-      updateQuoteCount();
-    });
-
-    updateQuoteButtons();
-    updateQuoteCount();
-  }
-   function updateQuoteCount(){
-  const quoteCount = document.getElementById('quoteCount');
-
-  if(!quoteCount) return;
-
-  const quoteList =
-    JSON.parse(localStorage.getItem('onnuriQuoteList')) || [];
-
-  quoteCount.textContent = quoteList.length;
-}
-</script>
+ <script src="quote.js"></script>
   <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
