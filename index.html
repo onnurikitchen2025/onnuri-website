@@ -604,21 +604,131 @@ mainNav.querySelectorAll('a').forEach(link => {
 
 <script src="feedback.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
   const headerSearch = document.querySelector(".header-search");
   const searchToggle = document.querySelector(".search-toggle");
   const searchClose = document.querySelector(".search-close");
   const searchInput = document.getElementById("siteSearch");
+  const searchResults = document.getElementById("searchResults");
 
-  searchToggle.addEventListener("click", function(){
+  /* PRODUCTS / CATEGORIES */
+  const searchData = [
+    {
+      name: "Gas Ranges",
+      keywords: "gas range commercial range burner stove",
+      url: "gas-ranges.html"
+    },
+    {
+      name: "Stainless Equipment",
+      keywords: "stainless sink table shelves cabinet",
+      url: "stainless.html"
+    },
+    {
+      name: "Other Products",
+      keywords: "other equipment kitchen products",
+      url: "other-products.html"
+    },
+
+    {
+      name: "SL600-001",
+      keywords: "sl600 001 gas range low range burner",
+      url: "sl600-001.html"
+    },
+    {
+      name: "SK1200-610",
+      keywords: "sk1200 610 gas range burner",
+      url: "sk1200-610.html"
+    },
+    {
+      name: "SK1200-900",
+      keywords: "sk1200 900 gas range burner",
+      url: "sk1200-900.html"
+    },
+    {
+      name: "SHL-1202",
+      keywords: "shl 1202 gas range low range",
+      url: "shl-1202.html"
+    },
+    {
+      name: "SK1200-420",
+      keywords: "sk1200 420 gas range burner",
+      url: "sk1200-420.html"
+    },
+    {
+      name: "SK1500-120",
+      keywords: "sk1500 120 gas range burner",
+      url: "sk1500-120.html"
+    },
+    {
+      name: "ST900-020",
+      keywords: "st900 020 gas range burner",
+      url: "st900-020.html"
+    },
+    {
+      name: "SL1200-002",
+      keywords: "sl1200 002 gas range low range burner",
+      url: "sl1200-002.html"
+    }
+  ];
+
+  /* OPEN SEARCH */
+  searchToggle.addEventListener("click", function () {
     headerSearch.classList.add("active");
     searchInput.focus();
   });
 
-  searchClose.addEventListener("click", function(){
+  /* CLOSE SEARCH */
+  searchClose.addEventListener("click", function () {
     headerSearch.classList.remove("active");
     searchInput.value = "";
+    searchResults.innerHTML = "";
+  });
+
+  /* SEARCH */
+  searchInput.addEventListener("input", function () {
+
+    const query = searchInput.value.toLowerCase().trim();
+
+    searchResults.innerHTML = "";
+
+    if (query.length < 2) {
+      return;
+    }
+
+    const matches = searchData.filter(function (item) {
+
+      const searchableText =
+        item.name.toLowerCase() + " " +
+        item.keywords.toLowerCase();
+
+      return searchableText.includes(query);
+
+    });
+
+    if (matches.length === 0) {
+
+      searchResults.innerHTML = `
+        <div class="search-no-results">
+          No products found
+        </div>
+      `;
+
+      return;
+    }
+
+    matches.forEach(function (item) {
+
+      const result = document.createElement("a");
+
+      result.href = item.url;
+      result.className = "search-result-item";
+      result.textContent = item.name;
+
+      searchResults.appendChild(result);
+
+    });
+
   });
 
 });
