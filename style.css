@@ -9213,3 +9213,47 @@ a.floating-back{
   appearance: none;
   display: none;
 }
+/* =========================
+   HEADER SEARCH RESULTS
+========================= */
+
+.search-results{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;
+  width:100%;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,.16);
+  overflow:hidden;
+  z-index:9999;
+}
+
+.search-results:empty{
+  display:none;
+}
+
+.search-result-item{
+  display:block;
+  padding:11px 14px;
+  color:#07352c;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  border-bottom:1px solid #eeeeee;
+}
+
+.search-result-item:last-child{
+  border-bottom:none;
+}
+
+.search-result-item:hover{
+  background:#f5f7f6;
+  color:#07352c;
+}
+
+.search-no-results{
+  padding:12px 14px;
+  font-size:13px;
+  color:#666666;
+}
