@@ -9,16 +9,25 @@
 
 <body>
 
-<header>
-  <div class="brand">Onnuri Kitchen</div>
+<button class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  <nav>
+  <nav class="main-nav">
     <a href="index.html">Home</a>
     <a href="index.html#products">Products</a>
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="index.html#quote" class="quote-btn">Request a Quote</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="quote-list.html#quotationForm" class="quote-btn">
+      Request a Quote
+    </a>
   </nav>
+
 </header>
 
 <main>
@@ -78,11 +87,64 @@
 
 </main>
 
-<footer>
-  <p>
-    © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
-    <span class="site-signature">Built by THRD</span>
-  </p>
+<footer class="site-footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="footer-logo">
+        <img src="onnuri-logo.png" alt="Onnuri Kitchen">
+      </a>
+
+      <p>
+        Commercial kitchen equipment for restaurants, cafés,
+        commissaries, and other food businesses.
+      </p>
+
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="index.html#products">Products</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+
+      <a href="mailto:onnurikitchen2025@gmail.com">
+        onnurikitchen2025@gmail.com
+      </a>
+
+      <a href="https://www.facebook.com/onnurioutletkitchencorporation"
+         target="_blank"
+         rel="noopener">
+        Facebook
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Warehouse</h4>
+
+      <p>
+        Km 78 McArthur Highway,<br>
+        Brgy. Saguin, San Fernando,<br>
+        Pampanga
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
+      <span class="site-signature">Built by THRD</span>
+    </p>
+  </div>
+
 </footer>
 
 <a href="quote-list.html" class="floating-quote">
@@ -91,98 +153,36 @@
   <span class="quote-count" id="quoteCount">0</span>
 </a>
 
+<script src="quote.js"></script>
+
 <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
 
-  const addToQuoteBtn = document.querySelector('.add-to-quote');
-  const removeFromQuoteBtn = document.querySelector('.remove-from-quote');
+  if(menuToggle && mainNav){
 
-  if(addToQuoteBtn && removeFromQuoteBtn){
+    menuToggle.addEventListener('click', () => {
 
-    const productName = addToQuoteBtn.dataset.product;
+      const isOpen = mainNav.classList.toggle('open');
 
-    function getQuoteList(){
-      return JSON.parse(
-        localStorage.getItem('onnuriQuoteList')
-      ) || [];
-    }
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
 
-    function saveQuoteList(list){
-      localStorage.setItem(
-        'onnuriQuoteList',
-        JSON.stringify(list)
-      );
-    }
-
-    function updateQuoteButtons(){
-
-      const quoteList = getQuoteList();
-      const isAdded = quoteList.includes(productName);
-
-      if(isAdded){
-
-        addToQuoteBtn.textContent = '✓ ADDED TO QUOTE';
-        addToQuoteBtn.classList.add('added');
-        addToQuoteBtn.disabled = true;
-
-        removeFromQuoteBtn.classList.add('show');
-
-      } else {
-
-        addToQuoteBtn.textContent = 'ADD TO QUOTE';
-        addToQuoteBtn.classList.remove('added');
-        addToQuoteBtn.disabled = false;
-
-        removeFromQuoteBtn.classList.remove('show');
-      }
-    }
-
-    addToQuoteBtn.addEventListener('click', () => {
-
-      const quoteList = getQuoteList();
-
-      if(!quoteList.includes(productName)){
-        quoteList.push(productName);
-        saveQuoteList(quoteList);
-      }
-
-      updateQuoteButtons();
-      updateQuoteCount();
     });
 
-    removeFromQuoteBtn.addEventListener('click', () => {
+    mainNav.querySelectorAll('a').forEach(link => {
 
-      let quoteList = getQuoteList();
+      link.addEventListener('click', () => {
 
-      quoteList =
-        quoteList.filter(
-          item => item !== productName
-        );
+        mainNav.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
 
-      saveQuoteList(quoteList);
+      });
 
-      updateQuoteButtons();
-      updateQuoteCount();
     });
 
-    updateQuoteButtons();
-    updateQuoteCount();
   }
-
-  function updateQuoteCount(){
-
-    const quoteCount =
-      document.getElementById('quoteCount');
-
-    if(!quoteCount) return;
-
-    const quoteList =
-      JSON.parse(
-        localStorage.getItem('onnuriQuoteList')
-      ) || [];
-
-    quoteCount.textContent = quoteList.length;
-  }
-
 </script>
 
 </body>
