@@ -9078,27 +9078,26 @@ a.floating-back{
    HEADER SEARCH
 ========================= */
 
-.search-results{
-  position:absolute;
-  top:calc(100% + 8px);
-  left:0;
-  width:100%;
-  background:#ffffff;
-  border-radius:8px;
-  box-shadow:0 8px 25px rgba(0,0,0,.16);
-  overflow:hidden;
-  z-index:9999;
-  display:block;
+.header-search{
+  position:relative;
+  display:flex;
+  align-items:center;
+
+  /* Search icon sits beside navigation */
+  margin-left:auto;
+  margin-right:18px;
 }
 
-.search-results:empty{
-  display:none;
+/* Push navigation beside search */
+.main-nav{
+  margin-left:0;
 }
 
-/* Search icon button */
+/* SEARCH ICON BUTTON */
 .search-toggle{
   width:38px;
   height:38px;
+
   border:none;
   border-radius:50%;
   background:transparent;
@@ -9116,30 +9115,44 @@ a.floating-back{
   background:rgba(255,255,255,.10);
 }
 
+/* MAGNIFYING GLASS */
 .search-icon{
   position:relative;
+
   width:17px;
   height:17px;
+
   display:block;
+
   border:2px solid #fff;
   border-radius:50%;
 }
 
 .search-icon::after{
   content:"";
+
   position:absolute;
+
   width:7px;
   height:2px;
+
   background:#fff;
+
   right:-5px;
   bottom:-2px;
+
   transform:rotate(45deg);
   border-radius:2px;
 }
 
-/* Search dropdown */
+
+/* =========================
+   SEARCH BOX
+========================= */
+
 .search-box{
   position:absolute;
+
   top:48px;
   right:0;
 
@@ -9147,37 +9160,70 @@ a.floating-back{
   padding:10px;
 
   background:#fff;
+
   border-radius:8px;
-  box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.18);
 
   display:none;
-  z-index:9999;
+
+  z-index:99999;
 }
 
+/* OPEN SEARCH */
 .header-search.active .search-box{
   display:block;
 }
 
+
+/* SEARCH INPUT */
+
 .search-box input{
   width:100%;
   height:42px;
-  padding:0 42px 0 14px;
 
-  border:1px solid #d8dfdc;
+  padding:
+    0 42px
+    0 14px;
+
+  border:
+    1px solid #d8dfdc;
+
   border-radius:6px;
+
   outline:none;
 
-  font-family:"Montserrat",sans-serif;
+  font-family:
+    "Montserrat",
+    sans-serif;
+
   font-size:13px;
+
   color:#07352c;
+
+  background:#fff;
 }
 
 .search-box input:focus{
   border-color:#07352c;
 }
 
+
+/* REMOVE BROWSER DEFAULT X */
+
+#siteSearch::-webkit-search-cancel-button{
+  -webkit-appearance:none;
+  appearance:none;
+  display:none;
+}
+
+
+/* CLOSE BUTTON */
+
 .search-close{
   position:absolute;
+
   top:18px;
   right:18px;
 
@@ -9185,11 +9231,91 @@ a.floating-back{
   background:none;
 
   font-size:20px;
+
   color:#6b7471;
+
   cursor:pointer;
+
+  line-height:1;
 }
 
-/* MOBILE */
+
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+.search-results{
+  position:absolute;
+
+  top:calc(100% + 8px);
+  left:0;
+
+  width:100%;
+
+  background:#fff;
+
+  border-radius:8px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.16);
+
+  overflow:hidden;
+
+  z-index:99999;
+
+  display:block;
+}
+
+.search-results:empty{
+  display:none;
+}
+
+
+/* RESULT */
+
+.search-result-item{
+  display:block;
+
+  padding:11px 14px;
+
+  color:#07352c;
+
+  background:#fff;
+
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:600;
+
+  border-bottom:
+    1px solid #eeeeee;
+}
+
+.search-result-item:last-child{
+  border-bottom:none;
+}
+
+.search-result-item:hover{
+  background:#f5f7f6;
+  color:#07352c;
+}
+
+
+/* NO RESULT */
+
+.search-no-results{
+  padding:12px 14px;
+
+  font-size:13px;
+
+  color:#666;
+}
+
+
+/* =========================
+   MOBILE SEARCH
+========================= */
+
 @media(max-width:768px){
 
   .header-search{
@@ -9204,16 +9330,19 @@ a.floating-back{
 
   .search-box{
     position:fixed;
+
     top:72px;
     left:12px;
     right:12px;
 
     width:auto;
+
+    transform:none;
   }
-}
-/* Hide default browser clear button inside search input */
-#siteSearch::-webkit-search-cancel-button{
-  -webkit-appearance: none;
-  appearance: none;
-  display: none;
+
+  .search-results{
+    max-height:350px;
+    overflow-y:auto;
+  }
+
 }
