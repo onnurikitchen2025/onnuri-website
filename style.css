@@ -9207,3 +9207,9 @@ a.floating-back{
     width:auto;
   }
 }
+/* Hide default browser clear button inside search input */
+#siteSearch::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
