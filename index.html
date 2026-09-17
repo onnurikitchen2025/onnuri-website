@@ -603,5 +603,25 @@ mainNav.querySelectorAll('a').forEach(link => {
 </div>
 
 <script src="feedback.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const headerSearch = document.querySelector(".header-search");
+  const searchToggle = document.querySelector(".search-toggle");
+  const searchClose = document.querySelector(".search-close");
+  const searchInput = document.getElementById("siteSearch");
+
+  searchToggle.addEventListener("click", function(){
+    headerSearch.classList.add("active");
+    searchInput.focus();
+  });
+
+  searchClose.addEventListener("click", function(){
+    headerSearch.classList.remove("active");
+    searchInput.value = "";
+  });
+
+});
+</script>
 </body>
 </html>
