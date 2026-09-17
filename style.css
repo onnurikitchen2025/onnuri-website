@@ -9078,12 +9078,21 @@ a.floating-back{
    HEADER SEARCH
 ========================= */
 
-.header-search{
-  position:relative;
-  display:flex;
-  align-items:center;
-  margin-left:auto;
-  margin-right:22px;
+.search-results{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;
+  width:100%;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,.16);
+  overflow:hidden;
+  z-index:9999;
+  display:block;
+}
+
+.search-results:empty{
+  display:none;
 }
 
 /* Search icon button */
@@ -9178,11 +9187,6 @@ a.floating-back{
   font-size:20px;
   color:#6b7471;
   cursor:pointer;
-}
-
-.search-results{
-  display:none;
-  margin-top:8px;
 }
 
 /* MOBILE */
