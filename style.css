@@ -9224,8 +9224,7 @@ a.floating-back{
 .search-box{
   position:absolute;
   top:48px;
-  left:50%;
-  transform:translateX(-50%);
+ 
 
   width:330px;
   padding:10px;
