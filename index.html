@@ -1340,7 +1340,443 @@ if(siteHeader){
 
 
 <script src="search.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
+  const showcaseProducts = [
+
+    {
+      model: 'ST900-020',
+      category: 'STANDARD STANDING RANGE',
+      image: 'ST900-020.png',
+      link: 'st900-020.html',
+      description:
+        'Commercial standing gas range designed for professional kitchen operations.'
+    },
+
+    {
+      model: 'SK1200-610',
+      category: 'STANDARD MULTI-BURNER RANGE',
+      image: 'SK1200-610.png',
+      link: 'sk1200-610.html',
+      description:
+        'Multi-burner commercial gas range designed for high-volume cooking operations.'
+    },
+
+    {
+      model: 'SA900-020',
+      category: 'AUTO-IGNITION STANDING RANGE',
+      image: 'SA900-020.png',
+      link: 'sa900-020.html',
+      description:
+        'Auto-ignition commercial gas range with independent burner control for professional kitchens.'
+    },
+
+    {
+      model: 'SHC-601',
+      category: 'SMART CHINESE RANGE',
+      image: 'SHC-601.png',
+      link: 'shc-601.html',
+      description:
+        'Smart commercial range featuring advanced pre-mixed gas combustion technology.'
+    },
+
+    {
+      model: 'SGD900-003',
+      category: 'STANDARD GRIDDLE',
+      image: 'SGD900-003.png',
+      link: 'sgd900-003.html',
+      description:
+        'Commercial griddle with a wide cooking surface for professional food preparation.'
+    },
+
+    {
+      model: 'SG900-005',
+      category: 'STANDARD GRILLER',
+      image: 'SG900-005.png',
+      link: 'sg900-005.html',
+      description:
+        'Commercial griller designed for high-volume grilling and professional kitchen operations.'
+    }
+
+  ];
+
+
+  const stage =
+    document.getElementById('showcaseStage');
+
+  const main =
+    document.querySelector('.showcase-main');
+
+  const mainImage =
+    document.getElementById('showcaseMainImage');
+
+  const category =
+    document.getElementById('showcaseCategory');
+
+  const model =
+    document.getElementById('showcaseModel');
+
+  const description =
+    document.getElementById('showcaseDescription');
+
+  const productLink =
+    document.getElementById('showcaseLink');
+
+  const indexLabel =
+    document.getElementById('showcaseIndex');
+
+  const currentLabel =
+    document.getElementById('showcaseCurrent');
+
+  const previewOne =
+    document.getElementById('showcasePreviewOne');
+
+  const previewTwo =
+    document.getElementById('showcasePreviewTwo');
+
+  const previousButton =
+    document.getElementById('showcasePrev');
+
+  const nextButton =
+    document.getElementById('showcaseNext');
+
+  const progressBar =
+    document.getElementById('showcaseProgressBar');
+
+
+  if(
+    !stage ||
+    !main ||
+    !mainImage ||
+    !previewOne ||
+    !previewTwo
+  ){
+    return;
+  }
+
+
+  let currentIndex = 0;
+
+  let autoTimer;
+
+  let progressTimer;
+
+  const autoDelay = 5000;
+
+
+  function formatNumber(number){
+
+    return String(number + 1).padStart(2, '0');
+
+  }
+
+
+  function productAt(offset){
+
+    return showcaseProducts[
+      (currentIndex + offset) %
+      showcaseProducts.length
+    ];
+
+  }
+
+
+  function updatePreview(button, product, index){
+
+    const image =
+      button.querySelector('img');
+
+    const categoryText =
+      button.querySelector('small');
+
+    const modelText =
+      button.querySelector('strong');
+
+    const number =
+      button.querySelector(
+        '.showcase-preview-number'
+      );
+
+
+    image.src =
+      product.image;
+
+    image.alt =
+      product.model;
+
+    categoryText.textContent =
+      product.category;
+
+    modelText.textContent =
+      product.model;
+
+    number.textContent =
+      formatNumber(index);
+
+  }
+
+
+  function render(){
+
+    const active =
+      showcaseProducts[currentIndex];
+
+    const nextIndex =
+      (currentIndex + 1) %
+      showcaseProducts.length;
+
+    const secondIndex =
+      (currentIndex + 2) %
+      showcaseProducts.length;
+
+
+    main.classList.add('is-changing');
+
+
+    setTimeout(() => {
+
+      mainImage.src =
+        active.image;
+
+      mainImage.alt =
+        active.model;
+
+      category.textContent =
+        active.category;
+
+      model.textContent =
+        active.model;
+
+      description.textContent =
+        active.description;
+
+      productLink.href =
+        active.link;
+
+      indexLabel.textContent =
+        formatNumber(currentIndex);
+
+      currentLabel.textContent =
+        formatNumber(currentIndex);
+
+
+      updatePreview(
+        previewOne,
+        showcaseProducts[nextIndex],
+        nextIndex
+      );
+
+
+      updatePreview(
+        previewTwo,
+        showcaseProducts[secondIndex],
+        secondIndex
+      );
+
+
+      main.classList.remove('is-changing');
+
+    }, 220);
+
+  }
+
+
+  function resetProgress(){
+
+    clearInterval(progressTimer);
+
+    let elapsed = 0;
+
+    progressBar.style.width = '0%';
+
+
+    progressTimer =
+      setInterval(() => {
+
+        elapsed += 50;
+
+        const progress =
+          Math.min(
+            (elapsed / autoDelay) * 100,
+            100
+          );
+
+        progressBar.style.width =
+          progress + '%';
+
+      }, 50);
+
+  }
+
+
+  function startAutoPlay(){
+
+    clearInterval(autoTimer);
+
+    resetProgress();
+
+
+    autoTimer =
+      setInterval(() => {
+
+        currentIndex =
+          (currentIndex + 1) %
+          showcaseProducts.length;
+
+        render();
+
+        resetProgress();
+
+      }, autoDelay);
+
+  }
+
+
+  function stopAutoPlay(){
+
+    clearInterval(autoTimer);
+
+    clearInterval(progressTimer);
+
+  }
+
+
+  function goNext(){
+
+    currentIndex =
+      (currentIndex + 1) %
+      showcaseProducts.length;
+
+    render();
+
+    startAutoPlay();
+
+  }
+
+
+  function goPrevious(){
+
+    currentIndex =
+      (
+        currentIndex - 1 +
+        showcaseProducts.length
+      ) %
+      showcaseProducts.length;
+
+    render();
+
+    startAutoPlay();
+
+  }
+
+
+  nextButton.addEventListener(
+    'click',
+    goNext
+  );
+
+
+  previousButton.addEventListener(
+    'click',
+    goPrevious
+  );
+
+
+  previewOne.addEventListener(
+    'click',
+    goNext
+  );
+
+
+  previewTwo.addEventListener(
+    'click',
+    () => {
+
+      currentIndex =
+        (currentIndex + 2) %
+        showcaseProducts.length;
+
+      render();
+
+      startAutoPlay();
+
+    }
+  );
+
+
+  /* PAUSE ON DESKTOP HOVER */
+
+  stage.addEventListener(
+    'mouseenter',
+    stopAutoPlay
+  );
+
+
+  stage.addEventListener(
+    'mouseleave',
+    startAutoPlay
+  );
+
+
+  /* MOBILE SWIPE */
+
+  let touchStartX = 0;
+
+
+  stage.addEventListener(
+    'touchstart',
+    event => {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  stage.addEventListener(
+    'touchend',
+    event => {
+
+      const touchEndX =
+        event.changedTouches[0].screenX;
+
+      const difference =
+        touchStartX - touchEndX;
+
+
+      if(Math.abs(difference) < 45){
+        return;
+      }
+
+
+      if(difference > 0){
+
+        goNext();
+
+      }else{
+
+        goPrevious();
+
+      }
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  render();
+
+  startAutoPlay();
+
+});
+</script>
 </body>
 
 </html>
