@@ -11326,3 +11326,11 @@ a.floating-back{
   }
 
 }
+/* Featured showcase header clearance */
+.equipment-showcase {
+  scroll-margin-top: 90px;
+}
+
+.showcase-heading {
+  padding-top: 20px;
+}
