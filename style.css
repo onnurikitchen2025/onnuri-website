@@ -11347,3 +11347,690 @@ a.floating-back{
 .showcase-preview {
   border-radius: 12px;
 }
+/* =========================================================
+   BUILD YOUR KITCHEN
+========================================================= */
+
+.kitchen-builder {
+  padding: 105px 0;
+  background: #f5f7f6;
+}
+
+
+.kitchen-builder-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.kitchen-builder-heading {
+  display: grid;
+  grid-template-columns: 1fr 430px;
+
+  gap: 80px;
+  align-items: end;
+
+  margin-bottom: 65px;
+}
+
+
+.kitchen-builder-heading .section-label {
+  margin-bottom: 13px;
+}
+
+
+.kitchen-builder-heading h2 {
+  max-width: 670px;
+
+  margin: 0;
+
+  color: #07352c;
+
+  font-size: clamp(35px, 4vw, 55px);
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+
+.kitchen-builder-heading > p {
+  margin: 0;
+
+  color: #68736f;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   STEP INDICATOR
+========================================================= */
+
+.builder-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-bottom: 55px;
+
+  border-top: 1px solid #d5ddda;
+}
+
+
+.builder-step {
+  position: relative;
+
+  padding: 18px 0;
+
+  color: #9ba4a1;
+
+  transition: color .25s ease;
+}
+
+
+.builder-step::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #f2c94c;
+
+  transition: width .35s ease;
+}
+
+
+.builder-step.active {
+  color: #07352c;
+}
+
+
+.builder-step.active::before {
+  width: 100%;
+}
+
+
+.builder-step span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+.builder-step p {
+  margin: 0;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.builder-panel {
+  display: none;
+}
+
+
+.builder-panel.active {
+  display: block;
+
+  animation: builderPanelIn .4s ease;
+}
+
+
+@keyframes builderPanelIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.builder-question {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+
+  gap: 25px;
+
+  margin-bottom: 35px;
+}
+
+
+.builder-question-number {
+  color: #c39800;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+
+.builder-eyebrow {
+  margin: 0 0 8px;
+
+  color: #b58a00;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+
+.builder-question h3,
+.builder-result-intro h3 {
+  margin: 0 0 10px;
+
+  color: #07352c;
+
+  font-size: clamp(27px, 3vw, 38px);
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+
+.builder-question p:not(.builder-eyebrow),
+.builder-result-intro > p:not(.builder-eyebrow) {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #6a7571;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.builder-options {
+  display: grid;
+
+  border-top: 1px solid #d5ddda;
+  border-left: 1px solid #d5ddda;
+}
+
+
+.business-options {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.equipment-options {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.builder-option {
+  position: relative;
+
+  min-height: 175px;
+
+  padding: 32px;
+
+  border: 0;
+  border-right: 1px solid #d5ddda;
+  border-bottom: 1px solid #d5ddda;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+
+.builder-option-number {
+  display: block;
+
+  margin-bottom: 35px;
+
+  color: #b58a00;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+.builder-option strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #07352c;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  transition: color .25s ease;
+}
+
+
+.builder-option small {
+  display: block;
+
+  max-width: 260px;
+
+  color: #78817e;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+  line-height: 1.6;
+
+  transition: color .25s ease;
+}
+
+
+.builder-option:hover {
+  background: #07352c;
+}
+
+
+.builder-option:hover strong {
+  color: #ffffff;
+}
+
+
+.builder-option:hover small {
+  color: rgba(255,255,255,.7);
+}
+
+
+.builder-option:hover
+.builder-option-number {
+  color: #f2c94c;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.builder-back {
+  margin-top: 28px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #07352c;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.builder-result-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 80px;
+}
+
+
+.builder-result-intro
+.builder-question-number {
+  display: block;
+
+  margin-bottom: 30px;
+}
+
+
+.builder-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 38px;
+}
+
+
+.builder-summary > div {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #d5ddda;
+
+  border-radius: 10px;
+}
+
+
+.builder-summary span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #9a7169;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .1em;
+}
+
+
+.builder-summary strong {
+  color: #07352c;
+
+  font-size: 12px;
+}
+
+
+/* RESULT CARDS */
+
+.builder-results {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.builder-result-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 210px;
+
+  padding: 30px;
+
+  border: 1px solid #d5ddda;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #07352c;
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.builder-result-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #aebdb7;
+
+  box-shadow: 0 12px 30px rgba(7,53,44,.07);
+}
+
+
+.builder-result-card small {
+  color: #b58a00;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .1em;
+}
+
+
+.builder-result-card h4 {
+  margin: 25px 0 8px;
+
+  font-size: 20px;
+}
+
+
+.builder-result-card p {
+  margin: 0;
+
+  color: #727d79;
+
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+
+.builder-result-arrow {
+  display: block;
+
+  margin-top: 25px;
+
+  font-size: 18px;
+
+  transition: transform .25s ease;
+}
+
+
+.builder-result-card:hover
+.builder-result-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RESULT FOOTER
+========================================================= */
+
+.builder-result-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #d5ddda;
+}
+
+
+.builder-result-footer
+.builder-back {
+  margin: 0;
+}
+
+
+.builder-quote-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 22px;
+
+  border-radius: 8px;
+
+  background: #07352c;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .06em;
+
+  text-decoration: none;
+}
+
+
+.builder-quote-btn span {
+  transition: transform .25s ease;
+}
+
+
+.builder-quote-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .kitchen-builder-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .business-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .builder-result-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .kitchen-builder {
+    padding: 75px 0;
+  }
+
+
+  .kitchen-builder-inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+
+  .kitchen-builder-heading {
+    margin-bottom: 45px;
+  }
+
+
+  .kitchen-builder-heading h2 {
+    font-size: 34px;
+  }
+
+
+  .builder-steps {
+    margin-bottom: 40px;
+  }
+
+
+  .builder-step p {
+    font-size: 7px;
+  }
+
+
+  .builder-question {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .business-options,
+  .equipment-options {
+    grid-template-columns: 1fr;
+  }
+
+
+  .builder-option {
+    min-height: 0;
+
+    padding: 25px;
+  }
+
+
+  .builder-option-number {
+    margin-bottom: 22px;
+  }
+
+
+  .builder-results {
+    grid-template-columns: 1fr;
+  }
+
+
+  .builder-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .builder-result-footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 28px;
+  }
+
+
+  .builder-quote-btn {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+}
