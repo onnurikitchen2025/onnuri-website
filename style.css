@@ -9478,3 +9478,65 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   GAS RANGE SERIES HEADINGS
+========================================= */
+
+.catalog-category-heading{
+  max-width:1200px;
+  margin:0 auto 28px;
+}
+
+.catalog-category-heading span{
+  display:block;
+
+  color:#b58a10;
+
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+
+  margin-bottom:6px;
+}
+
+.catalog-category-heading h2{
+  color:#07352c;
+
+  font-size:30px;
+  line-height:1.2;
+
+  margin-bottom:8px;
+}
+
+.catalog-category-heading p{
+  max-width:680px;
+
+  color:#59635f;
+
+  font-size:14px;
+  line-height:1.6;
+}
+
+
+/* SPACE BETWEEN SERIES */
+
+.catalog-section + .catalog-section{
+  padding-top:20px;
+}
+
+
+@media(max-width:768px){
+
+  .catalog-category-heading{
+    margin-bottom:22px;
+  }
+
+  .catalog-category-heading h2{
+    font-size:25px;
+  }
+
+  .catalog-category-heading p{
+    font-size:13px;
+  }
+
+}
