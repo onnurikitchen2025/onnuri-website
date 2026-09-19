@@ -12067,3 +12067,9 @@ a.floating-back{
 .builder-question p:not(.builder-eyebrow) {
   display: block;
 }
+.builder-result-arrow {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: #07352c;
+}
