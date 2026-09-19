@@ -10516,3 +10516,16 @@ a.floating-back{
   }
 
 }
+/* QUALITY & INNOVATION — FINAL SPACING */
+
+@media (min-width: 901px) {
+
+  .manufacturer-certifications {
+    padding: 75px 0 80px;
+  }
+
+  .certification-heading {
+    margin-bottom: 34px;
+  }
+
+}
