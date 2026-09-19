@@ -15,6 +15,94 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================
+       GAS RANGE FILTERS
+    ========================= */
+
+    .catalog-filter-area {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px 10px;
+    }
+
+    .filter-group {
+      margin-bottom: 20px;
+    }
+
+    .filter-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #07352c;
+      text-transform: uppercase;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      appearance: none;
+      border: 1px solid #d7dfdc;
+      background: #ffffff;
+      color: #07352c;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: #07352c;
+      transform: translateY(-1px);
+    }
+
+    .filter-btn.active {
+      background: #07352c;
+      border-color: #07352c;
+      color: #ffffff;
+    }
+
+    .catalog-section.is-hidden,
+    .catalog-card.is-hidden {
+      display: none;
+    }
+
+    .catalog-results {
+      margin-top: 5px;
+      color: #65716d;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .catalog-filter-area {
+        padding-top: 22px;
+      }
+
+      .filter-buttons {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 
@@ -40,7 +128,6 @@
   </button>
 
   <nav class="main-nav">
-
     <a href="index.html">Home</a>
     <a href="index.html#products">Products</a>
     <a href="services.html">Services</a>
@@ -50,7 +137,6 @@
     <a href="quote-list.html#quotationForm" class="quote-btn">
       Request a Quote
     </a>
-
   </nav>
 
 </header>
@@ -59,7 +145,7 @@
 <main>
 
 <!-- =========================
-     GAS RANGE HERO
+     HERO
 ========================= -->
 
 <section class="catalog-hero">
@@ -75,557 +161,803 @@
 
 
 <!-- =========================
-     ST SERIES
+     FILTERS
 ========================= -->
 
-<section class="catalog-section">
+<section class="catalog-filter-area">
+
+  <div class="filter-group">
+
+    <span class="filter-label">Series</span>
+
+    <div class="filter-buttons" id="seriesFilters">
+
+      <button class="filter-btn active" data-series-filter="all">
+        ALL
+      </button>
+
+      <button class="filter-btn" data-series-filter="st">
+        ST SERIES
+      </button>
+
+      <button class="filter-btn" data-series-filter="sk">
+        SK SERIES
+      </button>
+
+      <button class="filter-btn" data-series-filter="low">
+        LOW RANGE
+      </button>
+
+      <button class="filter-btn" data-series-filter="auto">
+        AUTO-IGNITION
+      </button>
+
+      <button class="filter-btn" data-series-filter="smart">
+        SMART RANGE
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="filter-group">
+
+    <span class="filter-label">Size</span>
+
+    <div class="filter-buttons" id="sizeFilters">
+
+      <button class="filter-btn active" data-size-filter="all">
+        ALL SIZES
+      </button>
+
+      <button class="filter-btn" data-size-filter="600">
+        600
+      </button>
+
+      <button class="filter-btn" data-size-filter="700">
+        700
+      </button>
+
+      <button class="filter-btn" data-size-filter="900">
+        900
+      </button>
+
+      <button class="filter-btn" data-size-filter="1200">
+        1200
+      </button>
+
+      <button class="filter-btn" data-size-filter="1500">
+        1500
+      </button>
+
+      <button class="filter-btn" data-size-filter="1800">
+        1800
+      </button>
+
+    </div>
+
+  </div>
+
+  <p class="catalog-results" id="catalogResults"></p>
+
+</section>
+
+
+<!-- =====================================================
+     ST SERIES
+===================================================== -->
+
+<section class="catalog-section" data-section-series="st">
 
   <div class="catalog-category-heading">
-
     <span>ST SERIES</span>
-
     <h2>Standard Standing Range</h2>
 
     <p>
       Commercial standing gas ranges with flexible burner configurations
       for restaurants and professional kitchens.
     </p>
-
   </div>
 
 
   <div class="catalog-grid">
 
-
-    <!-- ST600-001 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="600">
       <div class="catalog-image">
         <img src="ST600-001.png" alt="ST600-001">
       </div>
-
       <h3>ST600-001</h3>
-
-      <p>
-        Single-burner commercial standing gas range for professional kitchen use.
-      </p>
-
-      <a href="st600-001.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Single-burner commercial standing gas range for professional kitchen use.</p>
+      <a href="st600-001.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST900-020 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="900">
       <div class="catalog-image">
         <img src="ST900-020.png" alt="ST900-020">
       </div>
-
       <h3>ST900-020</h3>
-
-      <p>
-        Two-burner commercial standing gas range designed for professional kitchens.
-      </p>
-
-      <a href="st900-020.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Two-burner commercial standing gas range designed for professional kitchens.</p>
+      <a href="st900-020.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST900-120 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="900">
       <div class="catalog-image">
         <img src="ST900-120.png" alt="ST900-120">
       </div>
-
       <h3>ST900-120</h3>
-
-      <p>
-        Three-burner commercial standing gas range for professional kitchen operations.
-      </p>
-
-      <a href="st900-120.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Three-burner commercial standing gas range for professional kitchen operations.</p>
+      <a href="st900-120.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST1200-030 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="1200">
       <div class="catalog-image">
         <img src="ST1200-030.png" alt="ST1200-030">
       </div>
-
       <h3>ST1200-030</h3>
-
-      <p>
-        Three-burner commercial standing gas range designed for high-volume kitchens.
-      </p>
-
-      <a href="st1200-030.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Three-burner commercial standing gas range designed for high-volume kitchens.</p>
+      <a href="st1200-030.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST1200-220 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="1200">
       <div class="catalog-image">
         <img src="ST1200-220.png" alt="ST1200-220">
       </div>
-
       <h3>ST1200-220</h3>
-
-      <p>
-        Four-burner commercial standing gas range for professional kitchen use.
-      </p>
-
-      <a href="st1200-220.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Four-burner commercial standing gas range for professional kitchen use.</p>
+      <a href="st1200-220.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST1500-040 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="1500">
       <div class="catalog-image">
         <img src="ST1500-040.png" alt="ST1500-040">
       </div>
-
       <h3>ST1500-040</h3>
-
-      <p>
-        Four-burner commercial standing gas range built for demanding kitchen operations.
-      </p>
-
-      <a href="st1500-040.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Four-burner commercial standing gas range built for demanding kitchen operations.</p>
+      <a href="st1500-040.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST1500-230 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="1500">
       <div class="catalog-image">
         <img src="ST1500-230.png" alt="ST1500-230">
       </div>
-
       <h3>ST1500-230</h3>
-
-      <p>
-        Five-burner commercial standing gas range for high-volume professional kitchens.
-      </p>
-
-      <a href="st1500-230.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Five-burner commercial standing gas range for high-volume professional kitchens.</p>
+      <a href="st1500-230.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- ST1800-050 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="st" data-size="1800">
       <div class="catalog-image">
         <img src="ST1800-050.png" alt="ST1800-050">
       </div>
-
       <h3>ST1800-050</h3>
-
-      <p>
-        Five-burner commercial standing gas range designed for large professional kitchens.
-      </p>
-
-      <a href="st1800-050.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Five-burner commercial standing gas range designed for large professional kitchens.</p>
+      <a href="st1800-050.html">VIEW PRODUCT</a>
     </article>
-
 
   </div>
 
 </section>
-<!-- =========================
-     SK SERIES
-========================= -->
 
-<section class="catalog-section">
+
+<!-- =====================================================
+     SK SERIES
+===================================================== -->
+
+<section class="catalog-section" data-section-series="sk">
 
   <div class="catalog-category-heading">
-
     <span>SK SERIES</span>
-
     <h2>Standard Multi-Burner Range</h2>
 
     <p>
       Commercial multi-burner gas ranges designed for high-volume
       and multi-dish cooking in professional kitchens.
     </p>
-
   </div>
 
 
   <div class="catalog-grid">
 
-
-    <!-- SK600-400 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="600">
       <div class="catalog-image">
         <img src="SK600-400.png" alt="SK600-400">
       </div>
-
       <h3>SK600-400</h3>
-
-      <p>
-        Four-burner commercial multi-burner range for professional kitchen use.
-      </p>
-
+      <p>Four-burner commercial multi-burner range for professional kitchen use.</p>
       <a href="sk600-400.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK600-210 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="600">
       <div class="catalog-image">
         <img src="SK600-210.png" alt="SK600-210">
       </div>
-
       <h3>SK600-210</h3>
-
-      <p>
-        Three-burner commercial multi-burner range with flexible burner configuration.
-      </p>
-
+      <p>Three-burner commercial multi-burner range with flexible burner configuration.</p>
       <a href="sk600-210.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK900-600 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="900">
       <div class="catalog-image">
         <img src="SK900-600.png" alt="SK900-600">
       </div>
-
       <h3>SK900-600</h3>
-
-      <p>
-        Six-burner commercial multi-burner range for professional kitchens.
-      </p>
-
+      <p>Six-burner commercial multi-burner range for professional kitchens.</p>
       <a href="sk900-600.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK900-410 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="900">
       <div class="catalog-image">
         <img src="SK900-410.png" alt="SK900-410">
       </div>
-
       <h3>SK900-410</h3>
-
-      <p>
-        Five-burner commercial multi-burner range for demanding kitchen operations.
-      </p>
-
+      <p>Five-burner commercial multi-burner range for demanding kitchen operations.</p>
       <a href="sk900-410.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1200-900 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1200">
       <div class="catalog-image">
         <img src="SK1200-900.png" alt="SK1200-900">
       </div>
-
       <h3>SK1200-900</h3>
-
-      <p>
-        Nine-burner commercial gas range for high-volume professional kitchens.
-      </p>
-
+      <p>Nine-burner commercial gas range for high-volume professional kitchens.</p>
       <a href="sk1200-900.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1200-610 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1200">
       <div class="catalog-image">
         <img src="SK1200-610.png" alt="SK1200-610">
       </div>
-
       <h3>SK1200-610</h3>
-
-      <p>
-        Seven-burner commercial range with flexible burner configuration.
-      </p>
-
+      <p>Seven-burner commercial range with flexible burner configuration.</p>
       <a href="sk1200-610.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1200-420 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1200">
       <div class="catalog-image">
         <img src="SK1200-420.png" alt="SK1200-420">
       </div>
-
       <h3>SK1200-420</h3>
-
-      <p>
-        Six-burner commercial multi-burner range designed for professional kitchens.
-      </p>
-
+      <p>Six-burner commercial multi-burner range designed for professional kitchens.</p>
       <a href="sk1200-420.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1500-120 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1500">
       <div class="catalog-image">
         <img src="SK1500-120.png" alt="SK1500-120">
       </div>
-
       <h3>SK1500-120</h3>
-
-      <p>
-        Twelve-burner commercial range built for high-volume kitchen operations.
-      </p>
-
+      <p>Twelve-burner commercial range built for high-volume kitchen operations.</p>
       <a href="sk1500-120.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1500-910 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1500">
       <div class="catalog-image">
         <img src="SK1500-910.png" alt="SK1500-910">
       </div>
-
       <h3>SK1500-910</h3>
-
-      <p>
-        Ten-burner commercial multi-burner range for professional kitchens.
-      </p>
-
+      <p>Ten-burner commercial multi-burner range for professional kitchens.</p>
       <a href="sk1500-910.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1500-620 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1500">
       <div class="catalog-image">
         <img src="SK1500-620.png" alt="SK1500-620">
       </div>
-
       <h3>SK1500-620</h3>
-
-      <p>
-        Eight-burner commercial range with flexible burner configuration.
-      </p>
-
+      <p>Eight-burner commercial range with flexible burner configuration.</p>
       <a href="sk1500-620.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1800-150 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1800">
       <div class="catalog-image">
         <img src="SK1800-150.png" alt="SK1800-150">
       </div>
-
       <h3>SK1800-150</h3>
-
-      <p>
-        Fifteen-burner commercial range designed for high-volume kitchen operations.
-      </p>
-
+      <p>Fifteen-burner commercial range designed for high-volume kitchen operations.</p>
       <a href="sk1800-150.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1800-102 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1800">
       <div class="catalog-image">
         <img src="SK1800-102.png" alt="SK1800-102">
       </div>
-
       <h3>SK1800-102</h3>
-
-      <p>
-        Twelve-burner commercial multi-burner range for large professional kitchens.
-      </p>
-
+      <p>Twelve-burner commercial multi-burner range for large professional kitchens.</p>
       <a href="sk1800-102.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SK1800-121 -->
-
-    <article class="catalog-card">
+    <article class="catalog-card" data-series="sk" data-size="1800">
       <div class="catalog-image">
         <img src="SK1800-121.png" alt="SK1800-121">
       </div>
-
       <h3>SK1800-121</h3>
-
-      <p>
-        Thirteen-burner commercial range designed for high-volume and multi-dish cooking.
-      </p>
-
+      <p>Thirteen-burner commercial range designed for high-volume multi-dish cooking.</p>
       <a href="sk1800-121.html">VIEW PRODUCT</a>
     </article>
-
 
   </div>
 
 </section>
 
-<!-- =========================
-     LOW RANGE SERIES
-========================= -->
 
-<section class="catalog-section">
+<!-- =====================================================
+     LOW RANGE
+===================================================== -->
+
+<section class="catalog-section" data-section-series="low">
 
   <div class="catalog-category-heading">
-
     <span>LOW RANGE SERIES</span>
-
     <h2>Commercial Low Range</h2>
 
     <p>
       Heavy-duty low-height gas ranges designed for stock pots,
       large cookware, and professional kitchen operations.
     </p>
-
   </div>
 
 
   <div class="catalog-grid">
 
-
-    <!-- SL600-001 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="low" data-size="600">
       <div class="catalog-image">
         <img src="2123.png" alt="SL600-001">
       </div>
-
       <h3>SL600-001</h3>
-
-      <p>
-        Compact commercial low range with a heavy-duty triple-ring burner.
-      </p>
-
-      <a href="sl600-001.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Compact commercial low range with a heavy-duty triple-ring burner.</p>
+      <a href="sl600-001.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SHL-601 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="low" data-size="600">
       <div class="catalog-image">
-       <img src="SHL-601.png" alt="SHL-601">
+        <img src="SHL-601.png" alt="SHL-601">
       </div>
-
       <h3>SHL-601</h3>
-
-      <p>
-        Single-burner commercial low range with advanced pre-mixed gas combustion.
-      </p>
-
-      <a href="shl-601.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Single-burner commercial low range with advanced pre-mixed gas combustion.</p>
+      <a href="shl-601.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SHL-1202 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="low" data-size="1200">
       <div class="catalog-image">
-        <img src="SHL1202.png" alt="SHL-1202">
+        <img src="SHL-1202.png" alt="SHL-1202">
       </div>
-
       <h3>SHL-1202</h3>
-
-      <p>
-        Two-burner commercial low range with advanced pre-mixed gas combustion.
-      </p>
-
-      <a href="shl-1202.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Two-burner commercial low range with advanced pre-mixed gas combustion.</p>
+      <a href="shl-1202.html">VIEW PRODUCT</a>
     </article>
 
 
-    <!-- SL1200-002 -->
-
-    <article class="catalog-card">
-
+    <article class="catalog-card" data-series="low" data-size="1200">
       <div class="catalog-image">
         <img src="SL1200-002.png" alt="SL1200-002">
       </div>
-
       <h3>SL1200-002</h3>
-
-      <p>
-        Heavy-duty two-burner commercial low range with triple-ring burners.
-      </p>
-
-      <a href="sl1200-002.html">
-        VIEW PRODUCT
-      </a>
-
+      <p>Heavy-duty two-burner commercial low range with triple-ring burners.</p>
+      <a href="sl1200-002.html">VIEW PRODUCT</a>
     </article>
-
 
   </div>
 
 </section>
+
+
+<!-- =====================================================
+     AUTO-IGNITION SERIES
+===================================================== -->
+
+<section class="catalog-section" data-section-series="auto">
+
+  <div class="catalog-category-heading">
+    <span>AUTO-IGNITION SERIES</span>
+    <h2>Automatic Ignition Gas Ranges</h2>
+
+    <p>
+      Commercial gas ranges with automatic ignition systems,
+      designed for efficient professional kitchen operations.
+    </p>
+  </div>
+
+
+  <div class="catalog-grid">
+
+    <!-- LOW HEIGHT -->
+
+    <article class="catalog-card" data-series="auto" data-size="600">
+      <div class="catalog-image">
+        <img src="SA600-010.png" alt="SA600-010">
+      </div>
+      <h3>SA600-010</h3>
+      <p>Compact auto-ignition low-height range with double-ring burner.</p>
+      <a href="sa600-010.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="700">
+      <div class="catalog-image">
+        <img src="SA700-001.png" alt="SA700-001">
+      </div>
+      <h3>SA700-001</h3>
+      <p>Heavy-duty auto-ignition low-height range with triple-ring burner.</p>
+      <a href="sa700-001.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-002.png" alt="SA1200-002">
+      </div>
+      <h3>SA1200-002</h3>
+      <p>Two-burner auto-ignition low-height commercial gas range.</p>
+      <a href="sa1200-002.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- 900 -->
+
+    <article class="catalog-card" data-series="auto" data-size="900">
+      <div class="catalog-image">
+        <img src="SA900-020.png" alt="SA900-020">
+      </div>
+      <h3>SA900-020</h3>
+      <p>Two-burner auto-ignition standing gas range for commercial kitchens.</p>
+      <a href="sa900-020.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="900">
+      <div class="catalog-image">
+        <img src="SA900-120.png" alt="SA900-120">
+      </div>
+      <h3>SA900-120</h3>
+      <p>Three-burner auto-ignition commercial gas range.</p>
+      <a href="sa900-120.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="900">
+      <div class="catalog-image">
+        <img src="SA900-410.png" alt="SA900-410">
+      </div>
+      <h3>SA900-410</h3>
+      <p>Five-burner auto-ignition multi-burner range for professional kitchens.</p>
+      <a href="sa900-410.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="900">
+      <div class="catalog-image">
+        <img src="SA900-600.png" alt="SA900-600">
+      </div>
+      <h3>SA900-600</h3>
+      <p>Six-burner auto-ignition multi-burner range for commercial operations.</p>
+      <a href="sa900-600.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- 1200 -->
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-030.png" alt="SA1200-030">
+      </div>
+      <h3>SA1200-030</h3>
+      <p>Three-burner auto-ignition standing range for professional kitchens.</p>
+      <a href="sa1200-030.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-220.png" alt="SA1200-220">
+      </div>
+      <h3>SA1200-220</h3>
+      <p>Four-burner auto-ignition commercial multi-burner range.</p>
+      <a href="sa1200-220.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-420.png" alt="SA1200-420">
+      </div>
+      <h3>SA1200-420</h3>
+      <p>Six-burner auto-ignition commercial gas range for professional kitchens.</p>
+      <a href="sa1200-420.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-610.png" alt="SA1200-610">
+      </div>
+      <h3>SA1200-610</h3>
+      <p>Seven-burner auto-ignition multi-burner range.</p>
+      <a href="sa1200-610.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1200">
+      <div class="catalog-image">
+        <img src="SA1200-800.png" alt="SA1200-800">
+      </div>
+      <h3>SA1200-800</h3>
+      <p>Eight-burner auto-ignition range for high-volume cooking.</p>
+      <a href="sa1200-800.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- 1500 -->
+
+    <article class="catalog-card" data-series="auto" data-size="1500">
+      <div class="catalog-image">
+        <img src="SA1500-040.png" alt="SA1500-040">
+      </div>
+      <h3>SA1500-040</h3>
+      <p>Four-burner auto-ignition standing gas range.</p>
+      <a href="sa1500-040.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1500">
+      <div class="catalog-image">
+        <img src="SA1500-100.png" alt="SA1500-100">
+      </div>
+      <h3>SA1500-100</h3>
+      <p>Ten-burner auto-ignition multi-burner commercial range.</p>
+      <a href="sa1500-100.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1500">
+      <div class="catalog-image">
+        <img src="SA1500-230.png" alt="SA1500-230">
+      </div>
+      <h3>SA1500-230</h3>
+      <p>Five-burner auto-ignition commercial range with mixed burner configuration.</p>
+      <a href="sa1500-230.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1500">
+      <div class="catalog-image">
+        <img src="SA1500-620.png" alt="SA1500-620">
+      </div>
+      <h3>SA1500-620</h3>
+      <p>Eight-burner auto-ignition multi-burner range.</p>
+      <a href="sa1500-620.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1500">
+      <div class="catalog-image">
+        <img src="SA1500-810.png" alt="SA1500-810">
+      </div>
+      <h3>SA1500-810</h3>
+      <p>Nine-burner auto-ignition commercial multi-burner range.</p>
+      <a href="sa1500-810.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- 1800 -->
+
+    <article class="catalog-card" data-series="auto" data-size="1800">
+      <div class="catalog-image">
+        <img src="SA1800-050.png" alt="SA1800-050">
+      </div>
+      <h3>SA1800-050</h3>
+      <p>Five-burner auto-ignition standing range for large commercial kitchens.</p>
+      <a href="sa1800-050.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1800">
+      <div class="catalog-image">
+        <img src="SA1800-102.png" alt="SA1800-102">
+      </div>
+      <h3>SA1800-102</h3>
+      <p>Twelve-burner auto-ignition range for high-volume operations.</p>
+      <a href="sa1800-102.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1800">
+      <div class="catalog-image">
+        <img src="SA1800-121.png" alt="SA1800-121">
+      </div>
+      <h3>SA1800-121</h3>
+      <p>Thirteen-burner auto-ignition commercial range.</p>
+      <a href="sa1800-121.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="auto" data-size="1800">
+      <div class="catalog-image">
+        <img src="SA1800-140.png" alt="SA1800-140">
+      </div>
+      <h3>SA1800-140</h3>
+      <p>Fourteen-burner auto-ignition range for high-volume professional kitchens.</p>
+      <a href="sa1800-140.html">VIEW PRODUCT</a>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SMART RANGE
+===================================================== -->
+
+<section class="catalog-section" data-section-series="smart">
+
+  <div class="catalog-category-heading">
+    <span>SMART RANGE</span>
+    <h2>Smart Commercial Gas Range</h2>
+
+    <p>
+      Advanced commercial gas ranges featuring pre-mixed combustion
+      technology for powerful and efficient professional cooking.
+    </p>
+  </div>
+
+
+  <div class="catalog-grid">
+
+    <!-- SMART CHINESE / WOK -->
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHC-601.png" alt="SHC-601">
+      </div>
+      <h3>SHC-601</h3>
+      <p>Single-burner Smart Chinese wok range with lift-type flame combustion.</p>
+      <a href="shc-601.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHC-1202.png" alt="SHC-1202">
+      </div>
+      <h3>SHC-1202</h3>
+      <p>Two-burner Smart Chinese wok range with powerful lift-type flame combustion.</p>
+      <a href="shc-1202.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- SMART DIRECT FLAME -->
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHB-611-W.png" alt="SHB-611-W">
+      </div>
+      <h3>SHB-611-W</h3>
+      <p>Smart Direct Flame Range with wok ring and advanced pre-mixed combustion.</p>
+      <a href="shb-611-w.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHB-1222-W.png" alt="SHB-1222-W">
+      </div>
+      <h3>SHB-1222-W</h3>
+      <p>Dual Smart Direct Flame Range configured for professional wok cooking.</p>
+      <a href="shb-1222-w.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHB-611-O.png" alt="SHB-611-O">
+      </div>
+      <h3>SHB-611-O</h3>
+      <p>Smart Direct Flame Range with heavy-duty top grate for commercial cooking.</p>
+      <a href="shb-611-o.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHB-1222-O.png" alt="SHB-1222-O">
+      </div>
+      <h3>SHB-1222-O</h3>
+      <p>Dual Smart Direct Flame Range with heavy-duty top grates.</p>
+      <a href="shb-1222-o.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- SMART STIR-FRY -->
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHF-601.png" alt="SHF-601">
+      </div>
+      <h3>SHF-601</h3>
+      <p>Single-burner Smart Stir-Fry Range with powerful and stable heat output.</p>
+      <a href="shf-601.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHF-1202.png" alt="SHF-1202">
+      </div>
+      <h3>SHF-1202</h3>
+      <p>Two-burner Smart Stir-Fry Range for high-performance commercial cooking.</p>
+      <a href="shf-1202.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- SMART STANDING O -->
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHL-601-O.png" alt="SHL-601-O">
+      </div>
+      <h3>SHL-601-O</h3>
+      <p>Smart Standing Range with octopus-type heavy-duty cast iron top grate.</p>
+      <a href="shl-601-o.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHL-1202-O.png" alt="SHL-1202-O">
+      </div>
+      <h3>SHL-1202-O</h3>
+      <p>Two-burner Smart Standing Range with octopus-type cast iron top grates.</p>
+      <a href="shl-1202-o.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <!-- SMART STANDING R -->
+
+    <article class="catalog-card" data-series="smart" data-size="600">
+      <div class="catalog-image">
+        <img src="SHL-601-R.png" alt="SHL-601-R">
+      </div>
+      <h3>SHL-601-R</h3>
+      <p>Smart Standing Range with reinforced heavy-duty cast iron top grate.</p>
+      <a href="shl-601-r.html">VIEW PRODUCT</a>
+    </article>
+
+
+    <article class="catalog-card" data-series="smart" data-size="1200">
+      <div class="catalog-image">
+        <img src="SHL-1202-R.png" alt="SHL-1202-R">
+      </div>
+      <h3>SHL-1202-R</h3>
+      <p>Two-burner Smart Standing Range with reinforced cast iron top grates.</p>
+      <a href="shl-1202-r.html">VIEW PRODUCT</a>
+    </article>
+
+  </div>
+
+</section>
+
 
 </main>
 
@@ -637,7 +969,6 @@
 <footer class="site-footer">
 
   <div class="footer-grid">
-
 
     <div class="footer-brand">
 
@@ -695,7 +1026,6 @@
 
     </div>
 
-
   </div>
 
 
@@ -750,77 +1080,234 @@
 <script src="quote.js"></script>
 
 
+<!-- MOBILE MENU -->
+
 <script>
 
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.main-nav');
 
-  if(menuToggle && mainNav){
+if(menuToggle && mainNav){
 
-    menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', () => {
 
-      const isOpen = mainNav.classList.toggle('open');
+    const isOpen = mainNav.classList.toggle('open');
 
-      menuToggle.classList.toggle('active', isOpen);
+    menuToggle.classList.toggle(
+      'active',
+      isOpen
+    );
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
+    );
+
+  });
+
+
+  mainNav.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      mainNav.classList.remove('open');
+
+      menuToggle.classList.remove('active');
 
       menuToggle.setAttribute(
         'aria-expanded',
-        isOpen
+        'false'
+      );
+
+    });
+
+  });
+
+}
+
+</script>
+
+
+<!-- STICKY HEADER -->
+
+<script>
+
+const siteHeader = document.querySelector('.site-header');
+
+if(siteHeader){
+
+  const updateStickyHeader = () => {
+
+    if(window.scrollY > 20){
+
+      siteHeader.classList.add('scrolled');
+
+    }else{
+
+      siteHeader.classList.remove('scrolled');
+
+    }
+
+  };
+
+  updateStickyHeader();
+
+  window.addEventListener(
+    'scroll',
+    updateStickyHeader
+  );
+
+}
+
+</script>
+
+
+<!-- =========================
+     PRODUCT FILTER
+========================= -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const cards =
+    Array.from(document.querySelectorAll('.catalog-card'));
+
+  const sections =
+    Array.from(document.querySelectorAll('.catalog-section'));
+
+  const seriesButtons =
+    document.querySelectorAll('[data-series-filter]');
+
+  const sizeButtons =
+    document.querySelectorAll('[data-size-filter]');
+
+  const resultText =
+    document.getElementById('catalogResults');
+
+
+  let activeSeries = 'all';
+  let activeSize = 'all';
+
+
+  function updateFilters(){
+
+    let visibleCount = 0;
+
+
+    cards.forEach(card => {
+
+      const cardSeries =
+        card.dataset.series;
+
+      const cardSize =
+        card.dataset.size;
+
+
+      const seriesMatch =
+        activeSeries === 'all' ||
+        cardSeries === activeSeries;
+
+
+      const sizeMatch =
+        activeSize === 'all' ||
+        cardSize === activeSize;
+
+
+      const shouldShow =
+        seriesMatch && sizeMatch;
+
+
+      card.classList.toggle(
+        'is-hidden',
+        !shouldShow
+      );
+
+
+      if(shouldShow){
+        visibleCount++;
+      }
+
+    });
+
+
+    sections.forEach(section => {
+
+      const visibleCards =
+        section.querySelectorAll(
+          '.catalog-card:not(.is-hidden)'
+        );
+
+
+      section.classList.toggle(
+        'is-hidden',
+        visibleCards.length === 0
       );
 
     });
 
 
-    mainNav.querySelectorAll('a').forEach(link => {
+    if(resultText){
 
-      link.addEventListener('click', () => {
+      resultText.textContent =
+        visibleCount === 1
+          ? '1 product found'
+          : visibleCount + ' products found';
 
-        mainNav.classList.remove('open');
+    }
 
-        menuToggle.classList.remove('active');
+  }
 
-        menuToggle.setAttribute(
-          'aria-expanded',
-          'false'
-        );
 
-      });
+  seriesButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      seriesButtons.forEach(btn =>
+        btn.classList.remove('active')
+      );
+
+
+      button.classList.add('active');
+
+
+      activeSeries =
+        button.dataset.seriesFilter;
+
+
+      updateFilters();
 
     });
 
-  }
-
-</script>
+  });
 
 
-<script>
+  sizeButtons.forEach(button => {
 
-  const siteHeader = document.querySelector('.site-header');
+    button.addEventListener('click', () => {
 
-  if(siteHeader){
+      sizeButtons.forEach(btn =>
+        btn.classList.remove('active')
+      );
 
-    const updateStickyHeader = () => {
 
-      if(window.scrollY > 20){
+      button.classList.add('active');
 
-        siteHeader.classList.add('scrolled');
 
-      }else{
+      activeSize =
+        button.dataset.sizeFilter;
 
-        siteHeader.classList.remove('scrolled');
 
-      }
+      updateFilters();
 
-    };
+    });
 
-    updateStickyHeader();
+  });
 
-    window.addEventListener(
-      'scroll',
-      updateStickyHeader
-    );
 
-  }
+  updateFilters();
+
+});
 
 </script>
 
