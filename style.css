@@ -10503,3 +10503,16 @@ a.floating-back{
   }
 
 }
+/* BUILT FOR PROFESSIONAL KITCHENS — SPACING POLISH */
+
+@media (min-width: 901px) {
+
+  .manufacturer-products {
+    padding: 75px 0;
+  }
+
+  .manufacturer-products-grid {
+    gap: 65px;
+  }
+
+}
