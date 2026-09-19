@@ -12034,3 +12034,36 @@ a.floating-back{
   }
 
 }
+/* =========================================================
+   BUILD YOUR KITCHEN — ALIGNMENT FIX
+========================================================= */
+
+.builder-question {
+  display: block;
+  margin-bottom: 35px;
+}
+
+.builder-question-number {
+  display: inline-block;
+  margin: 0 14px 10px 0;
+  vertical-align: middle;
+}
+
+.builder-question .builder-eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  vertical-align: middle;
+}
+
+.builder-question > div {
+  display: contents;
+}
+
+.builder-question h3 {
+  display: block;
+  margin-top: 0;
+}
+
+.builder-question p:not(.builder-eyebrow) {
+  display: block;
+}
