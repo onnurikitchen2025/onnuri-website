@@ -271,35 +271,103 @@
 
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
 
   const addButton = document.querySelector('.add-to-quote');
   const removeButton = document.querySelector('.remove-from-quote');
+  const floatingQuote = document.querySelector('.floating-quote');
+
+  const productName = 'ST600-001';
+
+
+  /* =========================
+     ADD TO QUOTE
+  ========================= */
 
   if(addButton){
 
     addButton.addEventListener('click', () => {
 
-      addProductToQuote(
-        addButton.dataset.product
-      );
+      addProductToQuote(productName);
+
+      /* Update count immediately */
+      updateQuoteCount();
+
+
+      /* Flying check animation */
+      if(floatingQuote){
+
+        const startRect = addButton.getBoundingClientRect();
+        const endRect = floatingQuote.getBoundingClientRect();
+
+        const flyer = document.createElement('div');
+
+        flyer.textContent = '✓';
+        flyer.className = 'quote-flyer';
+
+        flyer.style.left =
+          (startRect.left + startRect.width / 2) + 'px';
+
+        flyer.style.top =
+          (startRect.top + startRect.height / 2) + 'px';
+
+        document.body.appendChild(flyer);
+
+
+        requestAnimationFrame(() => {
+
+          flyer.style.left =
+            (endRect.left + endRect.width / 2) + 'px';
+
+          flyer.style.top =
+            (endRect.top + endRect.height / 2) + 'px';
+
+          flyer.style.transform =
+            'translate(-50%, -50%) scale(.4)';
+
+          flyer.style.opacity = '0';
+
+        });
+
+
+        setTimeout(() => {
+
+          flyer.remove();
+
+          floatingQuote.classList.add('quote-pulse');
+
+          setTimeout(() => {
+            floatingQuote.classList.remove('quote-pulse');
+          }, 400);
+
+        }, 650);
+
+      }
 
     });
 
   }
 
+
+  /* =========================
+     REMOVE FROM QUOTE
+  ========================= */
 
   if(removeButton){
 
     removeButton.addEventListener('click', () => {
 
-      removeProductFromQuote(
-        'ST600-001'
-      );
+      removeProductFromQuote(productName);
+
+      /* Update count immediately */
+      updateQuoteCount();
 
     });
 
   }
 
+});
+  
 </script>
 
 
