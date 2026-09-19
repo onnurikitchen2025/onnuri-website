@@ -10756,3 +10756,573 @@ a.floating-back{
   }
 
 }
+/* =========================================================
+   ONNURI FEATURED EQUIPMENT SHOWCASE
+========================================================= */
+
+.equipment-showcase {
+  padding: 105px 0;
+  background: #07352c;
+  overflow: hidden;
+}
+
+
+.equipment-showcase-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* HEADING */
+
+.showcase-heading {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 70px;
+  align-items: end;
+
+  margin-bottom: 50px;
+}
+
+
+.equipment-showcase .section-label {
+  margin-bottom: 12px;
+  color: #f2c94c;
+}
+
+
+.showcase-heading h2 {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(34px, 4vw, 55px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+
+.showcase-heading-text {
+  margin: 0;
+
+  color: rgba(255,255,255,.65);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SHOWCASE STAGE
+========================================================= */
+
+.showcase-stage {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(280px, .65fr);
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT
+========================================================= */
+
+.showcase-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1.15fr)
+    minmax(250px, .85fr);
+
+  min-height: 520px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+.showcase-main-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+
+  padding: 55px;
+
+  background: #f4f6f5;
+}
+
+
+.showcase-main-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 440px;
+  height: 360px;
+
+  object-fit: contain;
+
+  transition:
+    opacity .35s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.showcase-main.is-changing
+.showcase-main-image img {
+  opacity: 0;
+
+  transform: translateX(-25px);
+}
+
+
+/* NUMBER */
+
+.showcase-index {
+  position: absolute;
+
+  top: 24px;
+  left: 28px;
+
+  color: #b9c2bf;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .1em;
+}
+
+
+/* PRODUCT INFORMATION */
+
+.showcase-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 55px 45px;
+}
+
+
+.showcase-category {
+  margin: 0 0 16px;
+
+  color: #b58a00;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+
+.showcase-main-content h3 {
+  margin: 0 0 18px;
+
+  color: #07352c;
+
+  font-size: clamp(31px, 3vw, 46px);
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+
+.showcase-description {
+  margin: 0 0 34px;
+
+  color: #69746f;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+.showcase-product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  width: fit-content;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid #07352c;
+
+  color: #07352c;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  text-decoration: none;
+}
+
+
+.showcase-product-link span {
+  transition: transform .25s ease;
+}
+
+
+.showcase-product-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SIDE PRODUCTS
+========================================================= */
+
+.showcase-side {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr;
+
+  gap: 16px;
+}
+
+
+.showcase-preview {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 125px 1fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 28px;
+
+  border: 0;
+
+  background: rgba(255,255,255,.08);
+
+  color: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+
+.showcase-preview:hover {
+  background: rgba(255,255,255,.13);
+}
+
+
+.showcase-preview img {
+  width: 110px;
+  height: 130px;
+
+  object-fit: contain;
+
+  transition: transform .3s ease;
+}
+
+
+.showcase-preview:hover img {
+  transform: scale(1.04);
+}
+
+
+.showcase-preview-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding-left: 16px;
+}
+
+
+.showcase-preview-info small {
+  color: #f2c94c;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+
+
+.showcase-preview-info strong {
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+.showcase-preview-number {
+  position: absolute;
+
+  top: 18px;
+  right: 20px;
+
+  color: rgba(255,255,255,.35);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.showcase-controls {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 28px;
+}
+
+
+/* PROGRESS */
+
+.showcase-progress {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: rgba(255,255,255,.55);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+.showcase-progress-line {
+  position: relative;
+
+  width: 150px;
+  height: 1px;
+
+  background: rgba(255,255,255,.2);
+
+  overflow: hidden;
+}
+
+
+.showcase-progress-line span {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 100%;
+
+  background: #f2c94c;
+}
+
+
+/* ARROWS */
+
+.showcase-arrows {
+  display: flex;
+
+  gap: 8px;
+}
+
+
+.showcase-arrows button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255,255,255,.25);
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    background-color .2s ease,
+    color .2s ease,
+    border-color .2s ease;
+}
+
+
+.showcase-arrows button:hover {
+  background: #f2c94c;
+  border-color: #f2c94c;
+
+  color: #07352c;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .showcase-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .showcase-heading-text {
+    max-width: 600px;
+  }
+
+
+  .showcase-stage {
+    grid-template-columns: 1fr;
+  }
+
+
+  .showcase-side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .equipment-showcase {
+    padding: 75px 0;
+  }
+
+
+  .equipment-showcase-inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+
+  .showcase-heading {
+    margin-bottom: 32px;
+  }
+
+
+  .showcase-heading h2 {
+    font-size: 34px;
+  }
+
+
+  .showcase-main {
+    grid-template-columns: 1fr;
+
+    min-height: 0;
+  }
+
+
+  .showcase-main-image {
+    min-height: 330px;
+
+    padding: 45px 30px 25px;
+  }
+
+
+  .showcase-main-image img {
+    height: 260px;
+  }
+
+
+  .showcase-main-content {
+    padding: 32px 28px 38px;
+  }
+
+
+  .showcase-main-content h3 {
+    font-size: 34px;
+  }
+
+
+  .showcase-side {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+
+  .showcase-preview {
+    display: block;
+
+    padding: 20px 14px;
+  }
+
+
+  .showcase-preview img {
+    display: block;
+
+    width: 100%;
+    height: 130px;
+
+    margin: 10px auto;
+  }
+
+
+  .showcase-preview-info {
+    padding: 0;
+
+    gap: 5px;
+  }
+
+
+  .showcase-preview-info small {
+    font-size: 7px;
+  }
+
+
+  .showcase-preview-info strong {
+    font-size: 13px;
+  }
+
+
+  .showcase-preview-number {
+    top: 12px;
+    right: 12px;
+  }
+
+
+  .showcase-progress-line {
+    width: 85px;
+  }
+
+
+  .showcase-arrows button {
+    width: 44px;
+    height: 44px;
+  }
+
+}
