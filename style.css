@@ -9431,3 +9431,16 @@ a.floating-back{
   }
 
 }
+@media(max-width:768px){
+
+  html,
+  body{
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  .site-header{
+    margin-top:0 !important;
+  }
+
+}
