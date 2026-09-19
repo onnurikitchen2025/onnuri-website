@@ -10402,3 +10402,104 @@ a.floating-back{
   }
 
 }
+/* =========================================================
+   GAS RANGE TECHNOLOGY — FINAL POLISH
+========================================================= */
+
+.technology-grid {
+  border: 1px solid #dfe5e2;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.technology-card {
+  position: relative;
+  min-height: 260px;
+  padding: 36px 32px 34px;
+  background: #ffffff;
+  transition:
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+/* GOLD TOP ACCENT */
+.technology-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 38px;
+  height: 3px;
+  background: #f2c94c;
+}
+
+/* NUMBER */
+.technology-number {
+  margin-bottom: 42px;
+  color: #9aa6a2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+/* SERIES */
+.technology-type {
+  margin-bottom: 9px;
+  color: #b38700;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+
+/* TITLE */
+.technology-card h3 {
+  margin: 0 0 14px;
+  color: #07352c;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* DESCRIPTION */
+.technology-card > p:last-child {
+  max-width: 310px;
+  color: #697570;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* DESKTOP HOVER */
+@media (hover: hover) {
+
+  .technology-card:hover {
+    background: #f8faf9;
+  }
+
+}
+
+
+/* MOBILE */
+@media (max-width: 650px) {
+
+  .technology-grid {
+    border-radius: 10px;
+  }
+
+  .technology-card {
+    min-height: auto;
+    padding: 30px 24px;
+  }
+
+  .technology-card::before {
+    left: 24px;
+  }
+
+  .technology-number {
+    margin-bottom: 30px;
+  }
+
+  .technology-card > p:last-child {
+    max-width: none;
+  }
+
+}
