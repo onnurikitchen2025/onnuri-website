@@ -9588,3 +9588,32 @@ a.floating-back{
   }
 
 }
+/* =========================================
+   SEARCH RESULTS — MAX HEIGHT
+========================================= */
+
+.search-results {
+  max-height: 320px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Cleaner scrollbar */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: #b8c3bf;
+  border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .search-results {
+    max-height: 260px;
+  }
+}
