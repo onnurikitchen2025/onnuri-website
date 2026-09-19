@@ -11334,3 +11334,16 @@ a.floating-back{
 .showcase-heading {
   padding-top: 20px;
 }
+/* FEATURED EQUIPMENT — ROUNDED CARDS */
+
+.showcase-main {
+  border-radius: 12px;
+}
+
+.showcase-main-image {
+  border-radius: 12px 0 0 12px;
+}
+
+.showcase-preview {
+  border-radius: 12px;
+}
