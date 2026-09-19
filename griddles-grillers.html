@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Commercial Griddles & Grillers | Onnuri Kitchen</title>
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="style.css">
+
+
+  <style>
+
+    /* =========================
+       GRIDDLE & GRILLER FILTERS
+    ========================= */
+
+    .catalog-filter-area {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px 10px;
+    }
+
+    .filter-group {
+      margin-bottom: 20px;
+    }
+
+    .filter-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #07352c;
+      text-transform: uppercase;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      appearance: none;
+      border: 1px solid #d7dfdc;
+      background: #ffffff;
+      color: #07352c;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+
+      transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: #07352c;
+      transform: translateY(-1px);
+    }
+
+    .filter-btn.active {
+      background: #07352c;
+      border-color: #07352c;
+      color: #ffffff;
+    }
+
+    .catalog-section.is-hidden,
+    .catalog-card.is-hidden {
+      display: none;
+    }
+
+    .catalog-results {
+      margin-top: 5px;
+      color: #65716d;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    @media (max-width: 600px) {
+
+      .catalog-filter-area {
+        padding-top: 22px;
+      }
+
+      .filter-buttons {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+  <a href="index.html"
+     class="brand brand-logo">
+
+    <img src="onnuri-logo.png"
+         alt="Onnuri Kitchen">
+
+  </a>
+
+
+  <button
+    class="menu-toggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+
+  <nav class="main-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="index.html#products">
+      Products
+    </a>
+
+    <a href="services.html">
+      Services
+    </a>
+
+    <a href="about.html">
+      About Us
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="quote-list.html#quotationForm"
+       class="quote-btn">
+
+      Request a Quote
+
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="catalog-hero">
+
+  <h1>
+    Commercial Griddles & Grillers
+  </h1>
+
+  <p>
+
+    Browse our commercial griddles and barbecue grillers
+    designed for restaurants, cafés, commissaries,
+    and other professional kitchens.
+
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     FILTERS
+========================= -->
+
+<section class="catalog-filter-area">
+
+
+  <!-- TYPE -->
+
+  <div class="filter-group">
+
+    <span class="filter-label">
+      Type
+    </span>
+
+
+    <div class="filter-buttons"
+         id="typeFilters">
+
+
+      <button
+        class="filter-btn active"
+        data-type-filter="all">
+
+        ALL
+
+      </button>
+
+
+      <button
+        class="filter-btn"
+        data-type-filter="griddle">
+
+        STANDARD GRIDDLE
+
+      </button>
+
+
+      <button
+        class="filter-btn"
+        data-type-filter="griller">
+
+        STANDARD GRILLER
+
+      </button>
+
+
+      <button
+        class="filter-btn"
+        data-type-filter="auto">
+
+        AUTO-IGNITION
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- SIZE -->
+
+  <div class="filter-group">
+
+    <span class="filter-label">
+      Size
+    </span>
+
+
+    <div class="filter-buttons"
+         id="sizeFilters">
+
+
+      <button
+        class="filter-btn active"
+        data-size-filter="all">
+
+        ALL SIZES
+
+      </button>
+
+
+      <button
+        class="filter-btn"
+        data-size-filter="600">
+
+        600
+
+      </button>
+
+
+      <button
+        class="filter-btn"
+        data-size-filter="900">
+
+        900
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+  <p class="catalog-results"
+     id="catalogResults">
+  </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STANDARD GRIDDLES
+===================================================== -->
+
+<section
+  class="catalog-section"
+  data-section-type="griddle">
+
+
+  <div class="catalog-category-heading">
+
+    <span>
+      STANDARD GRIDDLE
+    </span>
+
+
+    <h2>
+      Commercial Gas Griddles
+    </h2>
+
+
+    <p>
+
+      Heavy-duty commercial griddles designed for
+      high-volume frying, stir-frying, and flat-top
+      cooking with even heat distribution.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="catalog-grid">
+
+
+    <!-- SGD600-002 -->
+
+    <article
+      class="catalog-card"
+      data-type="griddle"
+      data-size="600">
+
+
+      <div class="catalog-image">
+
+        <img
+          src="SGD600-002.png"
+          alt="SGD600-002 Standard Griddle">
+
+      </div>
+
+
+      <h3>
+        SGD600-002
+      </h3>
+
+
+      <p>
+
+        600 mm commercial gas griddle with two
+        wide linear flame burners and a
+        12 mm polished steel griddle plate.
+
+      </p>
+
+
+      <a href="sgd600-002.html">
+        VIEW PRODUCT
+      </a>
+
+
+    </article>
+
+
+
+    <!-- SGD900-003 -->
+
+    <article
+      class="catalog-card"
+      data-type="griddle"
+      data-size="900">
+
+
+      <div class="catalog-image">
+
+        <img
+          src="SGD900-003.png"
+          alt="SGD900-003 Standard Griddle">
+
+      </div>
+
+
+      <h3>
+        SGD900-003
+      </h3>
+
+
+      <p>
+
+        900 mm commercial gas griddle with three
+        wide linear flame burners for high-volume
+        professional cooking.
+
+      </p>
+
+
+      <a href="sgd900-003.html">
+        VIEW PRODUCT
+      </a>
+
+
+    </article>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STANDARD GRILLERS
+===================================================== -->
+
+<section
+  class="catalog-section"
+  data-section-type="griller">
+
+
+  <div class="catalog-category-heading">
+
+    <span>
+      STANDARD GRILLER
+    </span>
+
+
+    <h2>
+      Commercial Barbecue Grillers
+    </h2>
+
+
+    <p>
+
+      Heavy-duty commercial barbecue grillers with
+      wide twin linear flame burners and detachable
+      cast-iron grates for consistent professional grilling.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="catalog-grid">
+
+
+    <!-- SG600-003 -->
+
+    <article
+      class="catalog-card"
+      data-type="griller"
+      data-size="600">
+
+
+      <div class="catalog-image">
+
+        <img
+          src="SG600-003.png"
+          alt="SG600-003 Standard Barbecue Griller">
+
+      </div>
+
+
+      <h3>
+        SG600-003
+      </h3>
+
+
+      <p>
+
+        600 mm commercial barbecue griller with
+        three wide twin linear flame burners and
+        detachable cast-iron angled grates.
+
+      </p>
+
+
+      <a href="sg600-003.html">
+        VIEW PRODUCT
+      </a>
+
+
+    </article>
+
+
+
+    <!-- SG900-005 -->
+
+    <article
+      class="catalog-card"
+      data-type="griller"
+      data-size="900">
+
+
+      <div class="catalog-image">
+
+        <img
+          src="SG900-005.png"
+          alt="SG900-005 Standard Barbecue Griller">
+
+      </div>
+
+
+      <h3>
+        SG900-005
+      </h3>
+
+
+      <p>
+
+        900 mm heavy-duty commercial barbecue griller
+        with five wide twin linear flame burners for
+        high-volume grilling.
+
+      </p>
+
+
+      <a href="sg900-005.html">
+        VIEW PRODUCT
+      </a>
+
+
+    </article>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     AUTO-IGNITION GRIDDLE
+===================================================== -->
+
+<section
+  class="catalog-section"
+  data-section-type="auto">
+
+
+  <div class="catalog-category-heading">
+
+    <span>
+      AUTO-IGNITION
+    </span>
+
+
+    <h2>
+      Auto-Ignition Griddle
+    </h2>
+
+
+    <p>
+
+      Commercial griddle featuring automatic ignition,
+      independent burner control, and powerful
+      double-ring burners for professional kitchen use.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="catalog-grid">
+
+
+    <!-- SAG900-020 -->
+
+    <article
+      class="catalog-card"
+      data-type="auto"
+      data-size="900">
+
+
+      <div class="catalog-image">
+
+        <img
+          src="SAG900-020.png"
+          alt="SAG900-020 Auto-Ignition Griddle">
+
+      </div>
+
+
+      <h3>
+        SAG900-020
+      </h3>
+
+
+      <p>
+
+        900 mm Kitchen Blue Auto-Ignition Griddle
+        with two double-ring burners and independent
+        ignition and flame control.
+
+      </p>
+
+
+      <a href="sag900-020.html">
+        VIEW PRODUCT
+      </a>
+
+
+    </article>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+
+  <div class="footer-grid">
+
+
+    <div class="footer-brand">
+
+
+      <a href="index.html"
+         class="footer-logo">
+
+        <img
+          src="onnuri-logo.png"
+          alt="Onnuri Kitchen">
+
+      </a>
+
+
+      <p>
+
+        Commercial kitchen equipment for restaurants, cafés,
+        commissaries, and other food businesses.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+
+      <h4>
+        Quick Links
+      </h4>
+
+
+      <a href="index.html#products">
+        Products
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+
+      <h4>
+        Contact
+      </h4>
+
+
+      <a href="mailto:onnurikitchen2025@gmail.com">
+
+        onnurikitchen2025@gmail.com
+
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/onnurioutletkitchencorporation"
+        target="_blank"
+        rel="noopener">
+
+        Facebook
+
+      </a>
+
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+
+      <h4>
+        Warehouse
+      </h4>
+
+
+      <p>
+
+        Km 78 McArthur Highway,<br>
+        Brgy. Saguin, San Fernando,<br>
+        Pampanga
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="footer-bottom">
+
+
+    <p>
+
+      © 2025–2026 Onnuri Outlet Kitchen Corporation.
+      All rights reserved.
+
+      <span class="site-signature">
+        Built by THRD
+      </span>
+
+    </p>
+
+
+  </div>
+
+
+</footer>
+
+
+
+<!-- =========================
+     FLOATING QUOTE LIST
+========================= -->
+
+<a
+  href="quote-list.html"
+  class="floating-quote"
+  aria-label="View Quote List">
+
+
+  <span class="floating-quote-icon">
+    📋
+  </span>
+
+
+  <span class="floating-quote-text">
+    Quote List
+  </span>
+
+
+  <span class="quote-count">
+    0
+  </span>
+
+
+</a>
+
+
+
+<!-- =========================
+     FLOATING BACK BUTTON
+========================= -->
+
+<a
+  href="index.html#products"
+  class="floating-back"
+  aria-label="Back to Products">
+
+  ←
+
+</a>
+
+
+
+<!-- =========================
+     QUOTE SCRIPT
+========================= -->
+
+<script src="quote.js"></script>
+
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<script>
+
+const menuToggle =
+  document.querySelector('.menu-toggle');
+
+const mainNav =
+  document.querySelector('.main-nav');
+
+
+if(menuToggle && mainNav){
+
+  menuToggle.addEventListener(
+    'click',
+    () => {
+
+
+      const isOpen =
+        mainNav.classList.toggle('open');
+
+
+      menuToggle.classList.toggle(
+        'active',
+        isOpen
+      );
+
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
+
+    }
+  );
+
+
+  mainNav.querySelectorAll('a').forEach(
+    link => {
+
+
+      link.addEventListener(
+        'click',
+        () => {
+
+
+          mainNav.classList.remove(
+            'open'
+          );
+
+
+          menuToggle.classList.remove(
+            'active'
+          );
+
+
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+
+        }
+      );
+
+
+    }
+  );
+
+}
+
+</script>
+
+
+
+<!-- =========================
+     STICKY HEADER
+========================= -->
+
+<script>
+
+const siteHeader =
+  document.querySelector('.site-header');
+
+
+if(siteHeader){
+
+
+  const updateStickyHeader = () => {
+
+
+    if(window.scrollY > 20){
+
+
+      siteHeader.classList.add(
+        'scrolled'
+      );
+
+
+    }else{
+
+
+      siteHeader.classList.remove(
+        'scrolled'
+      );
+
+
+    }
+
+
+  };
+
+
+  updateStickyHeader();
+
+
+  window.addEventListener(
+    'scroll',
+    updateStickyHeader
+  );
+
+
+}
+
+</script>
+
+
+
+<!-- =========================
+     PRODUCT FILTER
+========================= -->
+
+<script>
+
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+
+
+    const cards =
+      Array.from(
+        document.querySelectorAll(
+          '.catalog-card'
+        )
+      );
+
+
+    const sections =
+      Array.from(
+        document.querySelectorAll(
+          '.catalog-section'
+        )
+      );
+
+
+    const typeButtons =
+      document.querySelectorAll(
+        '[data-type-filter]'
+      );
+
+
+    const sizeButtons =
+      document.querySelectorAll(
+        '[data-size-filter]'
+      );
+
+
+    const resultText =
+      document.getElementById(
+        'catalogResults'
+      );
+
+
+    let activeType = 'all';
+
+    let activeSize = 'all';
+
+
+
+    function updateFilters(){
+
+
+      let visibleCount = 0;
+
+
+
+      cards.forEach(card => {
+
+
+        const cardType =
+          card.dataset.type;
+
+
+        const cardSize =
+          card.dataset.size;
+
+
+
+        const typeMatch =
+
+          activeType === 'all' ||
+
+          cardType === activeType;
+
+
+
+        const sizeMatch =
+
+          activeSize === 'all' ||
+
+          cardSize === activeSize;
+
+
+
+        const shouldShow =
+
+          typeMatch && sizeMatch;
+
+
+
+        card.classList.toggle(
+          'is-hidden',
+          !shouldShow
+        );
+
+
+
+        if(shouldShow){
+
+          visibleCount++;
+
+        }
+
+
+      });
+
+
+
+      sections.forEach(section => {
+
+
+        const visibleCards =
+
+          section.querySelectorAll(
+
+            '.catalog-card:not(.is-hidden)'
+
+          );
+
+
+
+        section.classList.toggle(
+
+          'is-hidden',
+
+          visibleCards.length === 0
+
+        );
+
+
+      });
+
+
+
+      if(resultText){
+
+
+        resultText.textContent =
+
+          visibleCount === 1
+
+            ? '1 product found'
+
+            : visibleCount +
+              ' products found';
+
+
+      }
+
+
+    }
+
+
+
+    typeButtons.forEach(button => {
+
+
+      button.addEventListener(
+        'click',
+        () => {
+
+
+          typeButtons.forEach(btn =>
+
+            btn.classList.remove(
+              'active'
+            )
+
+          );
+
+
+          button.classList.add(
+            'active'
+          );
+
+
+          activeType =
+
+            button.dataset.typeFilter;
+
+
+          updateFilters();
+
+
+        }
+      );
+
+
+    });
+
+
+
+    sizeButtons.forEach(button => {
+
+
+      button.addEventListener(
+        'click',
+        () => {
+
+
+          sizeButtons.forEach(btn =>
+
+            btn.classList.remove(
+              'active'
+            )
+
+          );
+
+
+          button.classList.add(
+            'active'
+          );
+
+
+          activeSize =
+
+            button.dataset.sizeFilter;
+
+
+          updateFilters();
+
+
+        }
+      );
+
+
+    });
+
+
+
+    updateFilters();
+
+
+  }
+);
+
+</script>
+
+
+
+<!-- =========================
+     FEEDBACK
+========================= -->
+
+<script src="feedback-widget.js"></script>
+<script src="feedback.js"></script>
+
+
+</body>
+
+</html>
