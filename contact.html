@@ -37,23 +37,65 @@
 
 
 <!-- =========================
-     HEADER
+     UNIVERSAL SITE HEADER
 ========================= -->
 
 <header class="site-header">
 
-  <a href="index.html"
-     class="brand brand-logo">
+  <!-- LOGO -->
 
-    <img src="onnuri-logo.png"
-         alt="Onnuri Kitchen">
-
+  <a href="index.html" class="brand brand-logo">
+    <img src="onnuri-logo.png" alt="Onnuri Kitchen">
   </a>
 
 
-  <button class="menu-toggle"
-          aria-label="Open navigation menu"
-          aria-expanded="false">
+  <!-- SEARCH -->
+
+  <div class="header-search">
+
+    <button
+      type="button"
+      class="search-toggle"
+      aria-label="Search products">
+
+      <span class="search-icon"></span>
+
+    </button>
+
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="Search products..."
+        autocomplete="off">
+
+
+      <button
+        type="button"
+        class="search-close"
+        aria-label="Close search">
+        ×
+      </button>
+
+
+      <div
+        class="search-results"
+        id="searchResults">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MOBILE MENU -->
+
+  <button
+    class="menu-toggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
 
     <span></span>
     <span></span>
@@ -62,9 +104,13 @@
   </button>
 
 
+  <!-- NAVIGATION -->
+
   <nav class="main-nav">
 
-    <a href="index.html">Home</a>
+    <a href="index.html">
+      Home
+    </a>
 
     <a href="index.html#products">
       Products
@@ -82,8 +128,9 @@
       Contact
     </a>
 
-    <a href="quote-list.html#quotationForm"
-       class="quote-btn">
+    <a
+      href="quote-list.html#quotationForm"
+      class="quote-btn">
       Request a Quote
     </a>
 
@@ -697,6 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
-
+<script src="quote.js"></script>
+<script src="search.js"></script>
 </body>
 </html>
