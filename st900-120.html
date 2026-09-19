@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ST600-001 | Onnuri Kitchen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <a href="index.html" class="brand brand-logo">
+    <img src="onnuri-logo.png" alt="Onnuri Kitchen">
+  </a>
+
+  <button class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Products</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="quote-list.html#quotationForm" class="quote-btn">
+      Request a Quote
+    </a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <a href="gas-ranges.html" class="back-to-category">
+    ← Back to Gas Ranges
+  </a>
+
+
+  <section class="product-detail">
+
+    <div class="product-detail-image">
+      <img src="ST600-001.png" alt="ST600-001">
+    </div>
+
+
+    <div class="product-detail-info">
+
+      <p class="hero-label">
+        COMMERCIAL GAS RANGE
+      </p>
+
+      <h1>ST600-001</h1>
+
+      <p class="product-detail-description">
+  Heavy-duty three-burner commercial standing gas range
+  designed for professional kitchen use.
+</p>
+
+
+      <div class="product-specs">
+
+  <h2>Product Specifications</h2>
+
+  <p><strong>Model:</strong> ST900-120</p>
+
+  <p><strong>Dimensions:</strong> 900 × 600 × 800 mm</p>
+
+  <p><strong>Weight:</strong> 44 kg</p>
+
+  <p><strong>Total Burners:</strong> 3 EA</p>
+
+  <p><strong>Burner:</strong> Single-Ring (Single Flame) — 1 EA</p>
+
+  <p><strong>Burner:</strong> Double-Ring (Double Flame) — 2 EA</p>
+
+  <p><strong>Burner Type:</strong> Ceramic-Coated Shield Burner</p>
+
+  <p><strong>Gas Consumption:</strong> LPG 2.50 kg / LNG 23,500 kcal</p>
+
+  <p><strong>Power Source:</strong> Gas</p>
+
+</div>
+
+
+      <div class="quote-actions">
+
+        <button
+          class="product-quote-btn add-to-quote"
+          data-product="ST600-001">
+          ADD TO QUOTE
+        </button>
+
+        <button class="remove-from-quote">
+          REMOVE FROM QUOTE
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="footer-logo">
+        <img src="onnuri-logo.png" alt="Onnuri Kitchen">
+      </a>
+
+      <p>
+        Commercial kitchen equipment for restaurants, cafés,
+        commissaries, and other food businesses.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Quick Links</h4>
+
+      <a href="index.html#products">Products</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Contact</h4>
+
+      <a href="mailto:onnurikitchen2025@gmail.com">
+        onnurikitchen2025@gmail.com
+      </a>
+
+      <a href="https://www.facebook.com/onnurioutletkitchencorporation"
+         target="_blank"
+         rel="noopener">
+        Facebook
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Warehouse</h4>
+
+      <p>
+        Km 78 McArthur Highway,<br>
+        Brgy. Saguin, San Fernando,<br>
+        Pampanga
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
+      <span class="site-signature">Built by THRD</span>
+    </p>
+
+  </div>
+
+</footer>
+
+
+<a href="quote-list.html"
+   class="floating-quote">
+
+  <span class="floating-quote-icon">📋</span>
+  <span class="floating-quote-text">Quote List</span>
+  <span class="quote-count">0</span>
+
+</a>
+
+
+<script src="quote.js"></script>
+
+
+<script>
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if(menuToggle && mainNav){
+
+    menuToggle.addEventListener('click', () => {
+
+      const isOpen = mainNav.classList.toggle('open');
+
+      menuToggle.classList.toggle('active', isOpen);
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
+    });
+
+
+    mainNav.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        mainNav.classList.remove('open');
+
+        menuToggle.classList.remove('active');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      });
+
+    });
+
+  }
+
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const addButton = document.querySelector('.add-to-quote');
+  const removeButton = document.querySelector('.remove-from-quote');
+  const floatingQuote = document.querySelector('.floating-quote');
+
+  const productName = 'ST900-120';
+
+
+  /* =========================
+     ADD TO QUOTE
+  ========================= */
+
+  if(addButton){
+
+    addButton.addEventListener('click', () => {
+
+      addProductToQuote(productName);
+
+      /* Update count immediately */
+      updateQuoteCount();
+
+
+      /* Flying check animation */
+      if(floatingQuote){
+
+        const startRect = addButton.getBoundingClientRect();
+        const endRect = floatingQuote.getBoundingClientRect();
+
+        const flyer = document.createElement('div');
+
+        flyer.textContent = '✓';
+        flyer.className = 'quote-flyer';
+
+        flyer.style.left =
+          (startRect.left + startRect.width / 2) + 'px';
+
+        flyer.style.top =
+          (startRect.top + startRect.height / 2) + 'px';
+
+        document.body.appendChild(flyer);
+
+
+        requestAnimationFrame(() => {
+
+          flyer.style.left =
+            (endRect.left + endRect.width / 2) + 'px';
+
+          flyer.style.top =
+            (endRect.top + endRect.height / 2) + 'px';
+
+          flyer.style.transform =
+            'translate(-50%, -50%) scale(.4)';
+
+          flyer.style.opacity = '0';
+
+        });
+
+
+        setTimeout(() => {
+
+          flyer.remove();
+
+          floatingQuote.classList.add('quote-pulse');
+
+          setTimeout(() => {
+            floatingQuote.classList.remove('quote-pulse');
+          }, 400);
+
+        }, 650);
+
+      }
+
+    });
+
+  }
+
+
+  /* =========================
+     REMOVE FROM QUOTE
+  ========================= */
+
+  if(removeButton){
+
+    removeButton.addEventListener('click', () => {
+
+      removeProductFromQuote(productName);
+
+      /* Update count immediately */
+      updateQuoteCount();
+
+    });
+
+  }
+
+});
+  
+</script>
+
+
+</body>
+</html>
