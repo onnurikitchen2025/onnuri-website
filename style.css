@@ -12167,3 +12167,17 @@ a.floating-back{
   z-index: 1000;
   width: 100%;
 }
+/* ========================================
+   MOBILE STICKY HEADER FIX
+======================================== */
+
+@media (max-width: 900px) {
+
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    width: 100%;
+  }
+
+}
