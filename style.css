@@ -12212,3 +12212,26 @@ a.floating-back{
   }
 
 }
+/* ========================================
+   MOBILE FIXED HEADER CLEARANCE
+======================================== */
+
+@media (max-width: 900px) {
+
+  body {
+    padding-top: 72px !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  /* Individual product pages */
+  .back-to-category {
+    display: inline-block !important;
+    margin: 28px 16px 28px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+}
