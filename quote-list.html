@@ -1195,104 +1195,106 @@ if(quotationForm){
 
 
       /* =========================
-         SUBMIT FORM
-      ========================= */
+   SUBMIT FORM
+========================= */
 
-      const submitButton =
-        quotationForm.querySelector(
-          'button[type="submit"]'
-        );
+const submitButton =
+  quotationForm.querySelector(
+    'button[type="submit"]'
+  );
 
 
-      if(submitButton){
+if(submitButton){
 
-        submitButton.disabled =
-          true;
+  submitButton.disabled = true;
 
-        submitButton.textContent =
-          'SUBMITTING...';
+  submitButton.textContent =
+    'SUBMITTING...';
 
+}
+
+
+/* SAVE FORM DATA */
+
+const formData =
+  new FormData(quotationForm);
+
+
+try {
+
+  const response =
+    await fetch(
+      'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
+      {
+        method: 'POST',
+
+        headers: {
+          'Accept': 'application/json'
+        },
+
+        body: formData
       }
+    );
 
 
-      const formData =
-        new FormData(
-          quotationForm
-        );
+  const result =
+    await response.json();
 
 
-      try{
+  if(
+    response.ok &&
+    (
+      result.success === true ||
+      result.success === 'true'
+    )
+  ){
+
+    localStorage.removeItem(
+      'onnuriQuoteList'
+    );
+
+    window.location.href =
+      'thank-you.html';
+
+    return;
+
+  }
 
 
-        const response =
-          await fetch(
-            'https://formsubmit.co/ajax/onnurikitchen2025@gmail.com',
-            {
-
-              method: 'POST',
-
-              headers: {
-                'Accept':
-                  'application/json'
-              },
-
-              body:
-                formData
-
-            }
-          );
+  throw new Error(
+    result.message ||
+    'Form submission failed.'
+  );
 
 
-        if(response.ok){
+}catch(error){
+
+  console.error(
+    'Quotation submission error:',
+    error
+  );
 
 
-          localStorage.removeItem(
-            'onnuriQuoteList'
-          );
+  alert(
+    'Unable to submit your quotation right now. Please try again.'
+  );
 
 
-          window.location.replace(
-            'thank-you.html'
-          );
+  if(submitButton){
 
+    submitButton.disabled = false;
 
-          return;
+    submitButton.textContent =
+      'SUBMIT QUOTATION REQUEST';
 
-        }
+  }
 
-
-        throw new Error(
-          'Form submission failed.'
-        );
-
-
-      }catch(error){
-
-
-        alert(
-          'Unable to submit your quotation. Please check your connection and try again.'
-        );
-
-
-        if(submitButton){
-
-          submitButton.disabled =
-            false;
-
-          submitButton.textContent =
-            'SUBMIT QUOTATION REQUEST';
-
-        }
-
-      }
+}
 
     }
   );
 
 }
-
-
-
 /* =========================
    STICKY HEADER
 ========================= */
