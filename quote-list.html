@@ -364,6 +364,7 @@
   }
 
 
+<script>
   /* =========================
      QUOTATION FORM SUBMIT
   ========================= */
@@ -378,6 +379,37 @@
       async function(e){
 
         e.preventDefault();
+
+
+        /* =========================
+           VALIDATE QUOTE PRODUCTS
+        ========================= */
+
+        const quoteList = getQuoteList();
+
+        if(quoteList.length === 0){
+
+          alert(
+            'Please add at least one equipment item to your Quote List before submitting a quotation request.'
+          );
+
+          const quoteListSection =
+            document.getElementById('quoteListItems');
+
+          if(quoteListSection){
+            quoteListSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }
+
+          return;
+        }
+
+
+        /* =========================
+           SUBMIT FORM
+        ========================= */
 
         const submitButton =
           quotationForm.querySelector(
@@ -441,8 +473,10 @@
     );
   }
 </script>
-  <script>
-  const siteHeader = document.querySelector('.site-header');
+
+<script>
+  const siteHeader =
+    document.querySelector('.site-header');
 
   if(siteHeader){
 
@@ -458,7 +492,10 @@
 
     updateStickyHeader();
 
-    window.addEventListener('scroll', updateStickyHeader);
+    window.addEventListener(
+      'scroll',
+      updateStickyHeader
+    );
 
   }
 </script>
