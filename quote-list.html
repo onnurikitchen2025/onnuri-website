@@ -61,13 +61,53 @@
     aria-label="Open navigation menu"
     aria-expanded="false"
   >
-
     <span></span>
     <span></span>
     <span></span>
-
   </button>
 
+
+  <!-- SEARCH -->
+
+  <div class="header-search">
+
+    <button
+      type="button"
+      class="search-toggle"
+      aria-label="Search products"
+    >
+      <span class="search-icon"></span>
+    </button>
+
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="Search products..."
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        class="search-close"
+        aria-label="Close search"
+      >
+        ×
+      </button>
+
+      <div
+        class="search-results"
+        id="searchResults"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- NAVIGATION -->
 
   <nav class="main-nav">
 
@@ -115,19 +155,13 @@
     YOUR SELECTION
   </p>
 
-
   <h1>
     Quote List
   </h1>
 
-
   <p class="quote-list-intro">
-
-    Review the equipment you selected
-    before requesting a quotation.
-
+    Review the equipment you selected before requesting a quotation.
   </p>
-
 
 
   <!-- =========================
@@ -153,7 +187,6 @@
   </div>
 
 
-
   <!-- =========================
        QUOTE ACTIONS
   ========================= -->
@@ -166,7 +199,6 @@
     >
       ← CONTINUE BROWSING
     </a>
-
 
     <a
       href="#quotation-form"
@@ -195,17 +227,12 @@
         REQUEST A QUOTATION
       </p>
 
-
       <h2>
         Tell Us About Your Requirements
       </h2>
 
-
       <p>
-
-        Complete the form below and our team
-        will review your selected equipment.
-
+        Complete the form below and our team will review your equipment requirements.
       </p>
 
     </div>
@@ -220,7 +247,7 @@
     >
 
 
-      <!-- FormSubmit Settings -->
+      <!-- FORMSUBMIT SETTINGS -->
 
       <input
         type="hidden"
@@ -228,13 +255,11 @@
         value="New Quotation Request - Onnuri Website"
       >
 
-
       <input
         type="hidden"
         name="_template"
         value="table"
       >
-
 
       <input
         type="hidden"
@@ -284,7 +309,7 @@
 
 
 
-        <!-- CONTACT -->
+        <!-- CONTACT NUMBER -->
 
         <div class="form-group">
 
@@ -296,8 +321,26 @@
             type="tel"
             id="contactNumber"
             name="Contact Number"
+            inputmode="numeric"
+            autocomplete="tel"
+            minlength="7"
+            maxlength="15"
+            placeholder="09157006009"
             required
           >
+
+          <small
+            id="contactError"
+            style="
+              display:none;
+              color:#b42318;
+              margin-top:6px;
+              font-size:12px;
+              line-height:1.4;
+            "
+          >
+            Please enter a valid contact number using numbers only.
+          </small>
 
         </div>
 
@@ -315,14 +358,29 @@
             type="email"
             id="customerEmail"
             name="Email"
+            autocomplete="email"
+            placeholder="example@company.com.ph"
             required
           >
+
+          <small
+            id="emailError"
+            style="
+              display:none;
+              color:#b42318;
+              margin-top:6px;
+              font-size:12px;
+              line-height:1.4;
+            "
+          >
+            Please enter a complete and valid email address.
+          </small>
 
         </div>
 
 
 
-        <!-- DELIVERY -->
+        <!-- DELIVERY LOCATION -->
 
         <div class="form-group full-width">
 
@@ -346,21 +404,78 @@
         <div class="form-group full-width">
 
           <label for="selectedProducts">
-            Selected Products *
+            Selected Products
           </label>
 
           <textarea
             id="selectedProducts"
             name="Selected Products"
             readonly
-            placeholder="Add equipment to your Quote List before submitting."
+            placeholder="Products added to your Quote List will appear here."
           ></textarea>
 
         </div>
 
 
 
-        <!-- MESSAGE -->
+        <!-- OR DIVIDER -->
+
+        <div
+          class="form-group full-width"
+          style="
+            text-align:center;
+            margin-top:-4px;
+            margin-bottom:-4px;
+          "
+        >
+
+          <span
+            style="
+              display:inline-block;
+              font-size:12px;
+              font-weight:700;
+              letter-spacing:.08em;
+              color:#68746f;
+            "
+          >
+            OR
+          </span>
+
+        </div>
+
+
+
+        <!-- MANUAL EQUIPMENT REQUEST -->
+
+        <div class="form-group full-width">
+
+          <label for="manualEquipment">
+            Equipment Required / Manual Request
+          </label>
+
+          <textarea
+            id="manualEquipment"
+            name="Equipment Required / Manual Request"
+            placeholder="Example: 4 Door Upright Chiller, 2 Deck Baking Oven, Stainless Work Table"
+          ></textarea>
+
+          <small
+            style="
+              display:block;
+              margin-top:6px;
+              color:#68746f;
+              font-size:12px;
+              line-height:1.5;
+            "
+          >
+            Use this field if the equipment you need is not currently listed on our website.
+          </small>
+
+        </div>
+
+
+
+        <!-- ADDITIONAL REQUIREMENTS -->
 
         <div class="form-group full-width">
 
@@ -371,7 +486,7 @@
           <textarea
             id="customerMessage"
             name="Additional Requirements"
-            placeholder="Quantity, preferred delivery date, or other requirements"
+            placeholder="Quantity, dimensions, specifications, preferred delivery date, or other requirements"
           ></textarea>
 
         </div>
@@ -381,7 +496,7 @@
 
 
 
-      <!-- VALIDATION MESSAGE -->
+      <!-- EQUIPMENT VALIDATION -->
 
       <div
         id="quoteValidationMessage"
@@ -396,11 +511,7 @@
           line-height:1.5;
         "
       >
-
-        Please add at least one equipment item
-        to your Quote List before submitting
-        a quotation request.
-
+        Please add at least one product to your Quote List or enter the equipment you require in the Manual Request field.
       </div>
 
 
@@ -415,7 +526,6 @@
 
     </form>
 
-
   </section>
 
 
@@ -429,7 +539,6 @@
 
 <footer class="site-footer">
 
-
   <div class="footer-grid">
 
 
@@ -439,20 +548,15 @@
         href="index.html"
         class="footer-logo"
       >
-
         <img
           src="onnuri-logo.png"
           alt="Onnuri Kitchen"
         >
-
       </a>
 
-
       <p>
-
-        Commercial kitchen equipment for restaurants,
-        cafés, commissaries, and other food businesses.
-
+        Commercial kitchen equipment for restaurants, cafés,
+        commissaries, and other food businesses.
       </p>
 
     </div>
@@ -514,19 +618,12 @@
       </h4>
 
       <p>
-
-        Km 78 McArthur Highway,
-        <br>
-
-        Brgy. Saguin, San Fernando,
-        <br>
-
+        Km 78 McArthur Highway,<br>
+        Brgy. Saguin, San Fernando,<br>
         Pampanga
-
       </p>
 
     </div>
-
 
   </div>
 
@@ -535,20 +632,25 @@
   <div class="footer-bottom">
 
     <p>
-
       © 2025–2026 Onnuri Outlet Kitchen Corporation.
       All rights reserved.
 
       <span class="site-signature">
         Built by THRD
       </span>
-
     </p>
 
   </div>
 
-
 </footer>
+
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<script src="search.js"></script>
 
 
 
@@ -571,7 +673,6 @@ const validationMessage =
   document.getElementById('quoteValidationMessage');
 
 
-
 function getQuoteList(){
 
   try{
@@ -589,7 +690,6 @@ function getQuoteList(){
 }
 
 
-
 function saveQuoteList(list){
 
   localStorage.setItem(
@@ -600,14 +700,11 @@ function saveQuoteList(list){
 }
 
 
-
 function renderQuoteList(){
 
   const quoteList =
     getQuoteList();
 
-
-  /* UPDATE FORM */
 
   if(selectedProducts){
 
@@ -617,9 +714,6 @@ function renderQuoteList(){
   }
 
 
-
-  /* CLEAR DISPLAY */
-
   if(!quoteListItems || !emptyQuoteMessage){
     return;
   }
@@ -627,9 +721,6 @@ function renderQuoteList(){
 
   quoteListItems.innerHTML = '';
 
-
-
-  /* EMPTY QUOTE */
 
   if(quoteList.length === 0){
 
@@ -640,9 +731,6 @@ function renderQuoteList(){
 
   }
 
-
-
-  /* PRODUCTS EXIST */
 
   emptyQuoteMessage.style.display =
     'none';
@@ -656,17 +744,14 @@ function renderQuoteList(){
   }
 
 
-
   quoteList.forEach(product => {
 
 
     const item =
       document.createElement('div');
 
-
     item.className =
       'quote-list-item';
-
 
 
     const productInfo =
@@ -676,64 +761,51 @@ function renderQuoteList(){
     const productTitle =
       document.createElement('h3');
 
-
     productTitle.textContent =
       product;
-
 
 
     const productType =
       document.createElement('p');
 
-
     productType.textContent =
       'Commercial Kitchen Equipment';
-
 
 
     productInfo.appendChild(
       productTitle
     );
 
-
     productInfo.appendChild(
       productType
     );
 
 
-
     const removeButton =
       document.createElement('button');
-
 
     removeButton.type =
       'button';
 
-
     removeButton.className =
       'remove-quote-item';
 
-
     removeButton.textContent =
       'REMOVE';
-
 
 
     removeButton.addEventListener(
       'click',
       function(){
 
-
         const updatedList =
           getQuoteList().filter(
             item => item !== product
           );
 
-
         saveQuoteList(
           updatedList
         );
-
 
         renderQuoteList();
 
@@ -741,16 +813,13 @@ function renderQuoteList(){
     );
 
 
-
     item.appendChild(
       productInfo
     );
 
-
     item.appendChild(
       removeButton
     );
-
 
     quoteListItems.appendChild(
       item
@@ -761,8 +830,111 @@ function renderQuoteList(){
 }
 
 
-
 renderQuoteList();
+
+
+
+/* =========================
+   CONTACT NUMBER
+========================= */
+
+const contactNumber =
+  document.getElementById('contactNumber');
+
+const contactError =
+  document.getElementById('contactError');
+
+
+if(contactNumber){
+
+  contactNumber.addEventListener(
+    'input',
+    function(){
+
+      /*
+        REMOVE EVERYTHING
+        EXCEPT NUMBERS
+      */
+
+      this.value =
+        this.value.replace(/\D/g, '');
+
+
+      if(contactError){
+
+        contactError.style.display =
+          'none';
+
+      }
+
+    }
+  );
+
+}
+
+
+
+/* =========================
+   EMAIL
+========================= */
+
+const customerEmail =
+  document.getElementById('customerEmail');
+
+const emailError =
+  document.getElementById('emailError');
+
+
+function isValidEmail(email){
+
+  /*
+    ACCEPTS:
+    name@gmail.com
+    sales@company.com.ph
+    info@company.ph
+    buyer@company.org
+    ETC.
+  */
+
+  const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  return emailPattern.test(
+    email.trim()
+  );
+
+}
+
+
+
+/* =========================
+   MANUAL EQUIPMENT
+========================= */
+
+const manualEquipment =
+  document.getElementById('manualEquipment');
+
+
+if(manualEquipment){
+
+  manualEquipment.addEventListener(
+    'input',
+    function(){
+
+      if(
+        this.value.trim().length > 0 &&
+        validationMessage
+      ){
+
+        validationMessage.style.display =
+          'none';
+
+      }
+
+    }
+  );
+
+}
 
 
 
@@ -779,21 +951,17 @@ const mainNav =
 
 if(menuToggle && mainNav){
 
-
   menuToggle.addEventListener(
     'click',
     function(){
 
-
       const isOpen =
         mainNav.classList.toggle('open');
-
 
       menuToggle.classList.toggle(
         'active',
         isOpen
       );
-
 
       menuToggle.setAttribute(
         'aria-expanded',
@@ -804,26 +972,21 @@ if(menuToggle && mainNav){
   );
 
 
-
   mainNav
     .querySelectorAll('a')
     .forEach(link => {
-
 
       link.addEventListener(
         'click',
         function(){
 
-
           mainNav.classList.remove(
             'open'
           );
 
-
           menuToggle.classList.remove(
             'active'
           );
-
 
           menuToggle.setAttribute(
             'aria-expanded',
@@ -840,7 +1003,7 @@ if(menuToggle && mainNav){
 
 
 /* =========================
-   QUOTATION FORM SUBMIT
+   QUOTATION FORM
 ========================= */
 
 const quotationForm =
@@ -851,28 +1014,30 @@ const quotationForm =
 
 if(quotationForm){
 
-
   quotationForm.addEventListener(
     'submit',
     async function(e){
 
-
-      /* ALWAYS STOP NORMAL FORM SUBMISSION */
-
       e.preventDefault();
 
 
-
       /* =========================
-         CHECK SELECTED PRODUCTS
+         EQUIPMENT VALIDATION
       ========================= */
 
       const quoteList =
         getQuoteList();
 
+      const manualRequest =
+        manualEquipment
+          ? manualEquipment.value.trim()
+          : '';
 
-      if(quoteList.length === 0){
 
+      if(
+        quoteList.length === 0 &&
+        manualRequest.length < 3
+      ){
 
         if(validationMessage){
 
@@ -886,18 +1051,120 @@ if(quotationForm){
 
         }
 
+        if(manualEquipment){
+          manualEquipment.focus();
+        }
 
         return;
 
       }
 
 
-
       /* =========================
-         FINAL FORM VALIDATION
+         CONTACT VALIDATION
       ========================= */
 
-      if(!quotationForm.checkValidity()){
+      const contactValue =
+        contactNumber
+          ? contactNumber.value.trim()
+          : '';
+
+
+      const contactPattern =
+        /^\d{7,15}$/;
+
+
+      if(
+        !contactPattern.test(
+          contactValue
+        )
+      ){
+
+        if(contactError){
+
+          contactError.style.display =
+            'block';
+
+        }
+
+        if(contactNumber){
+
+          contactNumber.focus();
+
+          contactNumber.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+        }
+
+        return;
+
+      }
+
+
+      if(contactError){
+
+        contactError.style.display =
+          'none';
+
+      }
+
+
+      /* =========================
+         EMAIL VALIDATION
+      ========================= */
+
+      const emailValue =
+        customerEmail
+          ? customerEmail.value.trim()
+          : '';
+
+
+      if(
+        !isValidEmail(
+          emailValue
+        )
+      ){
+
+        if(emailError){
+
+          emailError.style.display =
+            'block';
+
+        }
+
+        if(customerEmail){
+
+          customerEmail.focus();
+
+          customerEmail.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+        }
+
+        return;
+
+      }
+
+
+      if(emailError){
+
+        emailError.style.display =
+          'none';
+
+      }
+
+
+      /* =========================
+         HTML REQUIRED FIELDS
+      ========================= */
+
+      if(
+        !quotationForm.checkValidity()
+      ){
 
         quotationForm.reportValidity();
 
@@ -906,20 +1173,29 @@ if(quotationForm){
       }
 
 
-
-      /* KEEP PRODUCT FIELD UPDATED */
+      /* =========================
+         UPDATE SELECTED PRODUCTS
+      ========================= */
 
       if(selectedProducts){
 
-        selectedProducts.value =
-          quoteList.join('\n');
+        if(quoteList.length > 0){
+
+          selectedProducts.value =
+            quoteList.join('\n');
+
+        }else{
+
+          selectedProducts.value =
+            'No website product selected';
+
+        }
 
       }
 
 
-
       /* =========================
-         SUBMIT
+         SUBMIT FORM
       ========================= */
 
       const submitButton =
@@ -939,7 +1215,6 @@ if(quotationForm){
       }
 
 
-
       const formData =
         new FormData(
           quotationForm
@@ -957,10 +1232,8 @@ if(quotationForm){
               method: 'POST',
 
               headers: {
-
                 'Accept':
                   'application/json'
-
               },
 
               body:
@@ -970,24 +1243,13 @@ if(quotationForm){
           );
 
 
-
         if(response.ok){
 
-
-          /*
-            CLEAR QUOTE AFTER
-            SUCCESSFUL SUBMISSION
-          */
 
           localStorage.removeItem(
             'onnuriQuoteList'
           );
 
-
-          /*
-            GO TO OUR OWN
-            THANK YOU PAGE
-          */
 
           window.location.replace(
             'thank-you.html'
@@ -997,7 +1259,6 @@ if(quotationForm){
           return;
 
         }
-
 
 
         throw new Error(
@@ -1044,10 +1305,8 @@ const siteHeader =
 
 if(siteHeader){
 
-
   const updateStickyHeader =
     function(){
-
 
       if(window.scrollY > 20){
 
