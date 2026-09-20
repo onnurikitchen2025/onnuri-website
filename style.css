@@ -12235,3 +12235,60 @@ a.floating-back{
   }
 
 }
+/* ========================================
+   FLOATING BACK BUTTON
+======================================== */
+
+.floating-back {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #07352c;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+
+  z-index: 9000;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floating-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .floating-back {
+    left: 16px;
+    bottom: 18px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 23px;
+  }
+
+}
