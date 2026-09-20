@@ -12126,3 +12126,51 @@ a.floating-back{
   }
 
 }
+/* ========================================
+   PRODUCT CATEGORY IMAGES
+======================================== */
+
+.product-category-image.has-product-image {
+  position: relative;
+  overflow: hidden;
+  background: #f5f7f6;
+}
+
+.product-category-image.has-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+  transition: transform 0.35s ease;
+}
+
+.product-category-card:hover
+.product-category-image.has-product-image img {
+  transform: scale(1.04);
+}
+
+/* Category label over image */
+.product-category-image.has-product-image span {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+
+  background: rgba(7, 53, 44, 0.92);
+  color: #fff;
+
+  padding: 7px 12px;
+  border-radius: 5px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .product-category-image.has-product-image img {
+    padding: 12px;
+  }
+
+}
