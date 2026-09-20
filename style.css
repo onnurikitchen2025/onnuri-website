@@ -12187,3 +12187,28 @@ a.floating-back{
   }
 
 }
+/* ========================================
+   MOBILE PRODUCT PAGE FIX
+======================================== */
+
+@media (max-width: 900px) {
+
+  /* More clearance below fixed header */
+  main {
+    padding-top: 28px;
+  }
+
+  /* Make category back link visible */
+  .back-to-category {
+    display: inline-block !important;
+    margin: 0 16px 28px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Space between back link and product card */
+  .product-detail {
+    margin-top: 0 !important;
+  }
+
+}
