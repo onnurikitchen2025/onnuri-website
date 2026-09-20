@@ -221,174 +221,6 @@
 
 </section>
 
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section id="products"
-         class="products-section">
-
-
-  <div class="section-heading">
-
-
-
-    <h2>
-      Explore Our Products
-    </h2>
-
-
-    <p>
-
-      Commercial kitchen equipment built for restaurants,
-      cafés, commissaries, and professional food businesses.
-
-    </p>
-
-
-  </div>
-
-
-
-  <div class="products-grid">
-
-
-    <!-- GAS RANGES -->
-
-    <a href="gas-ranges.html"
-       class="product-category-card">
-
-
-      <div class="product-category-image">
-
-        <span>
-          GAS RANGES
-        </span>
-
-      </div>
-
-
-      <h3>
-        Gas Ranges
-      </h3>
-
-
-      <p>
-
-        Commercial gas ranges designed for restaurants,
-        cafés, commissaries, and professional kitchens.
-
-      </p>
-
-
-    </a>
-
-
-
-    <!-- GRIDDLES & GRILLERS -->
-
-    <a href="griddles-grillers.html"
-       class="product-category-card">
-
-
-      <div class="product-category-image">
-
-        <span>
-          GRIDDLES & GRILLERS
-        </span>
-
-      </div>
-
-
-      <h3>
-        Griddles & Grillers
-      </h3>
-
-
-      <p>
-
-        Commercial griddles and barbecue grillers
-        designed for high-volume cooking, grilling,
-        and professional kitchen operations.
-
-      </p>
-
-
-    </a>
-
-
-
-    <!-- STAINLESS EQUIPMENT -->
-
-    <a href="stainless.html"
-       class="product-category-card">
-
-
-      <div class="product-category-image">
-
-        <span>
-          STAINLESS EQUIPMENT
-        </span>
-
-      </div>
-
-
-      <h3>
-        Stainless Equipment
-      </h3>
-
-
-      <p>
-
-        Commercial sinks, work tables, racks, and other
-        stainless equipment for kitchen preparation
-        and operations.
-
-      </p>
-
-
-    </a>
-
-
-
-    <!-- OTHER PRODUCTS -->
-
-    <a href="other-products.html"
-       class="product-category-card">
-
-
-      <div class="product-category-image">
-
-        <span>
-          OTHER PRODUCTS
-        </span>
-
-      </div>
-
-
-      <h3>
-        Other Products
-      </h3>
-
-
-      <p>
-
-        Selected commercial kitchen equipment
-        currently available in limited quantities.
-
-      </p>
-
-
-    </a>
-
-
-  </div>
-
-
-</section>
-
 <!-- =====================================================
      FEATURED EQUIPMENT SHOWCASE
 ===================================================== -->
@@ -581,6 +413,173 @@
   </div>
 
 </section>
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products"
+         class="products-section">
+
+
+  <div class="section-heading">
+
+
+
+    <h2>
+      Explore Our Products
+    </h2>
+
+
+    <p>
+
+      Commercial kitchen equipment built for restaurants,
+      cafés, commissaries, and professional food businesses.
+
+    </p>
+
+
+  </div>
+
+
+
+  <div class="products-grid">
+
+
+    <!-- GAS RANGES -->
+
+    <a href="gas-ranges.html"
+       class="product-category-card">
+
+
+      <div class="product-category-image">
+
+        <span>
+          GAS RANGES
+        </span>
+
+      </div>
+
+
+      <h3>
+        Gas Ranges
+      </h3>
+
+
+      <p>
+
+        Commercial gas ranges designed for restaurants,
+        cafés, commissaries, and professional kitchens.
+
+      </p>
+
+
+    </a>
+
+
+
+    <!-- GRIDDLES & GRILLERS -->
+
+    <a href="griddles-grillers.html"
+       class="product-category-card">
+
+
+      <div class="product-category-image">
+
+        <span>
+          GRIDDLES & GRILLERS
+        </span>
+
+      </div>
+
+
+      <h3>
+        Griddles & Grillers
+      </h3>
+
+
+      <p>
+
+        Commercial griddles and barbecue grillers
+        designed for high-volume cooking, grilling,
+        and professional kitchen operations.
+
+      </p>
+
+
+    </a>
+
+
+
+    <!-- STAINLESS EQUIPMENT -->
+
+    <a href="stainless.html"
+       class="product-category-card">
+
+
+      <div class="product-category-image">
+
+        <span>
+          STAINLESS EQUIPMENT
+        </span>
+
+      </div>
+
+
+      <h3>
+        Stainless Equipment
+      </h3>
+
+
+      <p>
+
+        Commercial sinks, work tables, racks, and other
+        stainless equipment for kitchen preparation
+        and operations.
+
+      </p>
+
+
+    </a>
+
+
+
+    <!-- OTHER PRODUCTS -->
+
+    <a href="other-products.html"
+       class="product-category-card">
+
+
+      <div class="product-category-image">
+
+        <span>
+          OTHER PRODUCTS
+        </span>
+
+      </div>
+
+
+      <h3>
+        Other Products
+      </h3>
+
+
+      <p>
+
+        Selected commercial kitchen equipment
+        currently available in limited quantities.
+
+      </p>
+
+
+    </a>
+
+
+  </div>
+
+
+</section>
+
 <!-- =====================================================
      BUILD YOUR KITCHEN
 ===================================================== -->
