@@ -211,5 +211,35 @@ if(menuToggle && mainNav){
 }
 </script>
 
+
+
+<script>
+/* =========================
+   STICKY HEADER
+========================= */
+
+const siteHeader = document.querySelector('.site-header');
+
+if (siteHeader) {
+
+  const updateStickyHeader = function () {
+
+    if (window.scrollY > 20) {
+      siteHeader.classList.add('scrolled');
+    } else {
+      siteHeader.classList.remove('scrolled');
+    }
+
+  };
+
+  updateStickyHeader();
+
+  window.addEventListener(
+    'scroll',
+    updateStickyHeader
+  );
+}
+</script>
+
 </body>
 </html>
