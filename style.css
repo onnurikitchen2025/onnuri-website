@@ -12292,3 +12292,40 @@ a.floating-back{
   }
 
 }
+/* ========================================
+   PRODUCT FLOATING BACK - FINAL FIX
+======================================== */
+
+a.floating-back {
+  display: flex !important;
+  position: fixed !important;
+
+  left: 16px !important;
+  right: auto !important;
+  bottom: 18px !important;
+
+  width: 52px !important;
+  height: 52px !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: #07352c !important;
+  color: #ffffff !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  text-decoration: none !important;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  z-index: 9998 !important;
+}
