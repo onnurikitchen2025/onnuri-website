@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     border: '1px solid rgba(255,255,255,.35)',
     borderRadius: '6px',
+    opacity: '0.45',
 
     fontSize: '20px',
     fontWeight: '700',
@@ -68,5 +69,63 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
   }
+
+});
+
+/* ========================================
+   FLOATING BACK FADE INTERACTION
+======================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const floatingBack = document.querySelector('.floating-back');
+
+  if (!floatingBack) return;
+
+  /* Default faded state */
+  floatingBack.style.opacity = '0.45';
+
+  floatingBack.style.transition =
+    'opacity 0.2s ease, transform 0.2s ease';
+
+  /* Desktop hover */
+  floatingBack.addEventListener('mouseenter', () => {
+    floatingBack.style.opacity = '1';
+  });
+
+  floatingBack.addEventListener('mouseleave', () => {
+    floatingBack.style.opacity = '0.45';
+  });
+
+  /* Keyboard focus */
+  floatingBack.addEventListener('focus', () => {
+    floatingBack.style.opacity = '1';
+  });
+
+  floatingBack.addEventListener('blur', () => {
+    floatingBack.style.opacity = '0.45';
+  });
+
+  /* Mobile touch */
+  floatingBack.addEventListener(
+    'touchstart',
+    () => {
+      floatingBack.style.opacity = '1';
+      floatingBack.style.transform = 'scale(0.94)';
+    },
+    { passive: true }
+  );
+
+  floatingBack.addEventListener(
+    'touchend',
+    () => {
+      floatingBack.style.transform = 'scale(1)';
+
+      setTimeout(() => {
+        floatingBack.style.opacity = '0.45';
+      }, 150);
+    },
+    { passive: true }
+  );
 
 });
