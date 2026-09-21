@@ -376,7 +376,6 @@ footer{
   }
 
 }
-}
 
 .catalog-image{
   height:220px;
@@ -435,7 +434,6 @@ footer{
   main section:not(.hero){
     padding:50px 6%;
   }
-}
 .catalog-image{
   overflow:hidden;
 }
@@ -12330,76 +12328,198 @@ a.floating-back {
   z-index: 9998 !important;
 }
 
+/* =========================================================
+   ONNURI FINAL MOBILE CONTROLS
+   Canonical rules for mobile header + floating controls
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Fixed mobile header */
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+  }
+
+  body {
+    padding-top: 72px !important;
+  }
+
+  /* Keep normal product back link visible below header */
+  .back-to-category {
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 28px 16px 28px !important;
+  }
+
+  /* Small floating back button */
+  a.floating-back,
+  .floating-back {
+    display: flex !important;
+    position: fixed !important;
+    left: 14px !important;
+    right: auto !important;
+    bottom: 14px !important;
+
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #07352c !important;
+    color: #ffffff !important;
+
+    border: 0 !important;
+    border-radius: 50% !important;
+
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,.16) !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9997 !important;
+  }
+
+  /* Small floating quote button */
+  .floating-quote,
+  .floating-quote-list {
+    position: fixed !important;
+    right: 14px !important;
+    left: auto !important;
+    bottom: 14px !important;
+
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+    z-index: 9997 !important;
+  }
+
+  .floating-quote-text {
+    display: none !important;
+  }
+
+  .floating-quote-icon {
+    font-size: 15px !important;
+    line-height: 1 !important;
+  }
+
+  .floating-quote .quote-count,
+  .floating-quote-list .quote-count {
+    position: absolute !important;
+    top: -5px !important;
+    right: -5px !important;
+
+    min-width: 18px !important;
+    width: auto !important;
+    height: 18px !important;
+    padding: 0 5px !important;
+
+    font-size: 9px !important;
+    line-height: 18px !important;
+    border-radius: 20px !important;
+  }
+}
 /* ========================================
-   FINAL FLOATING CONTROLS
+   FLOATING BACK - SQUARE FADE STYLE
 ======================================== */
 
-/* Floating Back */
-a.floating-back {
+a.floating-back,
+.floating-back {
+  width: 38px !important;
+  height: 38px !important;
+
   display: flex !important;
-  position: fixed !important;
-
-  left: 14px !important;
-  right: auto !important;
-  bottom: 14px !important;
-
-  width: 40px !important;
-  height: 40px !important;
-
   align-items: center !important;
   justify-content: center !important;
+
+  padding: 0 !important;
 
   background: #07352c !important;
   color: #ffffff !important;
 
-  border: 0 !important;
-  border-radius: 50% !important;
+  border-radius: 7px !important;
 
-  font-size: 19px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
   line-height: 1 !important;
-  text-decoration: none !important;
 
-  opacity: 1 !important;
-  visibility: visible !important;
+  opacity: 0.55 !important;
 
-  box-shadow: 0 4px 12px rgba(0,0,0,.16) !important;
-
-  z-index: 9998 !important;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
 }
 
-/* Floating Quote List */
-.floating-quote,
-.floating-quote-list {
-  width: 40px !important;
-  height: 40px !important;
-  min-width: 40px !important;
-  min-height: 40px !important;
+a.floating-back:hover,
+.floating-back:hover {
+  opacity: 1 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18) !important;
+}
 
-  right: 14px !important;
-  bottom: 14px !important;
+a.floating-back:active,
+.floating-back:active {
+  opacity: 1 !important;
+  transform: scale(0.95);
+}/* FINAL BACK BUTTON SHAPE OVERRIDE */
+
+html body a.floating-back {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+
+  border-radius: 6px !important;
+
+  opacity: 0.45 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
   padding: 0 !important;
-  border-radius: 50% !important;
+
+  font-size: 18px !important;
+  line-height: 1 !important;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease !important;
 }
 
-/* Quote icon */
-.floating-quote-icon {
-  font-size: 15px !important;
+html body a.floating-back:hover,
+html body a.floating-back:focus {
+  opacity: 1 !important;
 }
 
-/* Quote counter */
-.floating-quote .quote-count,
-.floating-quote-list .quote-count {
-  min-width: 17px !important;
-  height: 17px !important;
-  padding: 0 4px !important;
-
-  font-size: 9px !important;
-  line-height: 17px !important;
+html body a.floating-back:active {
+  opacity: 1 !important;
+  transform: scale(0.94) !important;
 }
-
-/* Hide text on compact floating quote button */
-.floating-quote-text {
-  display: none !important;
-}
-
