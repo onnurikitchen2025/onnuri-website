@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     color: '#ffffff',
 
     border: '1px solid rgba(255,255,255,.35)',
-    borderRadius: '50%',
+    borderRadius: '6px',
 
     fontSize: '20px',
     fontWeight: '700',
