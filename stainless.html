@@ -1124,6 +1124,49 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
 
+  /*
+     Always reset the previous preview before
+     opening a different stainless product.
+     This prevents the last loaded image from
+     appearing on products without an image.
+  */
+
+  const resetProductPreview = () => {
+
+    if(previewImage){
+
+      previewImage.hidden = true;
+      previewImage.removeAttribute('src');
+      previewImage.alt = '';
+
+    }
+
+    if(previewPlaceholder){
+      previewPlaceholder.hidden = false;
+    }
+
+  };
+
+
+  if(previewImage){
+
+    previewImage.addEventListener('error', () => {
+
+      previewImage.hidden = true;
+      previewImage.removeAttribute('src');
+      previewImage.alt = '';
+
+      if(previewPlaceholder){
+        previewPlaceholder.hidden = false;
+        previewPlaceholder.textContent =
+          'PRODUCT IMAGE NOT AVAILABLE';
+      }
+
+    });
+
+  }
+
+
   document
     .querySelectorAll(
       '.preview-product-btn'
@@ -1131,6 +1174,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .forEach(button => {
 
       button.addEventListener('click', () => {
+
+        resetProductPreview();
+
+        if(previewPlaceholder){
+          previewPlaceholder.textContent =
+            'PRODUCT IMAGE';
+        }
 
         const card =
           button.closest(
@@ -1172,25 +1222,32 @@ document.addEventListener('DOMContentLoaded', () => {
           previewPlaceholder
         ){
 
-          previewImage.src = image;
-
           previewImage.alt =
             productName +
             ' ' +
             selectedSize;
 
-          previewImage.hidden = false;
+          /* Show the image only after it loads. */
 
-          previewPlaceholder.hidden = true;
+          previewImage.addEventListener(
+            'load',
+            () => {
+
+              previewImage.hidden = false;
+              previewPlaceholder.hidden = true;
+
+            },
+            { once:true }
+          );
+
+          previewImage.src = image;
 
         }else if(
           previewImage &&
           previewPlaceholder
         ){
 
-          previewImage.hidden = true;
-
-          previewPlaceholder.hidden = false;
+          resetProductPreview();
 
         }
 
@@ -1216,6 +1273,8 @@ document.addEventListener('DOMContentLoaded', () => {
           'open'
         );
 
+        resetProductPreview();
+
       }
     );
 
@@ -1234,12 +1293,30 @@ document.addEventListener('DOMContentLoaded', () => {
             'open'
           );
 
+          resetProductPreview();
+
         }
 
       }
     );
 
   }
+
+
+  document.addEventListener('keydown', e => {
+
+    if(
+      e.key === 'Escape' &&
+      previewModal &&
+      previewModal.classList.contains('open')
+    ){
+
+      previewModal.classList.remove('open');
+      resetProductPreview();
+
+    }
+
+  });
 
 
   /* =========================================
