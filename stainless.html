@@ -1,1479 +1,1037 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Stainless Equipment | Onnuri Kitchen</title>
 
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-  <link rel="stylesheet"
-        href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- PAGE LOADER -->
-
-<div class="page-loader" id="pageLoader">
-  <img src="onnuri-logo.png"
-       alt="Onnuri Kitchen">
-</div>
-
-
-<!-- =========================
-     UNIVERSAL SITE HEADER
-========================= -->
-
-<header class="site-header">
-
-  <!-- LOGO -->
-
-  <a href="index.html" class="brand brand-logo">
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="pageLoader">
     <img src="onnuri-logo.png" alt="Onnuri Kitchen">
-  </a>
+  </div>
 
+  <!-- HEADER -->
+  <header class="site-header">
 
-  <!-- SEARCH -->
+    <a href="index.html" class="brand brand-logo">
+      <img src="onnuri-logo.png" alt="Onnuri Kitchen">
+    </a>
 
-  <div class="header-search">
-
-    <button
-      type="button"
-      class="search-toggle"
-      aria-label="Search products">
-
-      <span class="search-icon"></span>
-
-    </button>
-
-
-    <div class="search-box">
-
-      <input
-        type="search"
-        id="siteSearch"
-        placeholder="Search products..."
-        autocomplete="off">
-
+    <!-- SEARCH -->
+    <div class="header-search">
 
       <button
         type="button"
-        class="search-close"
-        aria-label="Close search">
-        ×
+        class="search-toggle"
+        aria-label="Search products">
+        <span class="search-icon"></span>
       </button>
 
+      <div class="search-box">
 
-      <div
-        class="search-results"
-        id="searchResults">
+        <input
+          type="search"
+          id="siteSearch"
+          placeholder="Search products..."
+          autocomplete="off">
+
+        <button
+          type="button"
+          class="search-close"
+          aria-label="Close search">
+          ×
+        </button>
+
+        <div class="search-results" id="searchResults"></div>
+
       </div>
-
     </div>
 
-  </div>
-
-
-  <!-- MOBILE MENU -->
-
-  <button
-    class="menu-toggle"
-    aria-label="Open navigation menu"
-    aria-expanded="false">
-
-    <span></span>
-    <span></span>
-    <span></span>
-
-  </button>
-
-
-  <!-- NAVIGATION -->
-
-  <nav class="main-nav">
-
-    <a href="index.html">
-      Home
-    </a>
-
-    <a href="index.html#products">
-      Products
-    </a>
-
-    <a href="services.html">
-      Services
-    </a>
-
-    <a href="about.html">
-      About Us
-    </a>
-
-    <a href="contact.html">
-      Contact
-    </a>
-
-    <a
-      href="quote-list.html#quotationForm"
-      class="quote-btn">
-      Request a Quote
-    </a>
-
-  </nav>
-
-</header>
-
-
-
-<main>
-
-
-<!-- HERO -->
-
-<section class="catalog-hero">
-
- 
-
-  <h1>Stainless Equipment</h1>
-
-  <p>
-    Commercial stainless sinks and preparation equipment designed for
-    restaurants, cafés, commissaries, and professional kitchens.
-  </p>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="stainless-catalog">
-
-<div class="stainless-grid">
-  
-  <!-- 1-BOWL SINK -->
-  <article class="stainless-card"
-           data-product="1-Bowl Sink">
-
-  <div class="stainless-image">
-  <span class="stainless-image-placeholder">
-    PRODUCT IMAGE
-  </span>
-</div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">SINKS</span>
-
-      <h3>1-Bowl Sink</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="60 × 60 × 80 cm">
-          60 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="90 × 60 × 80 cm">
-          90 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="180 × 60 × 80 cm">
-          180 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>60 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- 2-BOWL SINK -->
-  <article class="stainless-card"
-           data-product="2-Bowl Sink">
-
-    <div class="stainless-image">
-      <span class="stainless-image-placeholder">
-        PRODUCT IMAGE
-      </span>
-    </div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">SINKS</span>
-
-      <h3>2-Bowl Sink</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="180 × 60 × 80 cm">
-          180 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>120 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- 2-LAYER TABLE -->
-  <article class="stainless-card"
-           data-product="2-Layer Table">
-
-    <div class="stainless-image">
-  <img
-    src="PT2L-120.png"
-    alt="2-Layer Stainless Prep Table"
-    loading="lazy"
-  >
-</div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">TABLES</span>
-      <h3>2-Layer Table</h3>
-
-      <p class="stainless-size-label">Select Size</p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button" class="size-btn active"
-                data-size="60 × 60 × 80 cm"
-                data-code="PT2L-60"
-                data-image="PT2L-60.png">
-          60 × 60 × 80 cm
-        </button>
-
-        <button type="button" class="size-btn"
-                data-size="90 × 60 × 80 cm"
-                data-code="PT2L-90"
-                data-image="PT2L-90.png">
-          90 × 60 × 80 cm
-        </button>
-
-        <button type="button" class="size-btn"
-                data-size="120 × 60 × 80 cm"
-                data-code="PT2L-120"
-                data-image="PT2L-120.png">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button" class="size-btn"
-                data-size="150 × 60 × 80 cm"
-                data-code="PT2L-150"
-                data-image="PT2L-150.png">
-          150 × 60 × 80 cm
-        </button>
-
-        <button type="button" class="size-btn"
-                data-size="180 × 60 × 80 cm"
-                data-code="PT2L-180"
-                data-image="PT2L-180.png">
-          180 × 60 × 80 cm
-        </button>
-
-        <button type="button" class="size-btn"
-                data-size="210 × 60 × 80 cm"
-                data-code="PT2L-210"
-                data-image="PT2L-210.png">
-          210 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>60 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-        <button type="button" class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button" class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- 3-LAYER TABLE -->
-  <article class="stainless-card"
-           data-product="3-Layer Table">
-
-    <div class="stainless-image">
-      <span class="stainless-image-placeholder">
-        PRODUCT IMAGE
-      </span>
-    </div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">TABLES</span>
-
-      <h3>3-Layer Table</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="60 × 60 × 80 cm">
-          60 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="90 × 60 × 80 cm">
-          90 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="180 × 60 × 80 cm">
-          180 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="210 × 60 × 80 cm">
-          210 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>60 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- TABLE CABINET -->
-  <article class="stainless-card"
-           data-product="Table Cabinet">
-
-    <div class="stainless-image">
-      <span class="stainless-image-placeholder">
-        PRODUCT IMAGE
-      </span>
-    </div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">CABINETS</span>
-
-      <h3>Table Cabinet</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>120 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- WALL SHELVES -->
-  <article class="stainless-card"
-           data-product="Wall Shelves">
-
-    <div class="stainless-image">
-      <span class="stainless-image-placeholder">
-        PRODUCT IMAGE
-      </span>
-    </div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">
-        SHELVES & ACCESSORIES
-      </span>
-
-      <h3>Wall Shelves</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="60 × 60 × 80 cm">
-          60 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="90 × 60 × 80 cm">
-          90 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="180 × 60 × 80 cm">
-          180 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="210 × 60 × 80 cm">
-          210 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>60 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- TOP SHELVES -->
-  <article class="stainless-card"
-           data-product="Top Shelves">
-
-    <div class="stainless-image">
-      <span class="stainless-image-placeholder">
-        PRODUCT IMAGE
-      </span>
-    </div>
-
-    <div class="stainless-card-content">
-
-      <span class="stainless-type">
-        SHELVES & ACCESSORIES
-      </span>
-
-      <h3>Top Shelves</h3>
-
-      <p class="stainless-size-label">
-        Select Size
-      </p>
-
-      <div class="stainless-sizes size-selector">
-
-        <button type="button"
-                class="size-btn active"
-                data-size="90 × 60 × 80 cm">
-          90 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="120 × 60 × 80 cm">
-          120 × 60 × 80 cm
-        </button>
-
-        <button type="button"
-                class="size-btn"
-                data-size="150 × 60 × 80 cm">
-          150 × 60 × 80 cm
-        </button>
-
-      </div>
-
-      <p class="selected-size">
-        Selected:
-        <strong>90 × 60 × 80 cm</strong>
-      </p>
-
-      <div class="stainless-card-actions">
-
-        <button type="button"
-                class="preview-product-btn">
-          VIEW IMAGE
-        </button>
-
-        <button type="button"
-                class="add-stainless-quote-btn">
-          ADD TO QUOTE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-</div>
-
-
-
-<!-- QUOTATION CTA -->
-
-<section class="stainless-cta">
-
-  <div class="stainless-cta-inner">
-
-    <p class="section-label">
-      NEED STAINLESS EQUIPMENT?
-    </p>
-
-    <h2>
-      Send Us Your Required Size
-    </h2>
-
-    <p>
-      Tell us the stainless equipment,
-      dimensions, and quantity you need,
-      and our team can assist with available options.
-    </p>
-
-
-    <a href="quote-list.html#quotationForm"
-       class="stainless-quote-btn">
-
-      REQUEST A QUOTE
-
-    </a>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- FOOTER
-     IMPORTANT:
-     Replace this with the exact master footer
-     copied from index.html, including Built by THRD.
--->
-
-<footer class="site-footer">
-
-  <div class="footer-grid">
-
-    <div class="footer-brand">
-
-      <a href="index.html"
-         class="footer-logo">
-
-        <img src="onnuri-logo.png"
-             alt="Onnuri Kitchen">
-
-      </a>
-
-      
-
-    </div>
-
-
-    <div class="footer-column">
-
-      <h3>Quick Links</h3>
-
+    <!-- MOBILE MENU -->
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
       <a href="index.html#products">Products</a>
       <a href="services.html">Services</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
 
-    </div>
-
-
-    <div class="footer-column">
-
-      <h3>Contact</h3>
-
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=onnurikitchen2025@gmail.com"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        onnurikitchen2025@gmail.com
-
+      <a href="quote-list.html#quotationForm" class="quote-btn">
+        Request a Quote
       </a>
+    </nav>
 
-      <a href="https://www.facebook.com/onnurioutletkitchencorporation"
-         target="_blank"
-         rel="noopener noreferrer">
-        Facebook
-      </a>
+  </header>
 
-    </div>
+  <main>
 
-
-    <div class="footer-column">
-
-      <h3>Warehouse</h3>
+    <!-- HERO -->
+    <section class="catalog-hero">
+      <h1>Stainless Equipment</h1>
 
       <p>
-        Km 78 McArthur Highway,<br>
-        Brgy. Saguin, San Fernando,<br>
-        Pampanga
+        Commercial stainless sinks and preparation equipment designed for
+        restaurants, cafés, commissaries, and professional kitchens.
       </p>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="stainless-catalog">
+
+      <div class="stainless-grid">
+
+        <!-- 1-BOWL SINK -->
+        <article class="stainless-card" data-product="1-Bowl Sink">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">SINKS</span>
+            <h3>1-Bowl Sink</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="60 × 60 × 80 cm">
+                60 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="90 × 60 × 80 cm">
+                90 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="180 × 60 × 80 cm">
+                180 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>60 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 2-BOWL SINK -->
+        <article class="stainless-card" data-product="2-Bowl Sink">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">SINKS</span>
+            <h3>2-Bowl Sink</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="180 × 60 × 80 cm">
+                180 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>120 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 2-LAYER TABLE -->
+        <article class="stainless-card" data-product="2-Layer Table">
+
+          <!-- Default card image without dimensions -->
+          <div class="stainless-image">
+            <img
+              src="PT2L-FRONT.png"
+              alt="2-Layer Stainless Prep Table"
+              loading="lazy">
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">TABLES</span>
+            <h3>2-Layer Table</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="60 × 60 × 80 cm"
+                data-code="PT2L-60"
+                data-image="PT2L-60.png">
+                60 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="90 × 60 × 80 cm"
+                data-code="PT2L-90"
+                data-image="PT2L-90.png">
+                90 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="120 × 60 × 80 cm"
+                data-code="PT2L-120"
+                data-image="PT2L-120.png">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm"
+                data-code="PT2L-150"
+                data-image="PT2L-150.png">
+                150 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="180 × 60 × 80 cm"
+                data-code="PT2L-180"
+                data-image="PT2L-180.png">
+                180 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="210 × 60 × 80 cm"
+                data-code="PT2L-210"
+                data-image="PT2L-210.png">
+                210 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>60 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 3-LAYER TABLE -->
+        <article class="stainless-card" data-product="3-Layer Table">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">TABLES</span>
+            <h3>3-Layer Table</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="60 × 60 × 80 cm">
+                60 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="90 × 60 × 80 cm">
+                90 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="180 × 60 × 80 cm">
+                180 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="210 × 60 × 80 cm">
+                210 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>60 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- TABLE CABINET -->
+        <article class="stainless-card" data-product="Table Cabinet">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">CABINETS</span>
+            <h3>Table Cabinet</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>120 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- WALL SHELVES -->
+        <article class="stainless-card" data-product="Wall Shelves">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">SHELVES &amp; ACCESSORIES</span>
+            <h3>Wall Shelves</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="60 × 60 × 80 cm">
+                60 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="90 × 60 × 80 cm">
+                90 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="180 × 60 × 80 cm">
+                180 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="210 × 60 × 80 cm">
+                210 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>60 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- TOP SHELVES -->
+        <article class="stainless-card" data-product="Top Shelves">
+
+          <div class="stainless-image">
+            <span class="stainless-image-placeholder">
+              PRODUCT IMAGE
+            </span>
+          </div>
+
+          <div class="stainless-card-content">
+
+            <span class="stainless-type">SHELVES &amp; ACCESSORIES</span>
+            <h3>Top Shelves</h3>
+            <p class="stainless-size-label">Select Size</p>
+
+            <div class="stainless-sizes size-selector">
+
+              <button
+                type="button"
+                class="size-btn active"
+                data-size="90 × 60 × 80 cm">
+                90 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="120 × 60 × 80 cm">
+                120 × 60 × 80 cm
+              </button>
+
+              <button
+                type="button"
+                class="size-btn"
+                data-size="150 × 60 × 80 cm">
+                150 × 60 × 80 cm
+              </button>
+
+            </div>
+
+            <p class="selected-size">
+              Selected: <strong>90 × 60 × 80 cm</strong>
+            </p>
+
+            <div class="stainless-card-actions">
+              <button type="button" class="preview-product-btn">
+                VIEW IMAGE
+              </button>
+
+              <button type="button" class="add-stainless-quote-btn">
+                ADD TO QUOTE
+              </button>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+      <!-- END PRODUCT GRID -->
+
+      <!-- QUOTATION CTA -->
+      <section class="stainless-cta">
+
+        <div class="stainless-cta-inner">
+
+          <p class="section-label">
+            NEED STAINLESS EQUIPMENT?
+          </p>
+
+          <h2>Send Us Your Required Size</h2>
+
+          <p>
+            Tell us the stainless equipment, dimensions, and quantity
+            you need, and our team can assist with available options.
+          </p>
+
+          <a
+            href="quote-list.html#quotationForm"
+            class="stainless-quote-btn">
+            REQUEST A QUOTE
+          </a>
+
+        </div>
+
+      </section>
+      <!-- END QUOTATION CTA -->
+
+    </section>
+    <!-- END CATALOG -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="onnuri-logo.png" alt="Onnuri Kitchen">
+        </a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="index.html#products">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+
+        <a
+          href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=onnurikitchen2025@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer">
+          onnurikitchen2025@gmail.com
+        </a>
+
+        <a
+          href="https://www.facebook.com/onnurioutletkitchencorporation"
+          target="_blank"
+          rel="noopener noreferrer">
+          Facebook
+        </a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Warehouse</h3>
+
+        <p>
+          Km 78 McArthur Highway,<br>
+          Brgy. Saguin, San Fernando,<br>
+          Pampanga
+        </p>
+      </div>
 
     </div>
 
-  </div>
+    <div class="footer-bottom">
+      <p>
+        © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
+        <span class="site-signature">Built by THRD</span>
+      </p>
+    </div>
 
-  <div class="footer-bottom">
-  <p>
-    © 2025–2026 Onnuri Outlet Kitchen Corporation. All rights reserved.
-    <span class="site-signature">Built by THRD</span>
-  </p>
-</div>
-</footer>
-  
+  </footer>
+
   <!-- FLOATING QUOTE LIST -->
-<a href="quote-list.html"
-   class="floating-quote-list"
-   aria-label="View Quote List">
+  <a
+    href="quote-list.html"
+    class="floating-quote-list"
+    aria-label="View Quote List">
 
-  <span class="floating-quote-icon">📋</span>
+    <span class="floating-quote-icon">📋</span>
+    <span class="floating-quote-text">QUOTE LIST</span>
+    <span class="quote-count">0</span>
 
-  <span class="floating-quote-text">
-    QUOTE LIST
-  </span>
+  </a>
 
-  <span class="quote-count">0</span>
+  <!-- PRODUCT PREVIEW -->
+  <div class="product-preview-modal" id="productPreviewModal">
 
-</a>
-<div class="product-preview-modal"
-     id="productPreviewModal">
+    <div class="product-preview-box">
 
-  <div class="product-preview-box">
+      <button
+        type="button"
+        class="product-preview-close"
+        id="productPreviewClose"
+        aria-label="Close product preview">
+        ×
+      </button>
 
-    <button type="button"
-            class="product-preview-close"
-            id="productPreviewClose">
-      ×
-    </button>
+      <div class="product-preview-image">
+        <span id="previewPlaceholder">PRODUCT IMAGE</span>
+        <img id="previewImage" alt="" hidden>
+      </div>
 
-    <div class="product-preview-image">
-
-      <span id="previewPlaceholder">
-        PRODUCT IMAGE
-      </span>
-
-      <img id="previewImage"
-           src=""
-           alt=""
-           hidden>
+      <h3 id="previewProductName">Product Name</h3>
+      <p id="previewProductSize">Selected Size</p>
 
     </div>
 
-    <h3 id="previewProductName">
-      Product Name
-    </h3>
-
-    <p id="previewProductSize">
-      Selected Size
-    </p>
-
   </div>
 
-</div>
+  <!-- BACK TO PRODUCTS -->
+  <a
+    href="index.html#products"
+    class="floating-back"
+    aria-label="Back to Products">
+    ←
+  </a>
 
+  <script src="quote.js"></script>
+  <script src="search.js"></script>
 
-<script src="quote.js"></script>
-<script src="search.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-  /* =========================================
-     MOBILE MENU
-  ========================================= */
+      /* MOBILE MENU */
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
 
-  const menuToggle =
-    document.querySelector('.menu-toggle');
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mainNav.classList.toggle('open');
 
-  const mainNav =
-    document.querySelector('.main-nav');
-
-  if(menuToggle && mainNav){
-
-    menuToggle.addEventListener('click', () => {
-
-      const isOpen =
-        mainNav.classList.toggle('open');
-
-      menuToggle.classList.toggle(
-        'active',
-        isOpen
-      );
-
-      menuToggle.setAttribute(
-        'aria-expanded',
-        isOpen
-      );
-
-      document.body.classList.toggle(
-        'menu-open',
-        isOpen
-      );
-
-    });
-
-    mainNav.querySelectorAll('a')
-      .forEach(link => {
-
-        link.addEventListener('click', () => {
-
-          mainNav.classList.remove('open');
-
-          menuToggle.classList.remove('active');
-
-          menuToggle.setAttribute(
-            'aria-expanded',
-            'false'
-          );
-
-          document.body.classList.remove(
-            'menu-open'
-          );
-
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          document.body.classList.toggle('menu-open', isOpen);
         });
 
-      });
-
-  }
-
-
-  /* =========================================
-     FIXED HEADER
-  ========================================= */
-
-  const siteHeader =
-    document.querySelector('.site-header');
-
-  const updateHeader = () => {
-
-    if(!siteHeader) return;
-
-    siteHeader.classList.toggle(
-      'scrolled',
-      window.scrollY > 20
-    );
-
-  };
-
-  updateHeader();
-
-  window.addEventListener(
-    'scroll',
-    updateHeader
-  );
-
-
-  /* =========================================
-     PAGE LOADER
-  ========================================= */
-
-  const pageLoader =
-    document.getElementById('pageLoader');
-
-  document.querySelectorAll('a')
-    .forEach(link => {
-
-      link.addEventListener('click', function(e){
-
-        const href =
-          this.getAttribute('href');
-
-        if(
-          !href ||
-          href === '#' ||
-          href.startsWith('#') ||
-          href.startsWith('mailto:') ||
-          href.startsWith('tel:') ||
-          this.target === '_blank'
-        ){
-          return;
-        }
-
-        e.preventDefault();
-
-        if(pageLoader){
-          pageLoader.classList.add('active');
-        }
-
-        setTimeout(() => {
-
-          window.location.href = href;
-
-        },300);
-
-      });
-
-    });
-
-
-  /* =========================================
-     SCROLL REVEAL
-  ========================================= */
-
-  const revealItems =
-    document.querySelectorAll(
-      '.stainless-card, ' +
-      '.stainless-cta-inner'
-    );
-
-  if('IntersectionObserver' in window){
-
-    const observer =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-              entry.target.classList.add(
-                'reveal-visible'
-              );
-
-              observer.unobserve(
-                entry.target
-              );
-
-            }
-
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
           });
-
-        },
-        { threshold:.12 }
-      );
-
-    revealItems.forEach(item => {
-
-      item.classList.add('reveal-item');
-
-      observer.observe(item);
-
-    });
-
-  }else{
-
-    revealItems.forEach(item => {
-      item.classList.add('reveal-visible');
-    });
-
-  }
-
-
-  /* =========================================
-     SIZE SELECTOR
-  ========================================= */
-
-  document
-    .querySelectorAll('.size-selector')
-    .forEach(selector => {
-
-      const buttons =
-        selector.querySelectorAll('.size-btn');
-
-      const card =
-        selector.closest('.stainless-card');
-
-      const selectedText =
-        card.querySelector(
-          '.selected-size strong'
-        );
-
-      buttons.forEach(button => {
-
-        button.addEventListener('click', () => {
-
-          buttons.forEach(btn => {
-            btn.classList.remove('active');
-          });
-
-          button.classList.add('active');
-
-          if(selectedText){
-            selectedText.textContent =
-              button.dataset.size;
-          }
-
         });
-
-      });
-
-    });
-
-
-  /* =========================================
-     PRODUCT IMAGE PREVIEW
-  ========================================= */
-
-  const previewModal =
-    document.getElementById(
-      'productPreviewModal'
-    );
-
-  const previewClose =
-    document.getElementById(
-      'productPreviewClose'
-    );
-
-  const previewImage =
-    document.getElementById(
-      'previewImage'
-    );
-
-  const previewPlaceholder =
-    document.getElementById(
-      'previewPlaceholder'
-    );
-
-  const previewProductName =
-    document.getElementById(
-      'previewProductName'
-    );
-
-  const previewProductSize =
-    document.getElementById(
-      'previewProductSize'
-    );
-
-
-  /*
-     Always reset the previous preview before
-     opening a different stainless product.
-     This prevents the last loaded image from
-     appearing on products without an image.
-  */
-
-  const resetProductPreview = () => {
-
-    if(previewImage){
-
-      previewImage.hidden = true;
-      previewImage.removeAttribute('src');
-      previewImage.alt = '';
-
-    }
-
-    if(previewPlaceholder){
-      previewPlaceholder.hidden = false;
-    }
-
-  };
-
-
-  if(previewImage){
-
-    previewImage.addEventListener('error', () => {
-
-      previewImage.hidden = true;
-      previewImage.removeAttribute('src');
-      previewImage.alt = '';
-
-      if(previewPlaceholder){
-        previewPlaceholder.hidden = false;
-        previewPlaceholder.textContent =
-          'PRODUCT IMAGE NOT AVAILABLE';
       }
 
-    });
+      /* FIXED HEADER */
+      const siteHeader = document.querySelector('.site-header');
 
-  }
+      const updateHeader = () => {
+        if (!siteHeader) return;
 
-
-  document
-    .querySelectorAll(
-      '.preview-product-btn'
-    )
-    .forEach(button => {
-
-      button.addEventListener('click', () => {
-
-        resetProductPreview();
-
-        if(previewPlaceholder){
-          previewPlaceholder.textContent =
-            'PRODUCT IMAGE';
-        }
-
-        const card =
-          button.closest(
-            '.stainless-card'
-          );
-
-        const productName =
-  card.dataset.product ||
-  card.querySelector('h3')?.textContent.trim();
-
-        const activeSize =
-          card.querySelector(
-            '.size-btn.active'
-          );
-
-        if(!activeSize) return;
-
-        const selectedSize =
-          activeSize.dataset.size;
-
-        const image =
-          activeSize.dataset.image;
-
-
-        if(previewProductName){
-          previewProductName.textContent =
-            productName;
-        }
-
-        if(previewProductSize){
-          previewProductSize.textContent =
-            selectedSize;
-        }
-
-
-        if(
-          image &&
-          previewImage &&
-          previewPlaceholder
-        ){
-
-          previewImage.alt =
-            productName +
-            ' ' +
-            selectedSize;
-
-          /* Show the image only after it loads. */
-
-          previewImage.addEventListener(
-            'load',
-            () => {
-
-              previewImage.hidden = false;
-              previewPlaceholder.hidden = true;
-
-            },
-            { once:true }
-          );
-
-          previewImage.src = image;
-
-        }else if(
-          previewImage &&
-          previewPlaceholder
-        ){
-
-          resetProductPreview();
-
-        }
-
-
-        if(previewModal){
-          previewModal.classList.add(
-            'open'
-          );
-        }
-
-      });
-
-    });
-
-
-  if(previewClose && previewModal){
-
-    previewClose.addEventListener(
-      'click',
-      () => {
-
-        previewModal.classList.remove(
-          'open'
+        siteHeader.classList.toggle(
+          'scrolled',
+          window.scrollY > 20
         );
+      };
 
-        resetProductPreview();
+      updateHeader();
+      window.addEventListener('scroll', updateHeader);
 
-      }
-    );
+      /* PAGE LOADER */
+      const pageLoader = document.getElementById('pageLoader');
 
-  }
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
 
-
-  if(previewModal){
-
-    previewModal.addEventListener(
-      'click',
-      e => {
-
-        if(e.target === previewModal){
-
-          previewModal.classList.remove(
-            'open'
-          );
-
-          resetProductPreview();
-
-        }
-
-      }
-    );
-
-  }
-
-
-  document.addEventListener('keydown', e => {
-
-    if(
-      e.key === 'Escape' &&
-      previewModal &&
-      previewModal.classList.contains('open')
-    ){
-
-      previewModal.classList.remove('open');
-      resetProductPreview();
-
-    }
-
-  });
-
-
-  /* =========================================
-     ADD STAINLESS PRODUCT TO QUOTE
-  ========================================= */
-
-  document
-    .querySelectorAll(
-      '.add-stainless-quote-btn'
-    )
-    .forEach(button => {
-
-      button.addEventListener(
-        'click',
-        () => {
-
-          const card =
-            button.closest(
-              '.stainless-card'
-            );
-
-          const productName =
-  card.dataset.product ||
-  card.querySelector('h3')?.textContent.trim();
-
-          const activeSize =
-            card.querySelector(
-              '.size-btn.active'
-            );
-
-          if(!activeSize) return;
-
-          const selectedSize =
-            activeSize.dataset.size;
-
-          const quoteItem =
-            productName +
-            ' — ' +
-            selectedSize;
-
-
-          if(
-            typeof addProductToQuote
-            === 'function'
-          ){
-
-            addProductToQuote(
-              quoteItem
-            );
-
+          if (
+            !href ||
+            href === '#' ||
+            href.startsWith('#') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('tel:') ||
+            this.target === '_blank'
+          ) {
+            return;
           }
-/* FLY TO QUOTE LIST ANIMATION */
 
-const floatingQuote =
-  document.querySelector(
-    '.floating-quote-list'
-  );
+          e.preventDefault();
 
-if(floatingQuote){
-
-  const buttonRect =
-    button.getBoundingClientRect();
-
-  const quoteRect =
-    floatingQuote.getBoundingClientRect();
-
-  const flyItem =
-    document.createElement('div');
-
-  flyItem.className =
-    'quote-fly-item';
-
-  flyItem.textContent = '✓';
-
-  flyItem.style.left =
-    (buttonRect.left +
-    buttonRect.width / 2 -
-    17) + 'px';
-
-  flyItem.style.top =
-    (buttonRect.top +
-    buttonRect.height / 2 -
-    17) + 'px';
-
-  document.body.appendChild(
-    flyItem
-  );
-
-
-  requestAnimationFrame(() => {
-
-    flyItem.style.left =
-      (quoteRect.left +
-      quoteRect.width / 2 -
-      17) + 'px';
-
-    flyItem.style.top =
-      (quoteRect.top +
-      quoteRect.height / 2 -
-      17) + 'px';
-
-    flyItem.style.transform =
-      'scale(.55)';
-
-    flyItem.style.opacity =
-      '0.75';
-
-  });
-
-
-  setTimeout(() => {
-
-    flyItem.remove();
-
-    floatingQuote.classList.remove(
-      'quote-pop'
-    );
-
-    void floatingQuote.offsetWidth;
-
-    floatingQuote.classList.add(
-      'quote-pop'
-    );
-
-  },650);
-
-}
-
-          const originalText =
-            button.textContent;
-
-          button.textContent =
-            'ADDED';
-
-          button.disabled = true;
-
+          if (pageLoader) {
+            pageLoader.classList.add('active');
+          }
 
           setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
 
-            button.textContent =
-              originalText;
-
-            button.disabled = false;
-
-          },1200);
-
-        }
+      /* SCROLL REVEAL */
+      const revealItems = document.querySelectorAll(
+        '.stainless-card, .stainless-cta-inner'
       );
 
-    });
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
 
-});
-</script>
-<a href="index.html#products"
-   class="floating-back"
-   aria-label="Back to Products">
-  ←
-</a>
+        revealItems.forEach(item => {
+          item.classList.add('reveal-item');
+          observer.observe(item);
+        });
+      } else {
+        revealItems.forEach(item => {
+          item.classList.add('reveal-visible');
+        });
+      }
+
+      /* SIZE SELECTOR */
+      document.querySelectorAll('.size-selector').forEach(selector => {
+        const buttons = selector.querySelectorAll('.size-btn');
+        const card = selector.closest('.stainless-card');
+        const selectedText = card.querySelector('.selected-size strong');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            buttons.forEach(btn => {
+              btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            if (selectedText) {
+              selectedText.textContent = button.dataset.size;
+            }
+          });
+        });
+      });
+
+      /* PRODUCT IMAGE PREVIEW */
+      const previewModal = document.getElementById('productPreviewModal');
+      const previewClose = document.getElementById('productPreviewClose');
+      const previewImage = document.getElementById('previewImage');
+      const previewPlaceholder = document.getElementById('previewPlaceholder');
+      const previewProductName = document.getElementById('previewProductName');
+      const previewProductSize = document.getElementById('previewProductSize');
+
+      const resetProductPreview = () => {
+        if (previewImage) {
+          previewImage.hidden = true;
+          previewImage.removeAttribute('src');
+          previewImage.alt = '';
+        }
+
+        if (previewPlaceholder) {
+          previewPlaceholder.hidden = false;
+        }
+      };
+
+      if (previewImage) {
+        previewImage.addEventListener('error', () => {
+          previewImage.hidden = true;
+          previewImage.removeAttribute('src');
+          previewImage.alt = '';
+
+          if (previewPlaceholder) {
+            previewPlaceholder.hidden = false;
+            previewPlaceholder.textContent = 'PRODUCT IMAGE NOT AVAILABLE';
+          }
+        });
+      }
+
+      document.querySelectorAll('.preview-product-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          resetProductPreview();
+
+          if (previewPlaceholder) {
+            previewPlaceholder.textContent = 'PRODUCT IMAGE';
+          }
+
+          const card = button.closest('.stainless-card');
+
+          const productName =
+            card.dataset.product ||
+            card.querySelector('h3')?.textContent.trim();
+
+          const activeSize = card.querySelector('.size-btn.active');
+
+          if (!activeSize) return;
+
+          const selectedSize = activeSize.dataset.size;
+          const image = activeSize.dataset.image;
+
+          if (previewProductName) {
+            previewProductName.textContent = productName;
+          }
+
+          if (previewProductSize) {
+            previewProductSize.textContent = selectedSize;
+          }
+
+          if (image && previewImage && previewPlaceholder) {
+            previewImage.alt = productName + ' ' + selectedSize;
+
+            previewImage.addEventListener(
+              'load',
+              () => {
+                previewImage.hidden = false;
+                previewPlaceholder.hidden = true;
+              },
+              { once: true }
+            );
+
+            previewImage.src = image;
+          } else if (previewImage && previewPlaceholder) {
+            resetProductPreview();
+          }
+
+          if (previewModal) {
+            previewModal.classList.add('open');
+          }
+        });
+      });
+
+      if (previewClose && previewModal) {
+        previewClose.addEventListener('click', () => {
+          previewModal.classList.remove('open');
+          resetProductPreview();
+        });
+      }
+
+      if (previewModal) {
+        previewModal.addEventListener('click', e => {
+          if (e.target === previewModal) {
+            previewModal.classList.remove('open');
+            resetProductPreview();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', e => {
+        if (
+          e.key === 'Escape' &&
+          previewModal &&
+          previewModal.classList.contains('open')
+        ) {
+          previewModal.classList.remove('open');
+          resetProductPreview();
+        }
+      });
+
+      /* ADD PRODUCT TO QUOTE */
+      document.querySelectorAll('.add-stainless-quote-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const card = button.closest('.stainless-card');
+
+          const productName =
+            card.dataset.product ||
+            card.querySelector('h3')?.textContent.trim();
+
+          const activeSize = card.querySelector('.size-btn.active');
+
+          if (!activeSize) return;
+
+          const selectedSize = activeSize.dataset.size;
+          const quoteItem = productName + ' — ' + selectedSize;
+
+          if (typeof addProductToQuote === 'function') {
+            addProductToQuote(quoteItem);
+          }
+
+          /* FLY TO QUOTE LIST ANIMATION */
+          const floatingQuote = document.querySelector('.floating-quote-list');
+
+          if (floatingQuote) {
+            const buttonRect = button.getBoundingClientRect();
+            const quoteRect = floatingQuote.getBoundingClientRect();
+            const flyItem = document.createElement('div');
+
+            flyItem.className = 'quote-fly-item';
+            flyItem.textContent = '✓';
+
+            flyItem.style.left =
+              (buttonRect.left + buttonRect.width / 2 - 17) + 'px';
+
+            flyItem.style.top =
+              (buttonRect.top + buttonRect.height / 2 - 17) + 'px';
+
+            document.body.appendChild(flyItem);
+
+            requestAnimationFrame(() => {
+              flyItem.style.left =
+                (quoteRect.left + quoteRect.width / 2 - 17) + 'px';
+
+              flyItem.style.top =
+                (quoteRect.top + quoteRect.height / 2 - 17) + 'px';
+
+              flyItem.style.transform = 'scale(.55)';
+              flyItem.style.opacity = '0.75';
+            });
+
+            setTimeout(() => {
+              flyItem.remove();
+
+              floatingQuote.classList.remove('quote-pop');
+              void floatingQuote.offsetWidth;
+              floatingQuote.classList.add('quote-pop');
+            }, 650);
+          }
+
+          const originalText = button.textContent;
+
+          button.textContent = 'ADDED';
+          button.disabled = true;
+
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 1200);
+        });
+      });
+
+    });
+  </script>
+
 </body>
 </html>
